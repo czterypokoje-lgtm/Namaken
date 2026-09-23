@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "skills": {
+    "anth-advanced-troubleshooting": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-advanced-troubleshooting/SKILL.md",
+      "computedHash": "0915932fdd6076206d71612cf9c2a568ee2b353e511ac7b76dae6054e2461d28"
+    },
+    "anth-architecture-variants": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-architecture-variants/SKILL.md",
+      "computedHash": "cf5dabe634fe622c25a14afa8005247caa005128126b38b058ba729bf5fc4cd5"
+    },
+    "anth-ci-integration": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-ci-integration/SKILL.md",
+      "computedHash": "5ce2580a2bf57b81e2ae0e2eb94b4706f6f50b03a885d2011327659eab501cac"
+    },
+    "anth-common-errors": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-common-errors/SKILL.md",
+      "computedHash": "25460c3f0ab7fe0cfb43c781bc5b25aa5afba14fbac3b04b8faa41c9c66472e8"
+    },
+    "anth-core-workflow-a": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-core-workflow-a/SKILL.md",
+      "computedHash": "66b9cb20319ef87c4f91e25e35a8c60437c67a32b607c9fe5cf92b07f14c611e"
+    },
+    "anth-core-workflow-b": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-core-workflow-b/SKILL.md",
+      "computedHash": "eb2bb93e6b676973096feac04ae8654fb87fde7fea3fcc34eeab59c42f1429ef"
+    },
+    "anth-cost-tuning": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-cost-tuning/SKILL.md",
+      "computedHash": "5ccaaeb68fab9b41af3fbf7c435e2c884c68c1ef7ce30175cf2f0b4999242ce5"
+    },
+    "anth-data-handling": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-data-handling/SKILL.md",
+      "computedHash": "9f9f135de0fe0deeaddf69b9bcf8d571f56df3183479c1d298bfe95a33b5b4eb"
+    },
+    "anth-debug-bundle": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-debug-bundle/SKILL.md",
+      "computedHash": "856da582ffd5b82035839673cb625fe9c8a5a66f6684d799297c7dea3c382235"
+    },
+    "anth-deploy-integration": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-deploy-integration/SKILL.md",
+      "computedHash": "a0ffcfaaedb2c90b073eb163474fa6febdc3d8ec93f21644568a52ba81708826"
+    },
+    "anth-enterprise-rbac": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-enterprise-rbac/SKILL.md",
+      "computedHash": "7cccf3ea0ffb8d26091ef9395421ce5ae15267536351efda54b6bcee942d4822"
+    },
+    "anth-hello-world": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-hello-world/SKILL.md",
+      "computedHash": "a21b16a542ba10faca85610e702b52fe1ccab13b712d3caf44a04e331c4cec04"
+    },
+    "anth-incident-runbook": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-incident-runbook/SKILL.md",
+      "computedHash": "d55326742af7b64703e42e38afc926692b2dc0cd99f5ac082cf8ea3d84a45877"
+    },
+    "anth-install-auth": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-install-auth/SKILL.md",
+      "computedHash": "53219e979118ed8fd3c325a2915338c8381b8c721990b979a9d8bb35cbd4cd5a"
+    },
+    "anth-known-pitfalls": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-known-pitfalls/SKILL.md",
+      "computedHash": "6697a3953ed82963bad1b88507998537d067b25bb69d1733c75bdee43f3e470d"
+    },
+    "anth-load-scale": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-load-scale/SKILL.md",
+      "computedHash": "657a89360ae8798242cebe4d14c32d700d0d97c683088a412144a28d5c8ad56e"
+    },
+    "anth-local-dev-loop": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-local-dev-loop/SKILL.md",
+      "computedHash": "b64031e9f133ce1c409690e734234ab6ffb133836bef48fe9e624352c2c46256"
+    },
+    "anth-migration-deep-dive": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-migration-deep-dive/SKILL.md",
+      "computedHash": "f0c6b560e0f45f0a39fafe1474c12a9f7265185cecaf0aa0368c57ac0cd307a7"
+    },
+    "anth-multi-env-setup": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-multi-env-setup/SKILL.md",
+      "computedHash": "aacd1224d9db34a72ce4a68de8eb4f2d779972afe74db24105cc16f4a63d4fe9"
+    },
+    "anth-observability": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-observability/SKILL.md",
+      "computedHash": "64e1d711d0dd6848a49b3ef4a4d03a4368729925e5f6218471b1c5e00b1e1c5e"
+    },
+    "anth-performance-tuning": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-performance-tuning/SKILL.md",
+      "computedHash": "d5f2d348948ea8461acc568d8672dd38eff368eb0295bf944eb29494aeb28f88"
+    },
+    "anth-policy-guardrails": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-policy-guardrails/SKILL.md",
+      "computedHash": "5182ae8ba164c7a4529f91a76d3a5ee23d024216110eb9057f4b328d467caba5"
+    },
+    "anth-prod-checklist": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-prod-checklist/SKILL.md",
+      "computedHash": "6e581d9fbd0d1b867602da621e6ee39fa5f5943044c144e41b85834e203b16e3"
+    },
+    "anth-rate-limits": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-rate-limits/SKILL.md",
+      "computedHash": "635ae31b8d8220bfa18590f65689da0fe54ba009f43471c3b2ae5ce93a54ad56"
+    },
+    "anth-reference-architecture": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-reference-architecture/SKILL.md",
+      "computedHash": "22a8c47ab8726c40d1f90f10077fb64334ff9b78aa946df0c846cf16457aae4d"
+    },
+    "anth-reliability-patterns": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-reliability-patterns/SKILL.md",
+      "computedHash": "54ea458d5d54615a58c3bc90f9f8763203954e041e5a3a128fe1964c966700e4"
+    },
+    "anth-security-basics": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-security-basics/SKILL.md",
+      "computedHash": "2a5227e25ee9fc69b9fba1f30b469242d527786155bbf9657dcd51c34015a8b8"
+    },
+    "anth-upgrade-migration": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-upgrade-migration/SKILL.md",
+      "computedHash": "842ac89387957df332f25dd4091a238ca71ab2fccd961fd1a941fc1c38dbc7d0"
+    },
+    "anth-webhooks-events": {
+      "source": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/anth-webhooks-events/SKILL.md",
+      "computedHash": "07d6e1a9cb2ae2120bbfa994effa4ffbed2c50bb08e8fe032e7c17191160e590"
+    },
+    "ponytail": {
+      "source": "DietrichGebert/ponytail",
+      "sourceType": "github",
+      "skillPath": "skills/ponytail/SKILL.md",
+      "computedHash": "210fa0831f649ce9f8a305f7b7c8cf2a0dd09ac4dd53067109941b96e7811d4e"
+    },
+    "vercel-composition-patterns": {
+      "source": "fcakyon/claude-codex-settings",
+      "sourceType": "github",
+      "skillPath": "plugins/react-skills/skills/composition-patterns/SKILL.md",
+      "computedHash": "78991ac213c1bda5548699965a692d0787276f28b0416112dff7b8abffb981e0"
+    },
+    "vercel-react-best-practices": {
+      "source": "fcakyon/claude-codex-settings",
+      "sourceType": "github",
+      "skillPath": "plugins/react-skills/skills/react-best-practices/SKILL.md",
+      "computedHash": "f1de58b80fe9bef6c046e7f2f670e0dfc52b40a6818a1411e01afa15e85a9b24"
+    },
+    "vercel-react-native-skills": {
+      "source": "fcakyon/claude-codex-settings",
+      "sourceType": "github",
+      "skillPath": "plugins/react-skills/skills/react-native-skills/SKILL.md",
+      "computedHash": "06989df6be95ce84be4660d632c653a1e6f095da64ca707043520a78a8f4bf70"
+    },
+    "vercel-react-view-transitions": {
+      "source": "fcakyon/claude-codex-settings",
+      "sourceType": "github",
+      "skillPath": "plugins/react-skills/skills/react-view-transitions/SKILL.md",
+      "computedHash": "2acd7be63b29f565ffae3d97304b951f9bb5f81e6d4974eac6dad368b68dc906"
+    }
+  }
+}

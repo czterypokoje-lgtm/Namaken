@@ -1,0 +1,3010 @@
+{
+  "colorStyles": [
+    {
+      "id": "a90ef0d2-697a-4bd1-9653-cefeb2c8916b",
+      "name": "Night Navy",
+      "path": "/Night Navy",
+      "light": "rgb(12, 20, 34)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "a90ef0d2-697a-4bd1-9653-cefeb2c8916b",
+        "name": "Night Navy",
+        "path": "/Night Navy",
+        "light": "rgb(12, 20, 34)",
+        "dark": null
+      }
+    },
+    {
+      "id": "1e7d7570-ca6b-4029-acc6-f011506129f5",
+      "name": "Navy Surface",
+      "path": "/Navy Surface",
+      "light": "rgb(15, 24, 38)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "1e7d7570-ca6b-4029-acc6-f011506129f5",
+        "name": "Navy Surface",
+        "path": "/Navy Surface",
+        "light": "rgb(15, 24, 38)",
+        "dark": null
+      }
+    },
+    {
+      "id": "d8c04b02-e263-4679-93c0-63c5962e208d",
+      "name": "Raised Navy",
+      "path": "/Raised Navy",
+      "light": "rgb(19, 29, 46)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "d8c04b02-e263-4679-93c0-63c5962e208d",
+        "name": "Raised Navy",
+        "path": "/Raised Navy",
+        "light": "rgb(19, 29, 46)",
+        "dark": null
+      }
+    },
+    {
+      "id": "aa26a95d-9e7c-4ec0-8c48-255e80a711ae",
+      "name": "Line",
+      "path": "/Line",
+      "light": "rgb(42, 54, 80)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "aa26a95d-9e7c-4ec0-8c48-255e80a711ae",
+        "name": "Line",
+        "path": "/Line",
+        "light": "rgb(42, 54, 80)",
+        "dark": null
+      }
+    },
+    {
+      "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+      "name": "Frost",
+      "path": "/Frost",
+      "light": "rgb(238, 240, 243)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "path": "/Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      }
+    },
+    {
+      "id": "69b83b52-ed32-4f0b-acc7-57e19eaeeecf",
+      "name": "Mist",
+      "path": "/Mist",
+      "light": "rgb(163, 173, 189)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "69b83b52-ed32-4f0b-acc7-57e19eaeeecf",
+        "name": "Mist",
+        "path": "/Mist",
+        "light": "rgb(163, 173, 189)",
+        "dark": null
+      }
+    },
+    {
+      "id": "6078b11e-fd19-4980-acae-474fa526d00c",
+      "name": "Signal Orange",
+      "path": "/Signal Orange",
+      "light": "rgb(255, 106, 43)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "6078b11e-fd19-4980-acae-474fa526d00c",
+        "name": "Signal Orange",
+        "path": "/Signal Orange",
+        "light": "rgb(255, 106, 43)",
+        "dark": null
+      }
+    },
+    {
+      "id": "928d42d3-e2e6-46d9-9227-5c2d6a6c2bad",
+      "name": "On Orange",
+      "path": "/On Orange",
+      "light": "rgb(12, 20, 34)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "928d42d3-e2e6-46d9-9227-5c2d6a6c2bad",
+        "name": "On Orange",
+        "path": "/On Orange",
+        "light": "rgb(12, 20, 34)",
+        "dark": null
+      }
+    },
+    {
+      "id": "96fa1c9b-0b0a-4aae-b1fc-aeb57e054ee6",
+      "name": "Faint",
+      "path": "/Faint",
+      "light": "rgb(138, 148, 166)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "96fa1c9b-0b0a-4aae-b1fc-aeb57e054ee6",
+        "name": "Faint",
+        "path": "/Faint",
+        "light": "rgb(138, 148, 166)",
+        "dark": null
+      }
+    },
+    {
+      "id": "88672f43-ec99-4192-8f51-255e21523c12",
+      "name": "Line Strong",
+      "path": "/Line Strong",
+      "light": "rgb(58, 72, 98)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "88672f43-ec99-4192-8f51-255e21523c12",
+        "name": "Line Strong",
+        "path": "/Line Strong",
+        "light": "rgb(58, 72, 98)",
+        "dark": null
+      }
+    },
+    {
+      "id": "74af97b2-3380-4a83-bdfd-4e22a8c7900e",
+      "name": "Live",
+      "path": "/Live",
+      "light": "rgb(255, 106, 43)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "74af97b2-3380-4a83-bdfd-4e22a8c7900e",
+        "name": "Live",
+        "path": "/Live",
+        "light": "rgb(255, 106, 43)",
+        "dark": null
+      }
+    },
+    {
+      "id": "f03a875a-57a6-442e-b715-b9d71742534a",
+      "name": "Navy Band",
+      "path": "/Navy Band",
+      "light": "rgb(16, 26, 43)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "f03a875a-57a6-442e-b715-b9d71742534a",
+        "name": "Navy Band",
+        "path": "/Navy Band",
+        "light": "rgb(16, 26, 43)",
+        "dark": null
+      }
+    },
+    {
+      "id": "e0723465-c4a4-4864-9e46-14981907e475",
+      "name": "Navy Deep",
+      "path": "/Navy Deep",
+      "light": "rgb(8, 14, 25)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "e0723465-c4a4-4864-9e46-14981907e475",
+        "name": "Navy Deep",
+        "path": "/Navy Deep",
+        "light": "rgb(8, 14, 25)",
+        "dark": null
+      }
+    },
+    {
+      "id": "bbfb331c-cf1b-4647-971d-d396fceaef58",
+      "name": "Navy Raised",
+      "path": "/Navy Raised",
+      "light": "rgb(26, 37, 56)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "bbfb331c-cf1b-4647-971d-d396fceaef58",
+        "name": "Navy Raised",
+        "path": "/Navy Raised",
+        "light": "rgb(26, 37, 56)",
+        "dark": null
+      }
+    },
+    {
+      "id": "78047b43-c750-4127-822d-335c345e1b2a",
+      "name": "Navy Line",
+      "path": "/Navy Line",
+      "light": "rgb(47, 59, 82)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "78047b43-c750-4127-822d-335c345e1b2a",
+        "name": "Navy Line",
+        "path": "/Navy Line",
+        "light": "rgb(47, 59, 82)",
+        "dark": null
+      }
+    },
+    {
+      "id": "686de495-77ed-406d-a3d6-6bd90c7806d8",
+      "name": "Frost On Band",
+      "path": "/Frost On Band",
+      "light": "rgb(238, 240, 243)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "686de495-77ed-406d-a3d6-6bd90c7806d8",
+        "name": "Frost On Band",
+        "path": "/Frost On Band",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      }
+    },
+    {
+      "id": "70e935a4-56e1-491e-a650-c214fd6e51df",
+      "name": "Mist On Band",
+      "path": "/Mist On Band",
+      "light": "rgb(163, 173, 189)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "70e935a4-56e1-491e-a650-c214fd6e51df",
+        "name": "Mist On Band",
+        "path": "/Mist On Band",
+        "light": "rgb(163, 173, 189)",
+        "dark": null
+      }
+    },
+    {
+      "id": "b5dab154-0f3c-4950-987b-405c71bcbeab",
+      "name": "Orange Text",
+      "path": "/Orange Text",
+      "light": "rgb(255, 125, 69)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "b5dab154-0f3c-4950-987b-405c71bcbeab",
+        "name": "Orange Text",
+        "path": "/Orange Text",
+        "light": "rgb(255, 125, 69)",
+        "dark": null
+      }
+    },
+    {
+      "id": "7bab677c-65c3-4df8-a2a7-0bfc57ca3b22",
+      "name": "Orange Tint",
+      "path": "/Orange Tint",
+      "light": "rgb(41, 30, 35)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "7bab677c-65c3-4df8-a2a7-0bfc57ca3b22",
+        "name": "Orange Tint",
+        "path": "/Orange Tint",
+        "light": "rgb(41, 30, 35)",
+        "dark": null
+      }
+    },
+    {
+      "id": "098655b6-d479-4e61-b94a-277a9f9673cc",
+      "name": "Orange Hover",
+      "path": "/Orange Hover",
+      "light": "rgb(255, 132, 80)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "098655b6-d479-4e61-b94a-277a9f9673cc",
+        "name": "Orange Hover",
+        "path": "/Orange Hover",
+        "light": "rgb(255, 132, 80)",
+        "dark": null
+      }
+    },
+    {
+      "id": "9c8edf2f-9a45-40dc-a74d-80fe701ba23d",
+      "name": "Check",
+      "path": "/Check",
+      "light": "rgb(255, 125, 69)",
+      "dark": null,
+      "originalStyleData": {
+        "id": "9c8edf2f-9a45-40dc-a74d-80fe701ba23d",
+        "name": "Check",
+        "path": "/Check",
+        "light": "rgb(255, 125, 69)",
+        "dark": null
+      }
+    }
+  ],
+  "textStyles": [
+    {
+      "id": "MVhlzGUEK",
+      "name": "Display",
+      "tag": "h1",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "100px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 0.9,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "56px",
+          "lineHeight": "0.9em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "40px",
+          "lineHeight": "0.92em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "MVhlzGUEK",
+        "name": "Display",
+        "path": "/Display",
+        "tag": "h1",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "uppercase",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "56px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.9em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "40px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.92em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "100px",
+        "letterSpacing": "0px",
+        "lineHeight": "0.9em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "qgylEGaiU",
+      "name": "Heading 2",
+      "tag": "h2",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "800",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "76px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 0.9,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 0,
+      "balance": true,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "60px",
+          "lineHeight": "0.92em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "44px",
+          "lineHeight": "0.94em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "qgylEGaiU",
+        "name": "Heading 2",
+        "path": "/Heading 2",
+        "tag": "h2",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "uppercase",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": true,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "60px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.92em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "44px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.94em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "76px",
+        "letterSpacing": "0px",
+        "lineHeight": "0.9em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "QqPpVhYCI",
+      "name": "Heading 3",
+      "tag": "h3",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "800",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "32px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1,
+      "letterSpacing": "0.005em",
+      "paragraphSpacing": 12,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "30px",
+          "lineHeight": "1em",
+          "letterSpacing": "0.005em",
+          "paragraphSpacing": 12
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "28px",
+          "lineHeight": "1em",
+          "letterSpacing": "0.005em",
+          "paragraphSpacing": 12
+        }
+      ],
+      "originalFramerData": {
+        "id": "QqPpVhYCI",
+        "name": "Heading 3",
+        "path": "/Heading 3",
+        "tag": "h3",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "uppercase",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "30px",
+            "letterSpacing": "0.005em",
+            "lineHeight": "1em",
+            "paragraphSpacing": 12
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "28px",
+            "letterSpacing": "0.005em",
+            "lineHeight": "1em",
+            "paragraphSpacing": 12
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "32px",
+        "letterSpacing": "0.005em",
+        "lineHeight": "1em",
+        "paragraphSpacing": 12
+      }
+    },
+    {
+      "id": "L8mA76yeG",
+      "name": "Body",
+      "tag": "p",
+      "font": {
+        "family": "Chivo",
+        "weight": "400",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "normal"
+      },
+      "italicFont": {
+        "family": "Chivo",
+        "weight": "400",
+        "style": "italic"
+      },
+      "boldItalicFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "italic"
+      },
+      "fontSize": "18px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "none",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1.55,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 16,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "18px",
+          "lineHeight": "1.55em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 16
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "17px",
+          "lineHeight": "1.55em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 16
+        }
+      ],
+      "originalFramerData": {
+        "id": "L8mA76yeG",
+        "name": "Body",
+        "path": "/Body",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "italicFont": "FONT_OBJECT_PRESERVED",
+        "boldItalicFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "none",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "18px",
+            "letterSpacing": "0px",
+            "lineHeight": "1.55em",
+            "paragraphSpacing": 16
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "17px",
+            "letterSpacing": "0px",
+            "lineHeight": "1.55em",
+            "paragraphSpacing": 16
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "18px",
+        "letterSpacing": "0px",
+        "lineHeight": "1.55em",
+        "paragraphSpacing": 16
+      }
+    },
+    {
+      "id": "capn7uGHV",
+      "name": "Body Small",
+      "tag": "p",
+      "font": {
+        "family": "Chivo",
+        "weight": "400",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "normal"
+      },
+      "italicFont": {
+        "family": "Chivo",
+        "weight": "400",
+        "style": "italic"
+      },
+      "boldItalicFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "italic"
+      },
+      "fontSize": "15px",
+      "color": "rgb(163, 173, 189)",
+      "colorStyleRef": {
+        "id": "69b83b52-ed32-4f0b-acc7-57e19eaeeecf",
+        "name": "Mist",
+        "light": "rgb(163, 173, 189)",
+        "dark": null
+      },
+      "textTransform": "none",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1.5,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 12,
+      "balance": false,
+      "breakpoints": [],
+      "originalFramerData": {
+        "id": "capn7uGHV",
+        "name": "Body Small",
+        "path": "/Body Small",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "italicFont": "FONT_OBJECT_PRESERVED",
+        "boldItalicFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "69b83b52-ed32-4f0b-acc7-57e19eaeeecf",
+          "name": "Mist",
+          "path": "/Mist",
+          "light": "rgb(163, 173, 189)",
+          "dark": null
+        },
+        "transform": "none",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [],
+        "minWidth": 0,
+        "fontSize": "15px",
+        "letterSpacing": "0px",
+        "lineHeight": "1.5em",
+        "paragraphSpacing": 12
+      }
+    },
+    {
+      "id": "Z6idQ96TR",
+      "name": "Label",
+      "tag": "p",
+      "font": {
+        "family": "Chivo",
+        "weight": "600",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Chivo",
+        "weight": "900",
+        "style": "normal"
+      },
+      "italicFont": {
+        "family": "Chivo",
+        "weight": "600",
+        "style": "italic"
+      },
+      "boldItalicFont": {
+        "family": "Chivo",
+        "weight": "900",
+        "style": "italic"
+      },
+      "fontSize": "15px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "none",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1.2,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [],
+      "originalFramerData": {
+        "id": "Z6idQ96TR",
+        "name": "Label",
+        "path": "/Label",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "italicFont": "FONT_OBJECT_PRESERVED",
+        "boldItalicFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "none",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [],
+        "minWidth": 0,
+        "fontSize": "15px",
+        "letterSpacing": "0px",
+        "lineHeight": "1.2em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "UitDwTRG4",
+      "name": "Eyebrow",
+      "tag": "p",
+      "font": {
+        "family": "Chivo",
+        "weight": "600",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Chivo",
+        "weight": "900",
+        "style": "normal"
+      },
+      "italicFont": {
+        "family": "Chivo",
+        "weight": "600",
+        "style": "italic"
+      },
+      "boldItalicFont": {
+        "family": "Chivo",
+        "weight": "900",
+        "style": "italic"
+      },
+      "fontSize": "13px",
+      "color": "rgb(163, 173, 189)",
+      "colorStyleRef": {
+        "id": "69b83b52-ed32-4f0b-acc7-57e19eaeeecf",
+        "name": "Mist",
+        "light": "rgb(163, 173, 189)",
+        "dark": null
+      },
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1.4,
+      "letterSpacing": "0.03em",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "13px",
+          "lineHeight": "1.4em",
+          "letterSpacing": "0.03em",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "12px",
+          "lineHeight": "1.4em",
+          "letterSpacing": "0.03em",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "UitDwTRG4",
+        "name": "Eyebrow",
+        "path": "/Eyebrow",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "italicFont": "FONT_OBJECT_PRESERVED",
+        "boldItalicFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "69b83b52-ed32-4f0b-acc7-57e19eaeeecf",
+          "name": "Mist",
+          "path": "/Mist",
+          "light": "rgb(163, 173, 189)",
+          "dark": null
+        },
+        "transform": "uppercase",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "13px",
+            "letterSpacing": "0.03em",
+            "lineHeight": "1.4em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "12px",
+            "letterSpacing": "0.03em",
+            "lineHeight": "1.4em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "13px",
+        "letterSpacing": "0.03em",
+        "lineHeight": "1.4em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "JpM5ArNGF",
+      "name": "Stat Figure",
+      "tag": "p",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "104px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "none",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 0.9,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "80px",
+          "lineHeight": "0.9em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "60px",
+          "lineHeight": "0.92em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "JpM5ArNGF",
+        "name": "Stat Figure",
+        "path": "/Stat Figure",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "none",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "80px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.9em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "60px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.92em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "104px",
+        "letterSpacing": "0px",
+        "lineHeight": "0.9em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "IRgIWmOu9",
+      "name": "Heading 4",
+      "tag": "h4",
+      "font": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Chivo",
+        "weight": "900",
+        "style": "normal"
+      },
+      "italicFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "italic"
+      },
+      "boldItalicFont": {
+        "family": "Chivo",
+        "weight": "900",
+        "style": "italic"
+      },
+      "fontSize": "19px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "none",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1.3,
+      "letterSpacing": "-0.01em",
+      "paragraphSpacing": 10,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "19px",
+          "lineHeight": "1.3em",
+          "letterSpacing": "-0.01em",
+          "paragraphSpacing": 10
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "18px",
+          "lineHeight": "1.3em",
+          "letterSpacing": "-0.01em",
+          "paragraphSpacing": 10
+        }
+      ],
+      "originalFramerData": {
+        "id": "IRgIWmOu9",
+        "name": "Heading 4",
+        "path": "/Heading 4",
+        "tag": "h4",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "italicFont": "FONT_OBJECT_PRESERVED",
+        "boldItalicFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "none",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "19px",
+            "letterSpacing": "-0.01em",
+            "lineHeight": "1.3em",
+            "paragraphSpacing": 10
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "18px",
+            "letterSpacing": "-0.01em",
+            "lineHeight": "1.3em",
+            "paragraphSpacing": 10
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "19px",
+        "letterSpacing": "-0.01em",
+        "lineHeight": "1.3em",
+        "paragraphSpacing": 10
+      }
+    },
+    {
+      "id": "jZDxWt31U",
+      "name": "Quote",
+      "tag": "p",
+      "font": {
+        "family": "Chivo",
+        "weight": "500",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "normal"
+      },
+      "italicFont": {
+        "family": "Chivo",
+        "weight": "500",
+        "style": "italic"
+      },
+      "boldItalicFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "italic"
+      },
+      "fontSize": "21px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "none",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1.45,
+      "letterSpacing": "-0.01em",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "20px",
+          "lineHeight": "1.45em",
+          "letterSpacing": "-0.01em",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "19px",
+          "lineHeight": "1.45em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "jZDxWt31U",
+        "name": "Quote",
+        "path": "/Quote",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "italicFont": "FONT_OBJECT_PRESERVED",
+        "boldItalicFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "none",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "20px",
+            "letterSpacing": "-0.01em",
+            "lineHeight": "1.45em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "19px",
+            "letterSpacing": "0px",
+            "lineHeight": "1.45em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "21px",
+        "letterSpacing": "-0.01em",
+        "lineHeight": "1.45em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "JE6uQR6lQ",
+      "name": "Mono",
+      "tag": "p",
+      "font": {
+        "family": "Chivo Mono",
+        "weight": "400",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Chivo Mono",
+        "weight": "700",
+        "style": "normal"
+      },
+      "italicFont": {
+        "family": "Chivo Mono",
+        "weight": "400",
+        "style": "italic"
+      },
+      "boldItalicFont": {
+        "family": "Chivo Mono",
+        "weight": "700",
+        "style": "italic"
+      },
+      "fontSize": "13px",
+      "color": "rgb(163, 173, 189)",
+      "colorStyleRef": {
+        "id": "69b83b52-ed32-4f0b-acc7-57e19eaeeecf",
+        "name": "Mist",
+        "light": "rgb(163, 173, 189)",
+        "dark": null
+      },
+      "textTransform": "none",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1.45,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "13px",
+          "lineHeight": "1.45em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "13px",
+          "lineHeight": "1.45em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "JE6uQR6lQ",
+        "name": "Mono",
+        "path": "/Mono",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "italicFont": "FONT_OBJECT_PRESERVED",
+        "boldItalicFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "69b83b52-ed32-4f0b-acc7-57e19eaeeecf",
+          "name": "Mist",
+          "path": "/Mist",
+          "light": "rgb(163, 173, 189)",
+          "dark": null
+        },
+        "transform": "none",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "13px",
+            "letterSpacing": "0px",
+            "lineHeight": "1.45em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "13px",
+            "letterSpacing": "0px",
+            "lineHeight": "1.45em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "13px",
+        "letterSpacing": "0px",
+        "lineHeight": "1.45em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "D42XkNMYJ",
+      "name": "List",
+      "tag": "p",
+      "font": {
+        "family": "Chivo",
+        "weight": "400",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "normal"
+      },
+      "italicFont": {
+        "family": "Chivo",
+        "weight": "400",
+        "style": "italic"
+      },
+      "boldItalicFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "italic"
+      },
+      "fontSize": "17px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "none",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1.55,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 10,
+      "balance": false,
+      "breakpoints": [],
+      "originalFramerData": {
+        "id": "D42XkNMYJ",
+        "name": "List",
+        "path": "/List",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "italicFont": "FONT_OBJECT_PRESERVED",
+        "boldItalicFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "none",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [],
+        "minWidth": 0,
+        "fontSize": "17px",
+        "letterSpacing": "0px",
+        "lineHeight": "1.55em",
+        "paragraphSpacing": 10
+      }
+    },
+    {
+      "id": "NsLywVItx",
+      "name": "RT H1",
+      "tag": "h1",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "800",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "56px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 0.95,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 24,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "48px",
+          "lineHeight": "0.95em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 24
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "40px",
+          "lineHeight": "0.96em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 20
+        }
+      ],
+      "originalFramerData": {
+        "id": "NsLywVItx",
+        "name": "RT H1",
+        "path": "/RT H1",
+        "tag": "h1",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "uppercase",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "48px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.95em",
+            "paragraphSpacing": 24
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "40px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.96em",
+            "paragraphSpacing": 20
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "56px",
+        "letterSpacing": "0px",
+        "lineHeight": "0.95em",
+        "paragraphSpacing": 24
+      }
+    },
+    {
+      "id": "RYhibGIaG",
+      "name": "RT H2",
+      "tag": "h2",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "800",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "44px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 20,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "38px",
+          "lineHeight": "1em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 20
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "32px",
+          "lineHeight": "1em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 18
+        }
+      ],
+      "originalFramerData": {
+        "id": "RYhibGIaG",
+        "name": "RT H2",
+        "path": "/RT H2",
+        "tag": "h2",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "uppercase",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "38px",
+            "letterSpacing": "0px",
+            "lineHeight": "1em",
+            "paragraphSpacing": 20
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "32px",
+            "letterSpacing": "0px",
+            "lineHeight": "1em",
+            "paragraphSpacing": 18
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "44px",
+        "letterSpacing": "0px",
+        "lineHeight": "1em",
+        "paragraphSpacing": 20
+      }
+    },
+    {
+      "id": "Sjv_qx180",
+      "name": "RT H3",
+      "tag": "h3",
+      "font": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Chivo",
+        "weight": "900",
+        "style": "normal"
+      },
+      "italicFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "italic"
+      },
+      "boldItalicFont": {
+        "family": "Chivo",
+        "weight": "900",
+        "style": "italic"
+      },
+      "fontSize": "22px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "none",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1.25,
+      "letterSpacing": "-0.015em",
+      "paragraphSpacing": 14,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "21px",
+          "lineHeight": "1.25em",
+          "letterSpacing": "-0.01em",
+          "paragraphSpacing": 14
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "20px",
+          "lineHeight": "1.25em",
+          "letterSpacing": "-0.01em",
+          "paragraphSpacing": 14
+        }
+      ],
+      "originalFramerData": {
+        "id": "Sjv_qx180",
+        "name": "RT H3",
+        "path": "/RT H3",
+        "tag": "h3",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "italicFont": "FONT_OBJECT_PRESERVED",
+        "boldItalicFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "none",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "21px",
+            "letterSpacing": "-0.01em",
+            "lineHeight": "1.25em",
+            "paragraphSpacing": 14
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "20px",
+            "letterSpacing": "-0.01em",
+            "lineHeight": "1.25em",
+            "paragraphSpacing": 14
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "22px",
+        "letterSpacing": "-0.015em",
+        "lineHeight": "1.25em",
+        "paragraphSpacing": 14
+      }
+    },
+    {
+      "id": "FXusjXaFC",
+      "name": "Lead",
+      "tag": "p",
+      "font": {
+        "family": "Chivo",
+        "weight": "400",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "normal"
+      },
+      "italicFont": {
+        "family": "Chivo",
+        "weight": "400",
+        "style": "italic"
+      },
+      "boldItalicFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "italic"
+      },
+      "fontSize": "21px",
+      "color": "rgb(163, 173, 189)",
+      "colorStyleRef": {
+        "id": "69b83b52-ed32-4f0b-acc7-57e19eaeeecf",
+        "name": "Mist",
+        "light": "rgb(163, 173, 189)",
+        "dark": null
+      },
+      "textTransform": "none",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1.5,
+      "letterSpacing": "-0.01em",
+      "paragraphSpacing": 16,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "20px",
+          "lineHeight": "1.5em",
+          "letterSpacing": "-0.01em",
+          "paragraphSpacing": 16
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "18px",
+          "lineHeight": "1.5em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 16
+        }
+      ],
+      "originalFramerData": {
+        "id": "FXusjXaFC",
+        "name": "Lead",
+        "path": "/Lead",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "italicFont": "FONT_OBJECT_PRESERVED",
+        "boldItalicFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "69b83b52-ed32-4f0b-acc7-57e19eaeeecf",
+          "name": "Mist",
+          "path": "/Mist",
+          "light": "rgb(163, 173, 189)",
+          "dark": null
+        },
+        "transform": "none",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "20px",
+            "letterSpacing": "-0.01em",
+            "lineHeight": "1.5em",
+            "paragraphSpacing": 16
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "18px",
+            "letterSpacing": "0px",
+            "lineHeight": "1.5em",
+            "paragraphSpacing": 16
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "21px",
+        "letterSpacing": "-0.01em",
+        "lineHeight": "1.5em",
+        "paragraphSpacing": 16
+      }
+    },
+    {
+      "id": "mY9HWQqKX",
+      "name": "Display Page",
+      "tag": "h1",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "136px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 0.86,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 0,
+      "balance": true,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "100px",
+          "lineHeight": "0.88em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "64px",
+          "lineHeight": "0.9em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "mY9HWQqKX",
+        "name": "Display Page",
+        "path": "/Display Page",
+        "tag": "h1",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "uppercase",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": true,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "100px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.88em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "64px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.9em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "136px",
+        "letterSpacing": "0px",
+        "lineHeight": "0.86em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "dTtUr9fdx",
+      "name": "Price",
+      "tag": "p",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "800",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "56px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "none",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "48px",
+          "lineHeight": "1em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "42px",
+          "lineHeight": "1em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "dTtUr9fdx",
+        "name": "Price",
+        "path": "/Price",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "none",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "48px",
+            "letterSpacing": "0px",
+            "lineHeight": "1em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "42px",
+            "letterSpacing": "0px",
+            "lineHeight": "1em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "56px",
+        "letterSpacing": "0px",
+        "lineHeight": "1em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "K_TbBPu5N",
+      "name": "Mono Caps",
+      "tag": "p",
+      "font": {
+        "family": "Chivo",
+        "weight": "600",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Chivo",
+        "weight": "900",
+        "style": "normal"
+      },
+      "italicFont": {
+        "family": "Chivo",
+        "weight": "600",
+        "style": "italic"
+      },
+      "boldItalicFont": {
+        "family": "Chivo",
+        "weight": "900",
+        "style": "italic"
+      },
+      "fontSize": "13px",
+      "color": "rgb(163, 173, 189)",
+      "colorStyleRef": {
+        "id": "69b83b52-ed32-4f0b-acc7-57e19eaeeecf",
+        "name": "Mist",
+        "light": "rgb(163, 173, 189)",
+        "dark": null
+      },
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1.4,
+      "letterSpacing": "0.03em",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "13px",
+          "lineHeight": "1.4em",
+          "letterSpacing": "0.03em",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "12px",
+          "lineHeight": "1.4em",
+          "letterSpacing": "0.03em",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "K_TbBPu5N",
+        "name": "Mono Caps",
+        "path": "/Mono Caps",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "italicFont": "FONT_OBJECT_PRESERVED",
+        "boldItalicFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "69b83b52-ed32-4f0b-acc7-57e19eaeeecf",
+          "name": "Mist",
+          "path": "/Mist",
+          "light": "rgb(163, 173, 189)",
+          "dark": null
+        },
+        "transform": "uppercase",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "13px",
+            "letterSpacing": "0.03em",
+            "lineHeight": "1.4em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "12px",
+            "letterSpacing": "0.03em",
+            "lineHeight": "1.4em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "13px",
+        "letterSpacing": "0.03em",
+        "lineHeight": "1.4em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "fT92SWGwk",
+      "name": "Call Number",
+      "tag": "p",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "800",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "36px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "none",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1,
+      "letterSpacing": "0.005em",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "34px",
+          "lineHeight": "1em",
+          "letterSpacing": "0.005em",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "32px",
+          "lineHeight": "1em",
+          "letterSpacing": "0.005em",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "fT92SWGwk",
+        "name": "Call Number",
+        "path": "/Call Number",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "none",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "34px",
+            "letterSpacing": "0.005em",
+            "lineHeight": "1em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "32px",
+            "letterSpacing": "0.005em",
+            "lineHeight": "1em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "36px",
+        "letterSpacing": "0.005em",
+        "lineHeight": "1em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "DeGzCc_bX",
+      "name": "ETA Figure",
+      "tag": "p",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "132px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "none",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 0.86,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "104px",
+          "lineHeight": "0.88em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "84px",
+          "lineHeight": "0.86em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "DeGzCc_bX",
+        "name": "ETA Figure",
+        "path": "/ETA Figure",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "none",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "104px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.88em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "84px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.86em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "132px",
+        "letterSpacing": "0px",
+        "lineHeight": "0.86em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "jkyxCgWsj",
+      "name": "Hero Line",
+      "tag": "h1",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "104px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 0.9,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "76px",
+          "lineHeight": "0.9em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "42px",
+          "lineHeight": "0.92em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "jkyxCgWsj",
+        "name": "Hero Line",
+        "path": "/Hero Line",
+        "tag": "h1",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "uppercase",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "76px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.9em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "42px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.92em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "104px",
+        "letterSpacing": "0px",
+        "lineHeight": "0.9em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "hyJfJUl8s",
+      "name": "Mega Figure",
+      "tag": "p",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "380px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 0.8,
+      "letterSpacing": "-0.01em",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "250px",
+          "lineHeight": "0.8em",
+          "letterSpacing": "-0.01em",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "150px",
+          "lineHeight": "0.82em",
+          "letterSpacing": "-0.01em",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "hyJfJUl8s",
+        "name": "Mega Figure",
+        "path": "/Mega Figure",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "uppercase",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "250px",
+            "letterSpacing": "-0.01em",
+            "lineHeight": "0.8em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "150px",
+            "letterSpacing": "-0.01em",
+            "lineHeight": "0.82em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "380px",
+        "letterSpacing": "-0.01em",
+        "lineHeight": "0.8em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "dV7DfcRA0",
+      "name": "Index Title",
+      "tag": "h3",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "116px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 0.86,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "92px",
+          "lineHeight": "0.88em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "56px",
+          "lineHeight": "0.9em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "dV7DfcRA0",
+        "name": "Index Title",
+        "path": "/Index Title",
+        "tag": "h3",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "uppercase",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "92px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.88em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "56px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.9em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "116px",
+        "letterSpacing": "0px",
+        "lineHeight": "0.86em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "KYoMOHz3P",
+      "name": "Poster",
+      "tag": "h2",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "180px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 0.84,
+      "letterSpacing": "-0.005em",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "120px",
+          "lineHeight": "0.86em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "56px",
+          "lineHeight": "0.88em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "KYoMOHz3P",
+        "name": "Poster",
+        "path": "/Poster",
+        "tag": "h2",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "uppercase",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "120px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.86em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "56px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.88em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "180px",
+        "letterSpacing": "-0.005em",
+        "lineHeight": "0.84em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "HhCcLwcF6",
+      "name": "Quote Large",
+      "tag": "p",
+      "font": {
+        "family": "Chivo",
+        "weight": "500",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "normal"
+      },
+      "italicFont": {
+        "family": "Chivo",
+        "weight": "500",
+        "style": "italic"
+      },
+      "boldItalicFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "italic"
+      },
+      "fontSize": "44px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "none",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1.18,
+      "letterSpacing": "-0.02em",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "34px",
+          "lineHeight": "1.2em",
+          "letterSpacing": "-0.02em",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "26px",
+          "lineHeight": "1.24em",
+          "letterSpacing": "-0.015em",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "HhCcLwcF6",
+        "name": "Quote Large",
+        "path": "/Quote Large",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "italicFont": "FONT_OBJECT_PRESERVED",
+        "boldItalicFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "none",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "34px",
+            "letterSpacing": "-0.02em",
+            "lineHeight": "1.2em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "26px",
+            "letterSpacing": "-0.015em",
+            "lineHeight": "1.24em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "44px",
+        "letterSpacing": "-0.02em",
+        "lineHeight": "1.18em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "mzVNbnFr1",
+      "name": "Board Row",
+      "tag": "p",
+      "font": {
+        "family": "Chivo",
+        "weight": "500",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "normal"
+      },
+      "italicFont": {
+        "family": "Chivo",
+        "weight": "500",
+        "style": "italic"
+      },
+      "boldItalicFont": {
+        "family": "Chivo",
+        "weight": "700",
+        "style": "italic"
+      },
+      "fontSize": "20px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "none",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 1.3,
+      "letterSpacing": "-0.005em",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "18px",
+          "lineHeight": "1.3em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "16px",
+          "lineHeight": "1.3em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "mzVNbnFr1",
+        "name": "Board Row",
+        "path": "/Board Row",
+        "tag": "p",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "italicFont": "FONT_OBJECT_PRESERVED",
+        "boldItalicFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "none",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "18px",
+            "letterSpacing": "0px",
+            "lineHeight": "1.3em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "16px",
+            "letterSpacing": "0px",
+            "lineHeight": "1.3em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "20px",
+        "letterSpacing": "-0.005em",
+        "lineHeight": "1.3em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "Wx_QqxVf6",
+      "name": "Index Compact",
+      "tag": "h3",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "72px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 0.9,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "60px",
+          "lineHeight": "0.9em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "44px",
+          "lineHeight": "0.92em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "Wx_QqxVf6",
+        "name": "Index Compact",
+        "path": "/Index Compact",
+        "tag": "h3",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "uppercase",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "60px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.9em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "44px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.92em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "72px",
+        "letterSpacing": "0px",
+        "lineHeight": "0.9em",
+        "paragraphSpacing": 0
+      }
+    },
+    {
+      "id": "okhNW2pVa",
+      "name": "Statement",
+      "tag": "h2",
+      "font": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "boldFont": {
+        "family": "Big Shoulders",
+        "weight": "900",
+        "style": "normal"
+      },
+      "fontSize": "112px",
+      "color": "rgb(238, 240, 243)",
+      "colorStyleRef": {
+        "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+        "name": "Frost",
+        "light": "rgb(238, 240, 243)",
+        "dark": null
+      },
+      "textTransform": "uppercase",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "lineHeight": 0.9,
+      "letterSpacing": "0px",
+      "paragraphSpacing": 0,
+      "balance": false,
+      "breakpoints": [
+        {
+          "minWidth": 1200,
+          "fontSize": "64px",
+          "lineHeight": "0.9em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        },
+        {
+          "minWidth": 810,
+          "fontSize": "32px",
+          "lineHeight": "0.92em",
+          "letterSpacing": "0px",
+          "paragraphSpacing": 0
+        }
+      ],
+      "originalFramerData": {
+        "id": "okhNW2pVa",
+        "name": "Statement",
+        "path": "/Statement",
+        "tag": "h2",
+        "font": "FONT_OBJECT_PRESERVED",
+        "boldFont": "FONT_OBJECT_PRESERVED",
+        "color": {
+          "id": "76a5b4e6-c520-44e6-8b02-e9e271aaa1fa",
+          "name": "Frost",
+          "path": "/Frost",
+          "light": "rgb(238, 240, 243)",
+          "dark": null
+        },
+        "transform": "uppercase",
+        "alignment": "left",
+        "decoration": "none",
+        "decorationColor": "currentcolor",
+        "decorationThickness": "auto",
+        "decorationStyle": "solid",
+        "decorationSkipInk": "auto",
+        "decorationOffset": "auto",
+        "balance": false,
+        "breakpoints": [
+          {
+            "minWidth": 1200,
+            "fontSize": "64px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.9em",
+            "paragraphSpacing": 0
+          },
+          {
+            "minWidth": 810,
+            "fontSize": "32px",
+            "letterSpacing": "0px",
+            "lineHeight": "0.92em",
+            "paragraphSpacing": 0
+          }
+        ],
+        "minWidth": 0,
+        "fontSize": "112px",
+        "letterSpacing": "0px",
+        "lineHeight": "0.9em",
+        "paragraphSpacing": 0
+      }
+    }
+  ],
+  "metadata": {
+    "projectName": "Framer Project",
+    "exportDate": "2026-09-22T21:40:41.978Z",
+    "version": "1.0.0"
+  }
+}
