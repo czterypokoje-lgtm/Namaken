@@ -11,7 +11,7 @@ const PHOTOS_NL = [
     caption: 'Autosleutel bijmaken & programmeren ter plekke',
   },
   {
-    image: images.houseKeychain,
+    image: images.blackKeyFobCloseup,
     caption: 'Originele kwaliteit transpondersleutels voor elk merk',
   },
   {
@@ -30,7 +30,7 @@ const PHOTOS_EN = [
     caption: 'Car key duplication & programming on location',
   },
   {
-    image: images.houseKeychain,
+    image: images.blackKeyFobCloseup,
     caption: 'Original-quality transponder keys for every make',
   },
   {

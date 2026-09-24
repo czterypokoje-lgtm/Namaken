@@ -56,7 +56,16 @@ export const ignitionImagePool = [
   images.startStopEngineButton,
 ] as const;
 
-export const cityImagePool = [images.cityNightAerial, images.nightCityStreet] as const;
+// Leans toward "we're already on our way" action shots (van, technician at
+// work) rather than generic skyline photos — better for conversion, since
+// it shows the actual service instead of just proving the city exists.
+export const cityImagePool = [
+  images.serviceVanParked,
+  images.keyHandoff,
+  images.cityNightAerial,
+  images.lockoutAirWedgeTool,
+  images.nightCityStreet,
+] as const;
 
 export const supportingImagePool = [
   images.serviceVanParked,
