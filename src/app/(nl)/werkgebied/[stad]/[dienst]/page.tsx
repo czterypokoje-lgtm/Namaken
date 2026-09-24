@@ -8,6 +8,8 @@ import { StickyCtaSidebar } from "@/components/StickyCtaSidebar";
 import { Faq } from "@/components/Faq";
 import { business } from "@/lib/business";
 import { breadcrumbSchema } from "@/lib/schema";
+import { Breadcrumb } from "@/components/Breadcrumb";
+import { pickServiceImage } from "@/lib/images";
 
 export function generateStaticParams() {
   return regions.flatMap((r) => services.map((s) => ({ stad: r.slug, dienst: s.id })));
@@ -25,6 +27,7 @@ export async function generateMetadata({
   return {
     title: `${service.name} ${region.name}`,
     description: `${service.name} in ${region.name}: gemiddeld ${region.avgArrivalMin} min aankomst, prijs vanaf €${service.priceFrom}, vooraf bevestigd aan de telefoon.`,
+    alternates: { canonical: `/werkgebied/${region.slug}/${service.id}` },
   };
 }
 
@@ -64,22 +67,24 @@ export default async function CityServicePage({
   };
 
   const base = `https://${business.domain}`;
-  const breadcrumb = breadcrumbSchema([
+  const breadcrumbItems = [
     { name: "Home", url: base },
     { name: "Werkgebied", url: `${base}/werkgebied` },
     { name: region.name, url: `${base}/werkgebied/${region.slug}` },
     { name: service.name, url: `${base}/werkgebied/${region.slug}/${service.id}` },
-  ]);
+  ];
+  const breadcrumb = breadcrumbSchema(breadcrumbItems);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <Breadcrumb items={breadcrumbItems} />
       <Hero
         eyebrow={`${service.name} · ${region.name}`}
         headline={`${service.name} in ${region.name}`}
         sub={intro}
-        image={service.heroImage}
+        image={pickServiceImage(service.id, region.slug)}
         compact
       />
       <ServiceBadgeRow

@@ -1,14 +1,22 @@
 import FadeIn from './FadeIn';
 import styles from './TrustSection.module.css';
+import { business } from '@/lib/business';
 
-const STATS = [
+const STATS_NL = [
   { number: '18.400', label: 'KLUSSEN SINDS 2018' },
   { number: '4.9', label: 'VAN 1.960 REVIEWS' },
   { number: '22', label: 'REGIO\'S IN NEDERLAND' },
   { number: '24/7', label: 'ELKE DAG VAN HET JAAR' },
 ];
 
-const BADGES = [
+const STATS_EN = [
+  { number: '18,400', label: 'JOBS SINCE 2018' },
+  { number: '4.9', label: 'FROM 1,960 REVIEWS' },
+  { number: '22', label: 'REGIONS IN THE NETHERLANDS' },
+  { number: '24/7', label: 'EVERY DAY OF THE YEAR' },
+];
+
+const BADGES_NL = [
   {
     title: 'GECERTIFICEERD',
     desc: 'Erkend slotenmaker. KVK- en licentienummer op verzoek, telefonisch of op uw factuur.',
@@ -35,18 +43,50 @@ const BADGES = [
   },
 ];
 
-export default function TrustSection() {
+const BADGES_EN = [
+  {
+    title: 'CERTIFIED',
+    desc: 'Licensed locksmith network. KVK and license number available on request, by phone or on your invoice.',
+  },
+  {
+    title: 'FULLY INSURED',
+    desc: 'Liability coverage on every job. Certificate by email on request.',
+  },
+  {
+    title: 'SCREENED STAFF',
+    desc: 'Every technician is screened annually, before they ever carry a key.',
+  },
+  {
+    title: 'ID BOTH WAYS',
+    desc: "We check your identity before we open anything. You're welcome to check ours.",
+  },
+  {
+    title: 'CLEAR INVOICE',
+    desc: 'Parts, labor and costs on separate lines, emailed as soon as we finish.',
+  },
+  {
+    title: '12-MONTH WARRANTY',
+    desc: 'On labor and materials for every new installation, key and programming job.',
+  },
+];
+
+export default function TrustSection({ locale = 'nl' }: { locale?: 'nl' | 'en' }) {
+  const isEn = locale === 'en';
+  const STATS = isEn ? STATS_EN : STATS_NL;
+  const BADGES = isEn ? BADGES_EN : BADGES_NL;
   return (
-    <section className={styles.section} aria-label="Vertrouwen en Zekerheden">
+    <section className={styles.section} aria-label={isEn ? 'Trust and credentials' : 'Vertrouwen en Zekerheden'}>
       <div className={styles.inner}>
-        
+
         <FadeIn>
           <div className={styles.titleArea}>
             <h2 className={styles.mainTitle}>
-              GECERTIFICEERD. VOLLEDIG VERZEKERD. EN WE TONEN ALTIJD ID.
+              {isEn ? 'CERTIFIED. FULLY INSURED. AND WE ALWAYS SHOW ID.' : 'GECERTIFICEERD. VOLLEDIG VERZEKERD. EN WE TONEN ALTIJD ID.'}
             </h2>
             <p className={styles.description}>
-              Autosleutelnamaken gebruikt al sinds 2018 dezelfde 24/7 noodlijn vanuit dezelfde hoofdvestiging. KVK-nummer altijd op verzoek beschikbaar.
+              {isEn
+                ? `${business.name} has run the same 24/7 emergency line from the same head office since 2018. KVK number always available on request.`
+                : `${business.name} gebruikt al sinds 2018 dezelfde 24/7 noodlijn vanuit dezelfde hoofdvestiging. KVK-nummer altijd op verzoek beschikbaar.`}
             </p>
           </div>
         </FadeIn>

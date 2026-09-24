@@ -8,22 +8,16 @@ import { motion, type Variants } from 'framer-motion';
 interface HeroProps {
   city?: string;
   heroImage?: string;
+  locale?: 'nl' | 'en';
 }
 
-export default function Hero({ city, heroImage }: HeroProps) {
-  const displayCity = city ?? 'Nederland';
+export default function Hero({ city, heroImage, locale = 'nl' }: HeroProps) {
+  const isEn = locale === 'en';
+  const displayCity = city ?? (isEn ? 'the Netherlands' : 'Nederland');
 
-  const container: Variants = {
+  const badgeVariants: Variants = {
     hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15, delayChildren: 0.1 }
-    }
-  };
-
-  const item: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 50, damping: 15 } }
+    show: { opacity: 1, transition: { duration: 0.4 } }
   };
 
   return (
@@ -42,42 +36,50 @@ export default function Hero({ city, heroImage }: HeroProps) {
         <div className={styles.bgOverlay} />
       </div>
 
-      <motion.div 
-        className={styles.content}
-        variants={container}
-        initial="hidden"
-        animate="show"
-      >
-        <motion.div variants={item} className={styles.badge} aria-label="Nooddienst actief">
+      <div className={styles.content}>
+        <motion.div
+          variants={badgeVariants}
+          initial="hidden"
+          animate="show"
+          className={styles.badge}
+          aria-label={isEn ? 'Emergency service active' : 'Nooddienst actief'}
+        >
           <span className={styles.liveDot} aria-hidden="true" />
-          Nu bereikbaar · Mobiele technicus in {displayCity} onderweg
+          {isEn
+            ? `Available now · Mobile technician heading to ${displayCity}`
+            : `Nu bereikbaar · Mobiele technicus in ${displayCity} onderweg`}
         </motion.div>
 
-        <motion.div variants={item} className={styles.bottomGrid}>
+        <div className={styles.bottomGrid}>
           <h1 className={styles.heading}>
-            Autosleutel kwijt?<br />
-            Binnen 35 min. ter plekke.
+            {isEn ? (
+              <>Lost your car key?<br />We&apos;re there in 35 min.</>
+            ) : (
+              <>Autosleutel kwijt?<br />Binnen 35 min. ter plekke.</>
+            )}
           </h1>
           <div className={styles.descWrapper}>
             <div>
               <p className={styles.desc}>
-                Sleutel bijmaken, verloren sleutel vervangen, buitengesloten of contactslot defect in {displayCity} en regio. Prijs hoort u altijd vooraf aan de telefoon.
+                {isEn
+                  ? `Key duplication, lost key replacement, lockouts or a broken ignition lock in ${displayCity} and the surrounding area. You always hear the price on the phone first.`
+                  : `Sleutel bijmaken, verloren sleutel vervangen, buitengesloten of contactslot defect in ${displayCity} en regio. Prijs hoort u altijd vooraf aan de telefoon.`}
               </p>
-              <Link href="/leistungen" className={styles.ctaLink}>
-                Bekijk onze diensten
+              <Link href={isEn ? '/en/diensten' : '/diensten'} className={styles.ctaLink}>
+                {isEn ? 'View our services' : 'Bekijk onze diensten'}
               </Link>
             </div>
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
-      <motion.div 
+      <motion.div
         className={styles.phoneContainer}
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.8, type: 'spring', bounce: 0.3 }}
       >
-        <a href={SITE_CONFIG.phoneHref} className={styles.phoneNumber} aria-label={`Nu bellen: ${SITE_CONFIG.phone}`}>
+        <a href={SITE_CONFIG.phoneHref} className={styles.phoneNumber} aria-label={`${isEn ? 'Call now' : 'Nu bellen'}: ${SITE_CONFIG.phone}`}>
           {SITE_CONFIG.phone}
         </a>
       </motion.div>

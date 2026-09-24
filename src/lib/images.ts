@@ -15,4 +15,76 @@ export const images = {
   carHeadlightsAutumn: unsplash("1541348263662-e068662d82af", 1200),
   houseKeychain: unsplash("1560518883-ce09059eeffa", 1200),
   carRainCity: unsplash("1471479917193-f00955256257", 1200),
+  // Added for photo variety across the 88 city×service and 28 brand pages —
+  // real key/lock/technician scenes instead of reusing the 9 above everywhere.
+  handHoldingKeyFob: unsplash("1652509573480-a190f1c61f6d", 1200),
+  personHoldingCarKey: unsplash("1653565217811-85b41bcd1edb", 1200),
+  blackKeyFobCloseup: unsplash("1562003596-a5827707367d", 1200),
+  startStopEngineButton: unsplash("1578452171578-a605cb38abe1", 1200),
+  keyInDoorLock: unsplash("1549380430-e2beef691ae8", 1200),
+  carDoorHandleCloseup: unsplash("1719929830065-7cdb8386da70", 1200),
+  serviceVanParked: unsplash("1570905375301-e33b61438107", 1200),
 } as const;
+
+export const keyServiceImagePool = [
+  images.keyCutting,
+  images.handHoldingKeyFob,
+  images.personHoldingCarKey,
+  images.blackKeyFobCloseup,
+] as const;
+
+export const lockoutImagePool = [
+  images.keyInDoorLock,
+  images.carDoorHandleCloseup,
+  images.houseDusk,
+] as const;
+
+export const ignitionImagePool = [
+  images.startStopEngineButton,
+  images.carRainCity,
+  images.carHeadlightsAutumn,
+] as const;
+
+export const supportingImagePool = [
+  images.serviceVanParked,
+  images.nightCityStreet,
+  images.carSnow,
+  images.houseKeychain,
+] as const;
+
+// DJB2-style string hash — good distribution across every character, unlike a
+// first/last-char-only hash which collides often at small pool sizes (e.g.
+// "utrecht" and "arnhem" both landed on remainder 0 mod 4 with that approach).
+const hash = (s: string) => {
+  let h = 5381;
+  for (let i = 0; i < s.length; i++) {
+    h = (h * 33) ^ s.charCodeAt(i);
+  }
+  return Math.abs(h);
+};
+
+const poolByService: Record<string, readonly string[]> = {
+  "autosleutel-bijmaken": keyServiceImagePool,
+  "autosleutel-kwijt": keyServiceImagePool,
+  "auto-openen-zonder-sleutel": lockoutImagePool,
+  "contactslot-vervangen": ignitionImagePool,
+};
+
+// Deterministically picks a thematically-correct photo for a given service,
+// varied by `seed` (e.g. a region slug) so pages for the same service don't
+// all show the exact same photo.
+export const pickServiceImage = (serviceId: string, seed: string): string => {
+  const pool = poolByService[serviceId] ?? keyServiceImagePool;
+  return pool[hash(seed) % pool.length];
+};
+
+const brandPagePool = [...keyServiceImagePool, ...supportingImagePool];
+
+// Returns 5 images for a brand page (hero + 4 inline sections), rotated by a
+// hash of the brand name so the 28 brand pages don't all show the same fixed
+// photos in the same positions.
+export const pickBrandImages = (brand: string): [string, string, string, string, string] => {
+  const offset = hash(brand) % brandPagePool.length;
+  const rotated = [...brandPagePool.slice(offset), ...brandPagePool.slice(0, offset)];
+  return [rotated[0], rotated[1], rotated[2], rotated[3], rotated[0]];
+};

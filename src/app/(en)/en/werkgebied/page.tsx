@@ -5,6 +5,7 @@ import { regions } from "@/data/regions";
 export const metadata: Metadata = {
   title: "Areas covered",
   description: `Car key service in ${regions.length} regions across the Netherlands, with average arrival times per region.`,
+  alternates: { canonical: "/en/werkgebied" },
 };
 
 export default function EnglishAreasIndexPage() {

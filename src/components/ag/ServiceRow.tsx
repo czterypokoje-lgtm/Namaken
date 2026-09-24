@@ -19,9 +19,10 @@ interface ServiceRowProps {
   price: string;
   href: string;
   index?: number;
+  priceLabel?: string;
 }
 
-export default function ServiceRow({ category, title, description, price, href, index = 0 }: ServiceRowProps) {
+export default function ServiceRow({ category, title, description, price, href, index = 0, priceLabel = 'vanaf' }: ServiceRowProps) {
   return (
     <MotionLink 
       href={href} 
@@ -36,7 +37,7 @@ export default function ServiceRow({ category, title, description, price, href, 
       <span className={styles.meta}>
         <span className={styles.description}>{description}</span>
         <span className={styles.priceRow}>
-          <span className={styles.priceLabel}>Ab</span>
+          <span className={styles.priceLabel}>{priceLabel}</span>
           <span className={styles.price}>{price}</span>
         </span>
       </span>

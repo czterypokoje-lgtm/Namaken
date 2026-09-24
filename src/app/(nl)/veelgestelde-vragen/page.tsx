@@ -7,6 +7,7 @@ import { images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Veelgestelde vragen",
   description: "Antwoorden op de meest gestelde vragen over autosleutel bijmaken, verloren sleutels en meer.",
+  alternates: { canonical: "/veelgestelde-vragen" },
 };
 
 const generalFaq = [

@@ -9,6 +9,7 @@ import { business } from "@/lib/business";
 export const metadata: Metadata = {
   title: "Werkgebied",
   description: `Autosleutelservice in ${regions.length} regio's door heel Nederland, met gemiddelde aankomsttijden per regio.`,
+  alternates: { canonical: "/werkgebied" },
 };
 
 export default function WerkgebiedIndexPage() {

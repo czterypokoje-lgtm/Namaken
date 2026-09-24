@@ -3,7 +3,7 @@
 import styles from './TimeLine.module.css';
 import { motion } from 'framer-motion';
 
-const STEPS = [
+const STEPS_NL = [
   {
     time: '2:07',
     counter: 'Stap 01 van 04',
@@ -30,21 +30,50 @@ const STEPS = [
   },
 ];
 
-export default function TimeLine() {
+const STEPS_EN = [
+  {
+    time: '2:07',
+    counter: 'Step 01 of 04',
+    heading: 'A person picks up right away.',
+    text: "No external call center, no phone menus. You speak directly with a technician who knows exactly which equipment and key blanks your make needs.",
+  },
+  {
+    time: '2:09',
+    counter: 'Step 02 of 04',
+    heading: 'A fixed price before we drive.',
+    text: 'Key duplication from €150, car unlock from €150. You hear the exact amount on the phone beforehand. Nobody leaves without your explicit go-ahead.',
+  },
+  {
+    time: '2:31',
+    counter: 'Step 03 of 04',
+    heading: 'A mobile workshop on location.',
+    text: 'Our technician arrives in a recognizable service van, shows ID and checks the registration. Then we cut and program the key on-site.',
+  },
+  {
+    time: '2:48',
+    counter: 'Step 04 of 04',
+    heading: 'You pay once it works.',
+    text: "Card or cash, with an itemized invoice. We only charge once the car starts, central locking works smoothly, and you're 100% satisfied.",
+  },
+];
+
+export default function TimeLine({ locale = 'nl' }: { locale?: 'nl' | 'en' }) {
+  const isEn = locale === 'en';
+  const STEPS = isEn ? STEPS_EN : STEPS_NL;
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.sectionHeader}>
           <div>
-            <p className={styles.sectionEyebrow}>Hoe het werkt</p>
-            <motion.h2 
+            <p className={styles.sectionEyebrow}>{isEn ? 'How it works' : 'Hoe het werkt'}</p>
+            <motion.h2
               className={styles.sectionTitle}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Van uw oproep<br />tot een startende auto.
+              {isEn ? <>From your call<br />to a starting engine.</> : <>Van uw oproep<br />tot een startende auto.</>}
             </motion.h2>
           </div>
         </div>

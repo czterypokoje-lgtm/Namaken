@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { business } from "@/lib/business";
 
-export const metadata: Metadata = { title: "Privacybeleid" };
+export const metadata: Metadata = {
+  title: "Privacybeleid",
+  alternates: { canonical: "/privacybeleid" },
+};
 
 export default function PrivacybeleidPage() {
   return (

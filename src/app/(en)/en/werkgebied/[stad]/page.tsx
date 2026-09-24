@@ -23,6 +23,7 @@ export async function generateMetadata({
   return {
     title: `Car key service ${name}`,
     description: `Car key duplication, lost keys or lockouts in ${name}? Our technician arrives in about ${region.avgArrivalMin} minutes on average.`,
+    alternates: { canonical: `/en/werkgebied/${region.slug}` },
   };
 }
 

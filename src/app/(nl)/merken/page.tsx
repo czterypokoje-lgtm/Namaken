@@ -5,6 +5,7 @@ import { BrandLogoGrid } from "@/components/BrandLogoGrid";
 export const metadata: Metadata = {
   title: "Merken",
   description: "Autosleutel bijmaken voor vrijwel elk automerk — kies uw merk voor specifieke informatie.",
+  alternates: { canonical: "/merken" },
 };
 
 export default function MerkenIndexPage() {

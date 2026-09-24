@@ -4,7 +4,8 @@ import FadeIn from './FadeIn';
 import styles from './SplitPhoneSection.module.css';
 import { images } from '@/lib/images';
 
-export default function SplitPhoneSection() {
+export default function SplitPhoneSection({ locale = 'nl' }: { locale?: 'nl' | 'en' }) {
+  const isEn = locale === 'en';
   const phoneParts = SITE_CONFIG.phone.split(' '); // e.g. "06", "11", "75", "12", "31"
   // Group them for a 3-line layout if we want, or just let them wrap
   const phoneFormattedLines = [
@@ -18,7 +19,7 @@ export default function SplitPhoneSection() {
       <div className={styles.imageCol}>
         <Image
           src={images.nightCityStreet}
-          alt="Mobiele servicewagen 's nachts"
+          alt={isEn ? 'Mobile service van at night' : "Mobiele servicewagen 's nachts"}
           fill
           className={styles.image}
         />
@@ -26,8 +27,8 @@ export default function SplitPhoneSection() {
       <div className={styles.textCol}>
         <div className={styles.textInner}>
           <FadeIn>
-            <h2 className={styles.title}>NOG STEEDS BUITEN?</h2>
-            
+            <h2 className={styles.title}>{isEn ? 'STILL LOCKED OUT?' : 'NOG STEEDS BUITEN?'}</h2>
+
             <a href={SITE_CONFIG.phoneHref} className={styles.massivePhone}>
               {phoneFormattedLines.map((line, idx) => (
                 <span key={idx} className={styles.phoneLine}>{line}</span>
@@ -37,16 +38,18 @@ export default function SplitPhoneSection() {
 
           <div className={styles.bottomMeta}>
             <div className={styles.metaBlock}>
-              <span className={styles.metaLabel}>MOBIELE SERVICE</span>
-              <span className={styles.metaValue}>24/7, elke dag</span>
+              <span className={styles.metaLabel}>{isEn ? 'MOBILE SERVICE' : 'MOBIELE SERVICE'}</span>
+              <span className={styles.metaValue}>{isEn ? '24/7, every day' : '24/7, elke dag'}</span>
             </div>
             <div className={styles.metaBlock}>
-              <span className={styles.metaLabel}>WERKPLAATS</span>
-              <span className={styles.metaValue}>Ma t/m Za, 08:00 tot 18:00</span>
+              <span className={styles.metaLabel}>{isEn ? 'WORKSHOP' : 'WERKPLAATS'}</span>
+              <span className={styles.metaValue}>{isEn ? 'Mon-Sat, 08:00 to 18:00' : 'Ma t/m Za, 08:00 tot 18:00'}</span>
             </div>
             <div className={styles.metaBlock}>
-              <span className={styles.metaLabel}>HOOFDVESTIGING</span>
-              <span className={styles.metaValue}>{SITE_CONFIG.address.street}, {SITE_CONFIG.address.city}</span>
+              <span className={styles.metaLabel}>{isEn ? 'HEAD OFFICE' : 'HOOFDVESTIGING'}</span>
+              <span className={styles.metaValue}>
+                {isEn ? 'Head office on request' : SITE_CONFIG.address.street}, {SITE_CONFIG.address.city}
+              </span>
             </div>
           </div>
         </div>

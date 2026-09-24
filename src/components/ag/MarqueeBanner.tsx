@@ -1,11 +1,17 @@
 import styles from './MarqueeBanner.module.css';
 
-const cities = [
-  "AMSTERDAM CA. 35 MIN.", "UTRECHT CA. 35 MIN.", "HAARLEM CA. 35 MIN.", 
+const citiesNl = [
+  "AMSTERDAM CA. 35 MIN.", "UTRECHT CA. 35 MIN.", "HAARLEM CA. 35 MIN.",
   "DEN HAAG CA. 35 MIN.", "ROTTERDAM CA. 35 MIN.", "ZAANDAM CA. 35 MIN."
 ];
 
-export default function MarqueeBanner() {
+const citiesEn = [
+  "AMSTERDAM APPROX. 35 MIN.", "UTRECHT APPROX. 35 MIN.", "HAARLEM APPROX. 35 MIN.",
+  "THE HAGUE APPROX. 35 MIN.", "ROTTERDAM APPROX. 35 MIN.", "ZAANDAM APPROX. 35 MIN."
+];
+
+export default function MarqueeBanner({ locale = 'nl' }: { locale?: 'nl' | 'en' }) {
+  const cities = locale === 'en' ? citiesEn : citiesNl;
   return (
     <div className={styles.marqueeWrapper}>
       <div className={styles.marqueeTrack}>

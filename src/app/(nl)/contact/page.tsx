@@ -7,6 +7,7 @@ import { images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Contact",
   description: `Neem contact op met ${business.name}. 24/7 pechhulp en autosleutelservice via ${business.phone}.`,
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

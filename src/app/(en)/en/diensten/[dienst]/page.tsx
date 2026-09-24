@@ -18,7 +18,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const service = getService((await params).dienst);
   if (!service) return {};
-  return { title: service.en.name, description: service.en.heroSub };
+  return {
+    title: service.en.name,
+    description: service.en.heroSub,
+    alternates: { canonical: `/en/diensten/${service.id}` },
+  };
 }
 
 export default async function EnglishServicePage({ params }: { params: Promise<{ dienst: string }> }) {

@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { business } from "@/lib/business";
 
-export const metadata: Metadata = { title: "Algemene voorwaarden" };
+export const metadata: Metadata = {
+  title: "Algemene voorwaarden",
+  alternates: { canonical: "/algemene-voorwaarden" },
+};
 
 export default function VoorwaardenPage() {
   return (

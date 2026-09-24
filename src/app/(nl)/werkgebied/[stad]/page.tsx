@@ -8,6 +8,7 @@ import { Testimonial } from "@/components/Testimonial";
 import { images } from "@/lib/images";
 import { business } from "@/lib/business";
 import { breadcrumbSchema } from "@/lib/schema";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 const regionImages = [images.carSnow, images.heroCarDusk, images.nightCityStreet, images.carRainCity];
 
@@ -25,6 +26,7 @@ export async function generateMetadata({
   return {
     title: `Autosleutelservice ${region.name}`,
     description: `Autosleutel bijmaken, verloren sleutel of buitengesloten in ${region.name}? Onze technicus is gemiddeld binnen ${region.avgArrivalMin} minuten ter plekke.`,
+    alternates: { canonical: `/werkgebied/${region.slug}` },
   };
 }
 
@@ -33,15 +35,17 @@ export default async function RegionPage({ params }: { params: Promise<{ stad: s
   if (!region) notFound();
 
   const base = `https://${business.domain}`;
-  const breadcrumb = breadcrumbSchema([
+  const breadcrumbItems = [
     { name: "Home", url: base },
     { name: "Werkgebied", url: `${base}/werkgebied` },
     { name: region.name, url: `${base}/werkgebied/${region.slug}` },
-  ]);
+  ];
+  const breadcrumb = breadcrumbSchema(breadcrumbItems);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <Breadcrumb items={breadcrumbItems} />
       <Hero
         eyebrow={`Werkgebied · gem. ${region.avgArrivalMin} min aankomst`}
         headline={`Autosleutelservice in ${region.name}.`}

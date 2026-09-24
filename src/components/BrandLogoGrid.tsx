@@ -38,7 +38,8 @@ const logoExt: Record<string, string> = {
   volkswagen: "svg",
 };
 
-export function BrandLogoGrid() {
+export function BrandLogoGrid({ locale = "nl" }: { locale?: "nl" | "en" }) {
+  const isEn = locale === "en";
   return (
     <div>
       <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6">
@@ -50,7 +51,7 @@ export function BrandLogoGrid() {
               key={brand}
               href={`/merken/${slug}`}
               className="group flex aspect-[4/3] items-center justify-center rounded-sm bg-frost p-4 transition-transform hover:-translate-y-1"
-              title={`${brand} sleutel bijmaken`}
+              title={isEn ? `${brand} key duplication` : `${brand} sleutel bijmaken`}
             >
               {ext ? (
                 <div className="relative h-full w-full">
@@ -72,8 +73,9 @@ export function BrandLogoGrid() {
         })}
       </div>
       <p className="text-mono text-faint mt-6">
-        Alle merklogo&apos;s zijn eigendom van de respectievelijke fabrikanten. {business.name} is een
-        onafhankelijk technicianetwerk en geen erkende dealer of licentiehouder van deze merken.
+        {isEn
+          ? `All brand logos are the property of their respective manufacturers. ${business.name} is an independent locksmith network and not an authorized dealer or licensee of these brands.`
+          : `Alle merklogo's zijn eigendom van de respectievelijke fabrikanten. ${business.name} is een onafhankelijk technicianetwerk en geen erkende dealer of licentiehouder van deze merken.`}
       </p>
     </div>
   );

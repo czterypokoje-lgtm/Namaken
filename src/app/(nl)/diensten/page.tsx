@@ -5,6 +5,7 @@ import { services } from "@/data/services";
 export const metadata: Metadata = {
   title: "Diensten",
   description: "Alle autosleutelservices: bijmaken, verloren sleutel, buitengesloten en contactslot vervangen.",
+  alternates: { canonical: "/diensten" },
 };
 
 export default function DienstenIndexPage() {

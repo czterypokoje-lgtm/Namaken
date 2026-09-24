@@ -5,6 +5,7 @@ import { services } from "@/data/services";
 export const metadata: Metadata = {
   title: "Services",
   description: "Car key duplication, lost key replacement, lockouts and ignition lock repair.",
+  alternates: { canonical: "/en/diensten" },
 };
 
 export default function EnglishServicesIndexPage() {

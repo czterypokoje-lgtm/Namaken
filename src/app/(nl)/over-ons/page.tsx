@@ -5,6 +5,7 @@ import { CtaBand } from "@/components/CtaBand";
 export const metadata: Metadata = {
   title: "Over ons",
   description: `Wij zijn een gespecialiseerd netwerk van mobiele autosleutel monteurs in Nederland. Geen tussenpersonen, echte technici, vaste prijzen vooraf.`,
+  alternates: { canonical: "/over-ons" },
 };
 
 const team = [

@@ -5,12 +5,13 @@ import { allBrands, getBrandBySlug, slugifyBrand } from "@/data/brands";
 import { getBrandModels } from "@/data/brandModels";
 import { services } from "@/data/services";
 import { getBrandContent } from "@/lib/brandContent";
-import { images } from "@/lib/images";
+import { pickBrandImages } from "@/lib/images";
 import { Hero } from "@/components/Hero";
 import { BrandBadge } from "@/components/BrandBadge";
 import { PriceTiers } from "@/components/PriceTiers";
 import { business } from "@/lib/business";
 import { breadcrumbSchema } from "@/lib/schema";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export function generateStaticParams() {
   return allBrands.map((b) => ({ merk: slugifyBrand(b) }));
@@ -27,6 +28,7 @@ export async function generateMetadata({
   return {
     title: `${brand} sleutel bijmaken`,
     description: `${brand} autosleutel bijmaken, inprogrammeren of alle sleutels kwijt? Vaste prijzen vanaf €${bijmakenPrice}, op locatie of in de winkel.`,
+    alternates: { canonical: `/merken/${slugifyBrand(brand)}` },
   };
 }
 
@@ -42,6 +44,8 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
   const colA = models.slice(0, midpoint);
   const colB = models.slice(midpoint);
 
+  const [heroImage, inprogrammerenImage, dealerImage, behuizingImage, alleSleutelsImage] = pickBrandImages(brand);
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -50,22 +54,24 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
   };
 
   const base = `https://${business.domain}`;
-  const breadcrumb = breadcrumbSchema([
+  const breadcrumbItems = [
     { name: "Home", url: base },
     { name: "Merken", url: `${base}/merken` },
     { name: brand, url: `${base}/merken/${slugifyBrand(brand)}` },
-  ]);
+  ];
+  const breadcrumb = breadcrumbSchema(breadcrumbItems);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <Breadcrumb items={breadcrumbItems} />
 
       <Hero
         eyebrow="Merkspecifiek"
         headline={`${brand} sleutel bijmaken`}
         sub={`Voordat u langskomt wilt u natuurlijk weten wat het bijmaken van een ${brand} sleutel kost. Onze technicus programmeert de sleutel op locatie — hieronder alles wat u moet weten.`}
-        image={images.keyCutting}
+        image={heroImage}
         compact
       />
 
@@ -107,7 +113,7 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
       <section className="border-t border-line px-4 py-16 sm:px-6">
         <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-2 lg:items-center">
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-            <Image src={images.keyCutting} alt="" fill sizes="500px" className="object-cover" />
+            <Image src={inprogrammerenImage} alt="" fill sizes="500px" className="object-cover" />
           </div>
           <div>
             <h2 className="text-heading-3 text-frost mb-4">{content.inprogrammeren.heading}</h2>
@@ -139,7 +145,7 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
             <p className="text-body-small text-mist">{content.dealer.p2}</p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-            <Image src={images.carHeadlightsAutumn} alt="" fill sizes="500px" className="object-cover" />
+            <Image src={dealerImage} alt="" fill sizes="500px" className="object-cover" />
           </div>
         </div>
       </section>
@@ -148,7 +154,7 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
       <section className="border-t border-line bg-signal-orange px-4 py-16 sm:px-6">
         <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-2 lg:items-center">
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-            <Image src={images.heroCarNight} alt="" fill sizes="500px" className="object-cover" />
+            <Image src={alleSleutelsImage} alt="" fill sizes="500px" className="object-cover" />
           </div>
           <div>
             <h2 className="text-heading-3 text-on-orange mb-4">{content.alleSleutels.heading}</h2>
@@ -167,7 +173,7 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
             <p className="text-body-small text-mist">{content.behuizing.p2}</p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-            <Image src={images.houseKeychain} alt="" fill sizes="500px" className="object-cover" />
+            <Image src={behuizingImage} alt="" fill sizes="500px" className="object-cover" />
           </div>
         </div>
       </section>

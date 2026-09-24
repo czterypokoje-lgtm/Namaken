@@ -6,6 +6,7 @@ import { CtaBand } from "@/components/CtaBand";
 export const metadata: Metadata = {
   title: "Prijzen",
   description: "Vaste, transparante prijzen voor autosleutel bijmaken, verloren sleutels, buitengesloten en contactslot vervangen.",
+  alternates: { canonical: "/prijzen" },
 };
 
 const priceList = [

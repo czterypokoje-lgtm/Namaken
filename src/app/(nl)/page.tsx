@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "Autosleutel bijmaken, kwijt of buitengesloten — 24/7 in heel Nederland",
   description:
     "Autosleutel bijmaken, verloren sleutel vervangen, buitengesloten of contactslot defect? Onze technici komen op locatie, prijs vooraf, 22 regio's, 24/7 bereikbaar.",
+  alternates: { canonical: "/" },
 };
 
 export default function HomePage() {

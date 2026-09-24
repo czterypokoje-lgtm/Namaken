@@ -1,7 +1,7 @@
 import styles from './PhotoGrid.module.css';
 import { images } from '@/lib/images';
 
-const PHOTOS = [
+const PHOTOS_NL = [
   {
     image: images.carHeadlightsAutumn,
     caption: 'Schadevrij openen zonder sleutel',
@@ -20,7 +20,27 @@ const PHOTOS = [
   },
 ];
 
-export default function PhotoGrid() {
+const PHOTOS_EN = [
+  {
+    image: images.carHeadlightsAutumn,
+    caption: 'Damage-free entry without a key',
+  },
+  {
+    image: images.keyCutting,
+    caption: 'Car key duplication & programming on location',
+  },
+  {
+    image: images.houseKeychain,
+    caption: 'Original-quality transponder keys for every make',
+  },
+  {
+    image: images.carRainCity,
+    caption: 'Ignition lock replacement and repair on location',
+  },
+];
+
+export default function PhotoGrid({ locale = 'nl' }: { locale?: 'nl' | 'en' }) {
+  const PHOTOS = locale === 'en' ? PHOTOS_EN : PHOTOS_NL;
   return (
     <section className={styles.gridSection}>
       <div className={styles.grid}>

@@ -9,6 +9,7 @@ import { Faq } from "@/components/Faq";
 import { AlsoUsefulCrossSell } from "@/components/AlsoUsefulCrossSell";
 import { business } from "@/lib/business";
 import { breadcrumbSchema } from "@/lib/schema";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export function generateStaticParams() {
   return services.map((s) => ({ dienst: s.id }));
@@ -24,6 +25,7 @@ export async function generateMetadata({
   return {
     title: service.name,
     description: service.heroSub,
+    alternates: { canonical: `/diensten/${service.id}` },
   };
 }
 
@@ -50,16 +52,18 @@ export default async function ServicePage({ params }: { params: Promise<{ dienst
   };
 
   const base = `https://${business.domain}`;
-  const breadcrumb = breadcrumbSchema([
+  const breadcrumbItems = [
     { name: "Home", url: base },
     { name: "Diensten", url: `${base}/diensten` },
     { name: service.name, url: `${base}/diensten/${service.id}` },
-  ]);
+  ];
+  const breadcrumb = breadcrumbSchema(breadcrumbItems);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <Breadcrumb items={breadcrumbItems} />
       <Hero headline={service.heroHeadline} sub={service.heroSub} image={service.heroImage} compact />
       <ServiceBadgeRow
         priceFrom={service.priceFrom}
