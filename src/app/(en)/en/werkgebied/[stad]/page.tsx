@@ -4,9 +4,7 @@ import { notFound } from "next/navigation";
 import { regions, getRegion } from "@/data/regions";
 import { services } from "@/data/services";
 import { Hero } from "@/components/Hero";
-import { images } from "@/lib/images";
-
-const regionImages = [images.carSnow, images.heroCarDusk, images.nightCityStreet, images.carRainCity];
+import { cityImagePool, hash } from "@/lib/images";
 
 export function generateStaticParams() {
   return regions.map((r) => ({ stad: r.slug }));
@@ -39,7 +37,7 @@ export default async function EnglishRegionPage({ params }: { params: Promise<{ 
         eyebrow={`Coverage area · avg. ${region.avgArrivalMin} min arrival`}
         headline={`Car key service in ${name}.`}
         sub={`From ${region.areas[0]} to ${region.areas[region.areas.length - 1]} — our technician knows ${name} and arrives in about ${region.avgArrivalMin} minutes on average.`}
-        image={regionImages[region.slug.length % regionImages.length]}
+        image={cityImagePool[hash(region.slug) % cityImagePool.length]}
         compact
       />
 

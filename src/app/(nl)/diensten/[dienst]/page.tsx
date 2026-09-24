@@ -5,6 +5,7 @@ import { Hero } from "@/components/Hero";
 import { ServiceBadgeRow } from "@/components/ServiceBadgeRow";
 import { StickyCtaSidebar } from "@/components/StickyCtaSidebar";
 import { TransponderSmartKeySection } from "@/components/TransponderSmartKeySection";
+import KeyTypesSection from "@/components/ag/KeyTypesSection";
 import { Faq } from "@/components/Faq";
 import { AlsoUsefulCrossSell } from "@/components/AlsoUsefulCrossSell";
 import { business } from "@/lib/business";
@@ -89,6 +90,7 @@ export default async function ServicePage({ params }: { params: Promise<{ dienst
       </section>
 
       {service.includesKeySection && <TransponderSmartKeySection />}
+      {service.includesKeySection && <KeyTypesSection />}
 
       <Faq items={service.faq} title="Veelgestelde vragen" />
 

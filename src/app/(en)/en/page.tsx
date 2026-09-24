@@ -9,6 +9,8 @@ import ServiceRow from "@/components/ag/ServiceRow";
 import TimeLine from "@/components/ag/TimeLine";
 import TrustSection from "@/components/ag/TrustSection";
 import SplitPhoneSection from "@/components/ag/SplitPhoneSection";
+import KeyTypesSection from "@/components/ag/KeyTypesSection";
+import KeyHandoffSection from "@/components/ag/KeyHandoffSection";
 import FadeIn from "@/components/ag/FadeIn";
 import { BrandLogoGrid } from "@/components/BrandLogoGrid";
 
@@ -100,7 +102,9 @@ export default function EnglishHomePage() {
         </div>
       </section>
 
+      <KeyTypesSection locale="en" />
       <TrustSection locale="en" />
+      <KeyHandoffSection locale="en" />
       <SplitPhoneSection locale="en" />
     </main>
   );

@@ -3,7 +3,7 @@ import { images } from '@/lib/images';
 
 const PHOTOS_NL = [
   {
-    image: images.carHeadlightsAutumn,
+    image: images.lockoutAirWedgeTool,
     caption: 'Schadevrij openen zonder sleutel',
   },
   {
@@ -15,14 +15,14 @@ const PHOTOS_NL = [
     caption: 'Originele kwaliteit transpondersleutels voor elk merk',
   },
   {
-    image: images.carRainCity,
+    image: images.ignitionBarrelCloseup,
     caption: 'Contactslot vervanging en reparatie op locatie',
   },
 ];
 
 const PHOTOS_EN = [
   {
-    image: images.carHeadlightsAutumn,
+    image: images.lockoutAirWedgeTool,
     caption: 'Damage-free entry without a key',
   },
   {
@@ -34,7 +34,7 @@ const PHOTOS_EN = [
     caption: 'Original-quality transponder keys for every make',
   },
   {
-    image: images.carRainCity,
+    image: images.ignitionBarrelCloseup,
     caption: 'Ignition lock replacement and repair on location',
   },
 ];

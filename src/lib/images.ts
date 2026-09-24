@@ -14,7 +14,6 @@ export const images = {
   carSnow: unsplash("1517524008697-84bbe3c3fd98", 1200),
   carHeadlightsAutumn: unsplash("1541348263662-e068662d82af", 1200),
   houseKeychain: unsplash("1560518883-ce09059eeffa", 1200),
-  carRainCity: unsplash("1471479917193-f00955256257", 1200),
   // Added for photo variety across the 88 city×service and 28 brand pages —
   // real key/lock/technician scenes instead of reusing the 9 above everywhere.
   handHoldingKeyFob: unsplash("1652509573480-a190f1c61f6d", 1200),
@@ -24,6 +23,15 @@ export const images = {
   keyInDoorLock: unsplash("1549380430-e2beef691ae8", 1200),
   carDoorHandleCloseup: unsplash("1719929830065-7cdb8386da70", 1200),
   serviceVanParked: unsplash("1570905375301-e33b61438107", 1200),
+  // Real on-site process shots (supplied by the business) — lockout tool use,
+  // ignition cylinder repair and the key handoff moment.
+  lockoutAirWedgeTool: "/photos/lockout-airwedge-tool.png",
+  lockoutDoorHandleTool: "/photos/lockout-doorhandle-tool.jpg",
+  ignitionCylinderRemoved: "/photos/ignition-cylinder-removed.jpg",
+  ignitionColumnOpen: "/photos/ignition-column-open.jpg",
+  ignitionBarrelCloseup: "/photos/ignition-barrel-closeup.png",
+  keyHandoff: "/photos/key-handoff.jpg",
+  cityNightAerial: "/photos/city-night-aerial.jpg",
 } as const;
 
 export const keyServiceImagePool = [
@@ -34,16 +42,20 @@ export const keyServiceImagePool = [
 ] as const;
 
 export const lockoutImagePool = [
+  images.lockoutAirWedgeTool,
+  images.lockoutDoorHandleTool,
   images.keyInDoorLock,
   images.carDoorHandleCloseup,
-  images.houseDusk,
 ] as const;
 
 export const ignitionImagePool = [
+  images.ignitionCylinderRemoved,
+  images.ignitionColumnOpen,
+  images.ignitionBarrelCloseup,
   images.startStopEngineButton,
-  images.carRainCity,
-  images.carHeadlightsAutumn,
 ] as const;
+
+export const cityImagePool = [images.cityNightAerial, images.nightCityStreet] as const;
 
 export const supportingImagePool = [
   images.serviceVanParked,
@@ -55,7 +67,7 @@ export const supportingImagePool = [
 // DJB2-style string hash — good distribution across every character, unlike a
 // first/last-char-only hash which collides often at small pool sizes (e.g.
 // "utrecht" and "arnhem" both landed on remainder 0 mod 4 with that approach).
-const hash = (s: string) => {
+export const hash = (s: string) => {
   let h = 5381;
   for (let i = 0; i < s.length; i++) {
     h = (h * 33) ^ s.charCodeAt(i);

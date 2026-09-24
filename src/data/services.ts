@@ -160,7 +160,7 @@ export const services: Service[] = [
     heroHeadline: "Buitengesloten? We openen de auto zonder schade.",
     heroSub:
       "Sleutel in de auto, portier op slot. Onze technicus opent de auto schadevrij en checkt uw identiteit voordat we beginnen.",
-    heroImage: images.houseDusk,
+    heroImage: images.lockoutAirWedgeTool,
     priceFrom: 150,
     timeOnSite: "10-20 min ter plekke",
     averageArrival: "gem. 30 min",
@@ -221,7 +221,7 @@ export const services: Service[] = [
     heroHeadline: "Contactslot defect of vast? Wij vervangen hem op locatie.",
     heroSub:
       "Sleutel draait niet meer om, contactslot loopt vast of het startsignaal komt niet meer aan. We diagnosticeren en vervangen het contactslot ter plekke.",
-    heroImage: images.carRainCity,
+    heroImage: images.ignitionBarrelCloseup,
     priceFrom: 300,
     timeOnSite: "45-90 min ter plekke",
     averageArrival: "gem. 40 min",

@@ -5,12 +5,10 @@ import { regions, getRegion } from "@/data/regions";
 import { services } from "@/data/services";
 import { Hero } from "@/components/Hero";
 import { Testimonial } from "@/components/Testimonial";
-import { images } from "@/lib/images";
+import { cityImagePool, hash } from "@/lib/images";
 import { business } from "@/lib/business";
 import { breadcrumbSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/Breadcrumb";
-
-const regionImages = [images.carSnow, images.heroCarDusk, images.nightCityStreet, images.carRainCity];
 
 export function generateStaticParams() {
   return regions.map((r) => ({ stad: r.slug }));
@@ -50,7 +48,7 @@ export default async function RegionPage({ params }: { params: Promise<{ stad: s
         eyebrow={`Werkgebied · gem. ${region.avgArrivalMin} min aankomst`}
         headline={`Autosleutelservice in ${region.name}.`}
         sub={`Van ${region.areas[0]} tot ${region.areas[region.areas.length - 1]} — onze technicus kent ${region.name} en is gemiddeld binnen ${region.avgArrivalMin} minuten bij u.`}
-        image={regionImages[region.slug.length % regionImages.length]}
+        image={cityImagePool[hash(region.slug) % cityImagePool.length]}
         compact
       />
 

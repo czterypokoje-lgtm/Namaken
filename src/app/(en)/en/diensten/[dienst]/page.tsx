@@ -5,6 +5,7 @@ import { Hero } from "@/components/Hero";
 import { ServiceBadgeRow } from "@/components/ServiceBadgeRow";
 import { StickyCtaSidebar } from "@/components/StickyCtaSidebar";
 import { TransponderSmartKeySection } from "@/components/TransponderSmartKeySection";
+import KeyTypesSection from "@/components/ag/KeyTypesSection";
 import { Faq } from "@/components/Faq";
 
 export function generateStaticParams() {
@@ -63,6 +64,7 @@ export default async function EnglishServicePage({ params }: { params: Promise<{
       </section>
 
       {service.includesKeySection && <TransponderSmartKeySection locale="en" />}
+      {service.includesKeySection && <KeyTypesSection locale="en" />}
 
       <Faq items={service.en.faq} title="Common questions" />
     </>
