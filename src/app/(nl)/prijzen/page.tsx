@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { services } from "@/data/services";
-import { priceTiers } from "@/lib/business";
 import { Faq } from "@/components/Faq";
 import { CtaBand } from "@/components/CtaBand";
 
@@ -12,7 +11,6 @@ export const metadata: Metadata = {
 const priceList = [
   { name: "Voorrijkosten", included: "Reistijd en diagnose binnen ons werkgebied", price: "€0" },
   ...services.map((s) => ({ name: s.name, included: s.whatWeDo[0], price: `vanaf €${s.priceFrom}` })),
-  ...priceTiers.map((t) => ({ name: t.name, included: t.description, price: `€${t.price}` })),
   { name: "Spoedtoeslag", included: "Vast bedrag, tussen 22:00 en 07:00, elke klus", price: "+€40" },
 ];
 

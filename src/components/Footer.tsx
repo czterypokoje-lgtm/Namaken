@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { business } from "@/lib/business";
 import { services } from "@/data/services";
+import { regions } from "@/data/regions";
 
 export function Footer({ locale = "nl" }: { locale?: "nl" | "en" }) {
   const isEn = locale === "en";
@@ -31,7 +32,7 @@ export function Footer({ locale = "nl" }: { locale?: "nl" | "en" }) {
               {services.map((s) => (
                 <li key={s.id}>
                   <Link href={`${base}/diensten/${s.id}`} className="text-mist hover:text-frost">
-                    {isEn ? s.en.name : s.shortName}
+                    {isEn ? s.en.name : s.name}
                   </Link>
                 </li>
               ))}
@@ -41,13 +42,28 @@ export function Footer({ locale = "nl" }: { locale?: "nl" | "en" }) {
             <p className="mb-2 font-semibold text-signal-orange">{isEn ? "Coverage" : "Werkgebied"}</p>
             <ul className="space-y-1">
               <li>
-                <Link href={`${base}/werkgebied`} className="text-mist hover:text-frost">
+                <Link href={`${base}/werkgebied`} className="text-frost font-semibold hover:text-signal-orange">
                   {isEn ? "All areas" : "Alle regio's"}
                 </Link>
               </li>
+              {isEn
+                ? regions.map((r) => (
+                    <li key={r.slug}>
+                      <Link href={`/en/werkgebied/${r.slug}`} className="text-mist hover:text-frost">
+                        {r.enName ?? r.name}
+                      </Link>
+                    </li>
+                  ))
+                : regions.map((r) => (
+                    <li key={r.slug}>
+                      <Link href={`/werkgebied/${r.slug}`} className="text-mist hover:text-frost">
+                        {r.name}
+                      </Link>
+                    </li>
+                  ))}
               {!isEn && (
-                <li>
-                  <Link href="/merken" className="text-mist hover:text-frost">
+                <li className="pt-1">
+                  <Link href="/merken" className="text-frost font-semibold hover:text-signal-orange">
                     Alle merken
                   </Link>
                 </li>

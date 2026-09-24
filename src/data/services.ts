@@ -36,7 +36,7 @@ export const services: Service[] = [
     heroSub:
       "Een reservesleutel is er voordat u hem nodig heeft. Onze technicus programmeert een nieuwe autosleutel bij u thuis, op het werk of langs de weg — zonder dat uw huidige sleutel het hoeft te laten afweten.",
     heroImage: images.keyCutting,
-    priceFrom: 89,
+    priceFrom: 150,
     timeOnSite: "20-40 min ter plekke",
     averageArrival: "gem. 35 min",
     whatWeDo: [
@@ -81,7 +81,7 @@ export const services: Service[] = [
     heroSub:
       "Sleutel kwijt is vervelend, maar geen reden om de auto te laten wegslepen. Wij programmeren een volledig nieuwe sleutel, ook als er geen reservesleutel meer is.",
     heroImage: images.carHeadlightsAutumn,
-    priceFrom: 149,
+    priceFrom: 300,
     timeOnSite: "30-60 min ter plekke",
     averageArrival: "gem. 35 min",
     whatWeDo: [
@@ -126,7 +126,7 @@ export const services: Service[] = [
     heroSub:
       "Sleutel in de auto, portier op slot. Onze technicus opent de auto schadevrij en checkt uw identiteit voordat we beginnen.",
     heroImage: images.houseDusk,
-    priceFrom: 79,
+    priceFrom: 150,
     timeOnSite: "10-20 min ter plekke",
     averageArrival: "gem. 30 min",
     whatWeDo: [
@@ -171,7 +171,7 @@ export const services: Service[] = [
     heroSub:
       "Sleutel draait niet meer om, contactslot loopt vast of het startsignaal komt niet meer aan. We diagnosticeren en vervangen het contactslot ter plekke.",
     heroImage: images.carRainCity,
-    priceFrom: 119,
+    priceFrom: 300,
     timeOnSite: "45-90 min ter plekke",
     averageArrival: "gem. 40 min",
     whatWeDo: [

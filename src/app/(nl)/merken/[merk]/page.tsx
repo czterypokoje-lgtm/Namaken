@@ -3,12 +3,14 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { allBrands, getBrandBySlug, slugifyBrand } from "@/data/brands";
 import { getBrandModels } from "@/data/brandModels";
-import { priceTiers } from "@/lib/business";
+import { services } from "@/data/services";
 import { getBrandContent } from "@/lib/brandContent";
 import { images } from "@/lib/images";
 import { Hero } from "@/components/Hero";
 import { BrandBadge } from "@/components/BrandBadge";
 import { PriceTiers } from "@/components/PriceTiers";
+import { business } from "@/lib/business";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
   return allBrands.map((b) => ({ merk: slugifyBrand(b) }));
@@ -21,9 +23,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const brand = getBrandBySlug((await params).merk);
   if (!brand) return {};
+  const bijmakenPrice = services.find((s) => s.id === "autosleutel-bijmaken")!.priceFrom;
   return {
     title: `${brand} sleutel bijmaken`,
-    description: `${brand} autosleutel bijmaken, inprogrammeren of alle sleutels kwijt? Vaste prijzen vanaf €${priceTiers[0].price}, op locatie of in de winkel.`,
+    description: `${brand} autosleutel bijmaken, inprogrammeren of alle sleutels kwijt? Vaste prijzen vanaf €${bijmakenPrice}, op locatie of in de winkel.`,
   };
 }
 
@@ -32,7 +35,7 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
   if (!brand) notFound();
 
   const models = getBrandModels(brand);
-  const price = priceTiers[1].price; // "op locatie" price quoted throughout, matches reference pattern
+  const price = services.find((s) => s.id === "autosleutel-bijmaken")!.priceFrom;
   const content = getBrandContent(brand, price);
 
   const midpoint = Math.ceil(models.length / 2);
@@ -46,9 +49,17 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
     offers: { "@type": "Offer", priceCurrency: "EUR", price },
   };
 
+  const base = `https://${business.domain}`;
+  const breadcrumb = breadcrumbSchema([
+    { name: "Home", url: base },
+    { name: "Merken", url: `${base}/merken` },
+    { name: brand, url: `${base}/merken/${slugifyBrand(brand)}` },
+  ]);
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
 
       <Hero
         eyebrow="Merkspecifiek"

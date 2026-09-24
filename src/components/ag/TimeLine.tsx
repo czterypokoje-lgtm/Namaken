@@ -14,7 +14,7 @@ const STEPS = [
     time: '2:09',
     counter: 'Stap 02 van 04',
     heading: 'Vaste prijs voordat we rijden.',
-    text: 'Sleutel bijmaken vanaf €89, auto openen vanaf €79. Het exacte bedrag hoort u vooraf aan de telefoon. Er vertrekt niemand zonder uw uitdrukkelijke akkoord.',
+    text: 'Sleutel bijmaken vanaf €150, auto openen vanaf €150. Het exacte bedrag hoort u vooraf aan de telefoon. Er vertrekt niemand zonder uw uitdrukkelijke akkoord.',
   },
   {
     time: '2:31',

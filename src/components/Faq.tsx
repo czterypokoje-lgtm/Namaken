@@ -1,6 +1,17 @@
 export function Faq({ items, title }: { items: { q: string; a: string }[]; title: string }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <section className="border-t border-line px-4 py-12 sm:px-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <div className="mx-auto max-w-4xl">
         <h2 className="text-heading-3 text-frost mb-6">{title}</h2>
         <div className="divide-y divide-line">

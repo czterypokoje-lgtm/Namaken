@@ -6,6 +6,8 @@ import { services } from "@/data/services";
 import { Hero } from "@/components/Hero";
 import { Testimonial } from "@/components/Testimonial";
 import { images } from "@/lib/images";
+import { business } from "@/lib/business";
+import { breadcrumbSchema } from "@/lib/schema";
 
 const regionImages = [images.carSnow, images.heroCarDusk, images.nightCityStreet, images.carRainCity];
 
@@ -30,8 +32,16 @@ export default async function RegionPage({ params }: { params: Promise<{ stad: s
   const region = getRegion((await params).stad);
   if (!region) notFound();
 
+  const base = `https://${business.domain}`;
+  const breadcrumb = breadcrumbSchema([
+    { name: "Home", url: base },
+    { name: "Werkgebied", url: `${base}/werkgebied` },
+    { name: region.name, url: `${base}/werkgebied/${region.slug}` },
+  ]);
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <Hero
         eyebrow={`Werkgebied · gem. ${region.avgArrivalMin} min aankomst`}
         headline={`Autosleutelservice in ${region.name}.`}

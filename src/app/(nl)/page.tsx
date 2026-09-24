@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { services } from "@/data/services";
-import { priceTiers } from "@/lib/business";
 import { images } from "@/lib/images";
 import Hero from "@/components/ag/Hero";
 import MarqueeBanner from "@/components/ag/MarqueeBanner";
@@ -11,6 +10,7 @@ import TimeLine from "@/components/ag/TimeLine";
 import TrustSection from "@/components/ag/TrustSection";
 import SplitPhoneSection from "@/components/ag/SplitPhoneSection";
 import FadeIn from "@/components/ag/FadeIn";
+import { BrandLogoGrid } from "@/components/BrandLogoGrid";
 
 export const metadata: Metadata = {
   title: "Autosleutel bijmaken, kwijt of buitengesloten — 24/7 in heel Nederland",
@@ -24,6 +24,16 @@ export default function HomePage() {
       <Hero city="Utrecht" heroImage={images.heroCarNight} />
       <MarqueeBanner />
       <PhotoGrid />
+
+      <section className="border-t border-line px-4 py-16 sm:px-6 lg:py-24">
+        <div className="mx-auto max-w-5xl">
+          <FadeIn className="mb-10">
+            <p className="text-eyebrow text-mist">Dekking per merk</p>
+            <h2 className="text-heading-1 text-frost mt-2">Autosleutel bijmaken voor deze merken</h2>
+          </FadeIn>
+          <BrandLogoGrid />
+        </div>
+      </section>
 
       <section className="px-4 py-16 sm:px-6 lg:py-24">
         <div className="mx-auto max-w-5xl">
@@ -64,13 +74,13 @@ export default function HomePage() {
             </h2>
           </FadeIn>
 
-          <div className="grid gap-6 sm:grid-cols-3">
-            {priceTiers.map((tier, idx) => (
-              <FadeIn key={tier.id} delay={idx * 0.15} className="border border-line bg-navy-surface p-6">
-                <span className="text-eyebrow text-mist block">{tier.description}</span>
-                <span className="text-heading-4 text-frost mt-2 block">{tier.name}</span>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((service, idx) => (
+              <FadeIn key={service.id} delay={idx * 0.15} className="border border-line bg-navy-surface p-6">
+                <span className="text-eyebrow text-mist block">{service.whatWeDo[0]}</span>
+                <span className="text-heading-4 text-frost mt-2 block">{service.name}</span>
                 <span style={{ fontFamily: "var(--font-big-shoulders)" }} className="mt-4 block text-3xl font-black text-signal-orange">
-                  vanaf €{tier.price}
+                  vanaf €{service.priceFrom}
                 </span>
               </FadeIn>
             ))}

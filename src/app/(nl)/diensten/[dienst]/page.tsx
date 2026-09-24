@@ -8,6 +8,7 @@ import { TransponderSmartKeySection } from "@/components/TransponderSmartKeySect
 import { Faq } from "@/components/Faq";
 import { AlsoUsefulCrossSell } from "@/components/AlsoUsefulCrossSell";
 import { business } from "@/lib/business";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
   return services.map((s) => ({ dienst: s.id }));
@@ -48,9 +49,17 @@ export default async function ServicePage({ params }: { params: Promise<{ dienst
     },
   };
 
+  const base = `https://${business.domain}`;
+  const breadcrumb = breadcrumbSchema([
+    { name: "Home", url: base },
+    { name: "Diensten", url: `${base}/diensten` },
+    { name: service.name, url: `${base}/diensten/${service.id}` },
+  ]);
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <Hero headline={service.heroHeadline} sub={service.heroSub} image={service.heroImage} compact />
       <ServiceBadgeRow
         priceFrom={service.priceFrom}

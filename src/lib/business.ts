@@ -18,27 +18,6 @@ export const business = {
   rating: "4.9",
 } as const;
 
-export const priceTiers = [
-  {
-    id: "basis",
-    name: "Standaard transpondersleutel",
-    price: 89,
-    description: "Voor auto's zonder afstandsbediening in de sleutel.",
-  },
-  {
-    id: "afstandsbediening",
-    name: "Sleutel met afstandsbediening",
-    price: 149,
-    description: "Klapsleutel of sleutel met centrale vergrendeling.",
-  },
-  {
-    id: "keyless",
-    name: "Smart key met keyless entry",
-    price: 189,
-    description: "Voor auto's met keyless toegang en start-stopknop.",
-  },
-] as const; // PENDING: confirm real price points before launch
-
 export const trustStats = [
   { figure: "4.9", label: "Gemiddelde beoordeling" },
   { figure: `${business.technicianCount}`, label: "Technici in het land" },

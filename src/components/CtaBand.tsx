@@ -27,8 +27,8 @@ export function CtaBand({ locale = "nl" }: { locale?: "nl" | "en" }) {
       <div className="mx-auto mt-6 flex max-w-5xl flex-wrap items-center justify-between gap-4 border-t border-navy-band/20 pt-4">
         <p className="text-body-small text-navy-band max-w-xl">
           {isEn
-            ? "Lockout from €79. After-hours flat +€40 between 10 PM and 7 AM. You hear the price before anyone drives."
-            : "Buitengesloten vanaf €79. Vast +€40 toeslag tussen 22:00 en 07:00. U hoort de prijs voordat er iemand vertrekt."}
+            ? "Lockout from €150. After-hours flat +€40 between 10 PM and 7 AM. You hear the price before anyone drives."
+            : "Buitengesloten vanaf €150. Vast +€40 toeslag tussen 22:00 en 07:00. U hoort de prijs voordat er iemand vertrekt."}
         </p>
         <div className="flex gap-6 text-label font-semibold text-navy-band underline">
           <Link href={`${base}/contact`}>{isEn ? "Book a daytime visit" : "Boek een overdag bezoek"}</Link>

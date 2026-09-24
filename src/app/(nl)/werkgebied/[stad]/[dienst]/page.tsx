@@ -7,6 +7,7 @@ import { ServiceBadgeRow } from "@/components/ServiceBadgeRow";
 import { StickyCtaSidebar } from "@/components/StickyCtaSidebar";
 import { Faq } from "@/components/Faq";
 import { business } from "@/lib/business";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
   return regions.flatMap((r) => services.map((s) => ({ stad: r.slug, dienst: s.id })));
@@ -62,9 +63,18 @@ export default async function CityServicePage({
     },
   };
 
+  const base = `https://${business.domain}`;
+  const breadcrumb = breadcrumbSchema([
+    { name: "Home", url: base },
+    { name: "Werkgebied", url: `${base}/werkgebied` },
+    { name: region.name, url: `${base}/werkgebied/${region.slug}` },
+    { name: service.name, url: `${base}/werkgebied/${region.slug}/${service.id}` },
+  ]);
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <Hero
         eyebrow={`${service.name} · ${region.name}`}
         headline={`${service.name} in ${region.name}`}

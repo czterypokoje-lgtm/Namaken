@@ -5,14 +5,14 @@ type Step = { time: string; title: string; body: string };
 
 const stepsNl: Step[] = [
   { time: "2:07", title: "Iemand neemt op.", body: "Een technicus, geen callcenter. Ze vragen wat er is gebeurd, waar u bent en om wat voor sleutel het gaat." },
-  { time: "2:09", title: "De prijs, voordat er iemand rijdt.", body: "Vanaf €89, plus €40 spoedtoeslag tussen 22:00 en 07:00. U hoort het aan de telefoon, en krijgt het per sms." },
+  { time: "2:09", title: "De prijs, voordat er iemand rijdt.", body: "Vanaf €150, plus €40 spoedtoeslag tussen 22:00 en 07:00. U hoort het aan de telefoon, en krijgt het per sms." },
   { time: "2:31", title: "Een herkenbare technicus, legitimatie eerst.", body: "De technicus checkt uw ID en kenteken, en gaat dan pas aan de slag met de sleutel." },
   { time: "2:48", title: "Betalen als het werkt.", body: "Pin, mobiel of contant, met een gespecificeerde factuur per e-mail. Verandert het totaal, dan hoort u waarom voordat we verdergaan." },
 ];
 
 const stepsEn: Step[] = [
   { time: "2:07", title: "A person picks up.", body: "A technician, not a call center. They ask what happened, where you are and what kind of key it is." },
-  { time: "2:09", title: "The price, before anyone drives.", body: "From €89, plus a €40 after-hours fee between 10 PM and 7 AM. You hear it on the phone and get it by text." },
+  { time: "2:09", title: "The price, before anyone drives.", body: "From €150, plus a €40 after-hours fee between 10 PM and 7 AM. You hear it on the phone and get it by text." },
   { time: "2:31", title: "A recognizable technician, ID first.", body: "The technician checks your ID and plate, then gets to work on the key." },
   { time: "2:48", title: "Pay when it works.", body: "Card, mobile or cash, with an itemized invoice by email. If the total changes, you hear why before we continue." },
 ];
