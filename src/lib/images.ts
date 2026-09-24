@@ -58,6 +58,12 @@ export const cityPhotoBySlug: Record<string, string> = {
   limburg: unsplash("1562758477-db861f798e9d", 1600), // Maastricht, Limburg's largest city
   eindhoven: unsplash("1659789178944-8299a5e9047e", 1600),
   helmond: unsplash("1696152576083-db88c29e1bc9", 1600),
+  // Supplied directly by the business (verified against known local
+  // landmarks before use — see chat: one of the 5 supplied this round was
+  // actually Amsterdam's Spiegelgracht, not Hoofddorp, so it was left out).
+  arnhem: "/photos/city-arnhem.jpg", // Eusebiuskerk tower
+  ede: "/photos/city-ede.jpg", // Ede raadhuis/Cultura carillon tower
+  venlo: "/photos/city-venlo.jpg", // historic Stadhuis on the Maas
 };
 
 // DJB2-style string hash — good distribution across every character, unlike a
