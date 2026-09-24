@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { regions, getRegion, cityServiceIntro, cityServiceWhy } from "@/data/regions";
 import { services, getService } from "@/data/services";
-import { Hero } from "@/components/Hero";
-import { ServiceBadgeRow } from "@/components/ServiceBadgeRow";
+import { ServiceHero } from "@/components/ag/ServiceHero";
 import { StickyCtaSidebar } from "@/components/StickyCtaSidebar";
 import { Faq } from "@/components/Faq";
 import { business } from "@/lib/business";
@@ -80,17 +79,15 @@ export default async function CityServicePage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <Breadcrumb items={breadcrumbItems} />
-      <Hero
-        eyebrow={`${service.name} · ${region.name}`}
+      
+      <ServiceHero
         headline={`${service.name} in ${region.name}`}
         sub={intro}
         image={pickServiceImage(service.id, region.slug)}
-        compact
-      />
-      <ServiceBadgeRow
         priceFrom={service.priceFrom}
         timeOnSite={service.timeOnSite}
         averageArrival={`gem. ${region.avgArrivalMin} min`}
+        isEn={false}
       />
 
       <section className="px-4 py-12 sm:px-6">

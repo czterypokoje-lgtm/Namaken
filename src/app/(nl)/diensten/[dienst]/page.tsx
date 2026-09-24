@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { services, getService } from "@/data/services";
-import { Hero } from "@/components/Hero";
-import { ServiceBadgeRow } from "@/components/ServiceBadgeRow";
+import { ServiceHero } from "@/components/ag/ServiceHero";
 import { StickyCtaSidebar } from "@/components/StickyCtaSidebar";
 import { TransponderSmartKeySection } from "@/components/TransponderSmartKeySection";
 import KeyTypesSection from "@/components/ag/KeyTypesSection";
@@ -65,11 +64,15 @@ export default async function ServicePage({ params }: { params: Promise<{ dienst
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <Breadcrumb items={breadcrumbItems} />
-      <Hero headline={service.heroHeadline} sub={service.heroSub} image={service.heroImage} compact />
-      <ServiceBadgeRow
+      
+      <ServiceHero 
+        headline={service.heroHeadline}
+        sub={service.heroSub}
+        image={service.heroImage || ''}
         priceFrom={service.priceFrom}
         timeOnSite={service.timeOnSite}
         averageArrival={service.averageArrival}
+        isEn={false}
       />
 
       <section className="px-4 py-12 sm:px-6">

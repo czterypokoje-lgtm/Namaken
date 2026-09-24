@@ -1,0 +1,205 @@
+.board {
+  padding: 3rem 5%;
+  background-color: var(--color-night-navy);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.headerTitle {
+  font-family: var(--font-big-shoulders), sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: var(--color-frost);
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+}
+
+.headerSub {
+  font-family: var(--font-chivo), sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-mist);
+}
+
+.intro {
+  font-family: var(--font-chivo), sans-serif;
+  font-size: 0.95rem;
+  color: var(--color-mist);
+  max-width: 600px;
+  margin-bottom: 3rem;
+  line-height: 1.5;
+}
+
+/* Table structure */
+.tableHeader {
+  display: none;
+  grid-template-columns: 80px 1fr 240px 120px;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-line);
+  font-family: var(--font-chivo), sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--color-mist);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 768px) {
+  .tableHeader {
+    display: grid;
+  }
+}
+
+.tableHeaderRight {
+  text-align: right;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.row:hover {
+  background-color: var(--color-navy-surface);
+}
+
+@media (min-width: 768px) {
+  .row {
+    grid-template-columns: 80px 1fr 240px 120px;
+  }
+}
+
+/* Cell 1: Minutes */
+.minCell {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  color: var(--color-signal-orange);
+}
+
+.minNumber {
+  font-family: var(--font-big-shoulders), sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 0.8;
+  letter-spacing: -0.02em;
+}
+
+.minLabel {
+  font-family: var(--font-chivo), sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-mist);
+}
+
+/* Cell 2: Area */
+.areaCell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.areaName {
+  font-family: var(--font-big-shoulders), sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 0.9;
+  color: var(--color-frost);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.areaSub {
+  font-family: var(--font-chivo), sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--color-mist);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Cell 3: Progress Bar */
+.barCell {
+  display: none;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-line-strong);
+}
+
+@media (min-width: 768px) {
+  .barCell {
+    display: block;
+  }
+}
+
+.barFill {
+  height: 100%;
+  background-color: var(--color-signal-orange);
+}
+
+.barFillGray {
+  height: 100%;
+  background-color: var(--color-mist);
+}
+
+/* Cell 4: Status */
+.statusCell {
+  display: none;
+  text-align: right;
+  font-family: var(--font-chivo), sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 768px) {
+  .statusCell {
+    display: block;
+  }
+}
+
+.statusFast {
+  color: var(--color-signal-orange);
+}
+
+.statusSlow {
+  color: var(--color-mist);
+}
+
+.footerText {
+  font-family: var(--font-chivo), sans-serif;
+  font-size: 0.9rem;
+  color: var(--color-mist);
+  margin-top: 3rem;
+  line-height: 1.5;
+}
