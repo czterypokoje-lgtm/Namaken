@@ -39,6 +39,7 @@ export const keyServiceImagePool = [
   images.handHoldingKeyFob,
   images.personHoldingCarKey,
   images.blackKeyFobCloseup,
+  images.startStopEngineButton,
 ] as const;
 
 export const lockoutImagePool = [
