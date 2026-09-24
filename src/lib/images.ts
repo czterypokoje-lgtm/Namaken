@@ -30,13 +30,18 @@ export const images = {
   ignitionCylinderRemoved: "/photos/ignition-cylinder-removed.webp",
   ignitionColumnOpen: "/photos/ignition-column-open.webp",
   ignitionBarrelCloseup: "/photos/ignition-barrel-closeup.webp",
-  keyHandoff: "/photos/key-handoff.webp",
+  // Replaces an earlier low-res supplied photo (521x377, visibly blurry at
+  // display size) with a clean, high-resolution studio shot of the same
+  // key-handoff moment.
+  keyHandoff: unsplash("1761014586544-53fe5e1f1e25", 1200),
   // Human-face trust photos for the brand pages' 4 supporting sections
   // (inprogrammeren/dealer/kosten/alleSleutels) — deliberately the SAME
   // across every brand page rather than car photos, since a Citroën page
   // was showing an unrelated Audi in the snow and a random city skyline in
   // those slots. These are about trusting the service, not the car brand.
-  smilingTechnician: unsplash("1732395805034-e0bf859665e5", 1200),
+  // (Previous smilingTechnician pick was a US car-wash worker in branded
+  // "Memphis Wash Co." workwear — wrong market fit for an NL audience.)
+  smilingTechnician: unsplash("1649768870222-17848797d6b4", 1200),
   happyCustomerInCar: unsplash("1634055739897-b6a98a80114a", 1200),
 } as const;
 
