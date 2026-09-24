@@ -21,7 +21,7 @@ export function TrustCredentialsBand({ locale = "nl" }: { locale?: "nl" | "en" }
           {trustStats.map((stat) => (
             <div key={stat.label}>
               <p className="text-stat-figure text-frost">{stat.figure}</p>
-              <p className="text-body-small text-mist mt-1">{stat.label}</p>
+              <p className="text-body-small text-mist mt-1">{isEn ? stat.enLabel : stat.label}</p>
             </div>
           ))}
         </div>
@@ -29,8 +29,8 @@ export function TrustCredentialsBand({ locale = "nl" }: { locale?: "nl" | "en" }
         <div className="mt-10 grid gap-6 border-t border-line pt-8 sm:grid-cols-2 lg:grid-cols-3">
           {trustBadges.map((badge) => (
             <div key={badge.label}>
-              <p className="text-eyebrow text-signal-orange">{badge.label}</p>
-              <p className="text-body-small text-mist mt-1">{badge.body}</p>
+              <p className="text-eyebrow text-signal-orange">{isEn ? badge.enLabel : badge.label}</p>
+              <p className="text-body-small text-mist mt-1">{isEn ? badge.enBody : badge.body}</p>
             </div>
           ))}
         </div>

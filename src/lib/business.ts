@@ -19,17 +19,47 @@ export const business = {
 } as const;
 
 export const trustStats = [
-  { figure: "4.9", label: "Gemiddelde beoordeling" },
-  { figure: `${business.technicianCount}`, label: "Technici in het land" },
-  { figure: "22", label: "Regio's met vaste dekking" },
-  { figure: "24/7", label: "Elke dag van het jaar" },
+  { figure: "4.9", label: "Gemiddelde beoordeling", enLabel: "Average rating" },
+  { figure: `${business.technicianCount}`, label: "Technici in het land", enLabel: "Technicians nationwide" },
+  { figure: "22", label: "Regio's met vaste dekking", enLabel: "Regions with fixed coverage" },
+  { figure: "24/7", label: "Elke dag van het jaar", enLabel: "Every day of the year" },
 ] as const;
 
 export const trustBadges = [
-  { label: "Gescreend", body: "Elke technicus jaarlijks gecontroleerd voordat hij een sleutel draagt." },
-  { label: "Verzekerd", body: "Aansprakelijkheidsverzekering op elke klus, certificaat op aanvraag." },
-  { label: "Legitimatie eerst", body: "We checken uw ID voordat we beginnen. Vraag gerust naar dat van ons." },
-  { label: "Prijs vooraf", body: "Bevestigd aan de telefoon, voordat er iemand onderweg gaat." },
-  { label: "Gespecificeerde factuur", body: "Onderdelen, arbeid en toeslagen apart, per e-mail." },
-  { label: "12 maanden garantie", body: "Op arbeid voor elke installatie en herprogrammering." },
+  {
+    label: "Gescreend",
+    body: "Elke technicus jaarlijks gecontroleerd voordat hij een sleutel draagt.",
+    enLabel: "Background-checked",
+    enBody: "Every technician is screened annually before carrying a key.",
+  },
+  {
+    label: "Verzekerd",
+    body: "Aansprakelijkheidsverzekering op elke klus, certificaat op aanvraag.",
+    enLabel: "Insured",
+    enBody: "Liability insurance on every job, certificate available on request.",
+  },
+  {
+    label: "Legitimatie eerst",
+    body: "We checken uw ID voordat we beginnen. Vraag gerust naar dat van ons.",
+    enLabel: "ID first",
+    enBody: "We check your ID before we start. Feel free to ask for ours too.",
+  },
+  {
+    label: "Prijs vooraf",
+    body: "Bevestigd aan de telefoon, voordat er iemand onderweg gaat.",
+    enLabel: "Price upfront",
+    enBody: "Confirmed on the phone, before anyone drives out.",
+  },
+  {
+    label: "Gespecificeerde factuur",
+    body: "Onderdelen, arbeid en toeslagen apart, per e-mail.",
+    enLabel: "Itemized invoice",
+    enBody: "Parts, labor and surcharges listed separately, emailed to you.",
+  },
+  {
+    label: "12 maanden garantie",
+    body: "Op arbeid voor elke installatie en herprogrammering.",
+    enLabel: "12-month warranty",
+    enBody: "On labor for every installation and reprogramming.",
+  },
 ] as const;

@@ -24,6 +24,9 @@ export type Service = {
     heroHeadline: string;
     heroSub: string;
     whatWeDo: string[];
+    timeOnSite: string;
+    averageArrival: string;
+    faq: { q: string; a: string }[];
   };
 };
 
@@ -71,6 +74,22 @@ export const services: Service[] = [
         "Price confirmed on the phone before we start",
         "Your existing key keeps working",
       ],
+      timeOnSite: "20-40 min on site",
+      averageArrival: "avg. 35 min",
+      faq: [
+        {
+          q: "Do I need to bring my car to a garage?",
+          a: "No. Our technician comes to your car's location and programs the new key on-site.",
+        },
+        {
+          q: "Do I need my current key?",
+          a: "In most cases yes, or the vehicle registration and a valid ID. We confirm this with you by phone beforehand.",
+        },
+        {
+          q: "How fast can this be arranged?",
+          a: "Often the same day. Call us for the nearest available technician in your area.",
+        },
+      ],
     },
   },
   {
@@ -115,6 +134,22 @@ export const services: Service[] = [
         "Old key deactivated from the car's system for your security",
         "ID and registration check on-site",
         "Available nights and weekends",
+      ],
+      timeOnSite: "30-60 min on site",
+      averageArrival: "avg. 35 min",
+      faq: [
+        {
+          q: "Can this be done without a spare key?",
+          a: "Yes, that's exactly what this service is for. We create a completely new key based on the vehicle.",
+        },
+        {
+          q: "Will my old key still work if it turns up?",
+          a: "No, for your security we deactivate the lost key as soon as the new one is programmed.",
+        },
+        {
+          q: "What should I bring or have ready?",
+          a: "A valid ID and the car's registration. If in doubt, we'll confirm by phone beforehand.",
+        },
       ],
     },
   },
@@ -161,6 +196,22 @@ export const services: Service[] = [
         "Works on nearly all lock and central-locking systems",
         "Can move straight into key duplication if needed",
       ],
+      timeOnSite: "10-20 min on site",
+      averageArrival: "avg. 30 min",
+      faq: [
+        {
+          q: "Will you damage the car while opening it?",
+          a: "Almost never. We work damage-free with professional tools, unless the lock itself is already broken.",
+        },
+        {
+          q: "What if I'm renting or borrowing the car?",
+          a: "We can also assist with rental or company cars; call us to discuss the situation.",
+        },
+        {
+          q: "How fast can you get there?",
+          a: "On average within 30 minutes, depending on your area and the nearest technician.",
+        },
+      ],
     },
   },
   {
@@ -205,6 +256,22 @@ export const services: Service[] = [
         "Replacement with original or equivalent parts",
         "New key programmed at the same time if needed",
         "Final price only after diagnosis, always confirmed first",
+      ],
+      timeOnSite: "45-90 min on site",
+      averageArrival: "avg. 40 min",
+      faq: [
+        {
+          q: "How do I know it's the ignition lock and not the key?",
+          a: "Our technician diagnoses it on-site first and tells you exactly what's wrong before anything gets replaced.",
+        },
+        {
+          q: "Does this work on every make?",
+          a: "We work on nearly every make; call us with the license plate so we bring the right part.",
+        },
+        {
+          q: "Does the car need to go to a garage?",
+          a: "In most cases no — this work happens on location at your car.",
+        },
       ],
     },
   },

@@ -85,8 +85,8 @@ export function Hero({
             {business.phone}
           </a>
           <div className="mt-4 flex flex-wrap gap-4">
-            <CallButton />
-            <WhatsAppButton />
+            <CallButton locale={locale} />
+            <WhatsAppButton locale={locale} />
           </div>
         </motion.div>
       )}

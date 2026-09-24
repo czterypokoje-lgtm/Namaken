@@ -36,8 +36,8 @@ export default async function EnglishServicePage({ params }: { params: Promise<{
       />
       <ServiceBadgeRow
         priceFrom={service.priceFrom}
-        timeOnSite={service.timeOnSite}
-        averageArrival={service.averageArrival}
+        timeOnSite={service.en.timeOnSite}
+        averageArrival={service.en.averageArrival}
         locale="en"
       />
 
@@ -60,7 +60,7 @@ export default async function EnglishServicePage({ params }: { params: Promise<{
 
       {service.includesKeySection && <TransponderSmartKeySection locale="en" />}
 
-      <Faq items={service.faq} title="Common questions" />
+      <Faq items={service.en.faq} title="Common questions" />
     </>
   );
 }

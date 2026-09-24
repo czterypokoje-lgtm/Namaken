@@ -27,8 +27,8 @@ export function StickyCtaSidebar({
         {t.from} €{priceFrom}
       </p>
       <div className="mt-4 flex flex-col gap-3">
-        <CallButton className="w-full" />
-        <WhatsAppButton className="w-full" />
+        <CallButton className="w-full" locale={locale} />
+        <WhatsAppButton className="w-full" locale={locale} />
       </div>
       <p className="text-body-small text-mist mt-4">{t.note}</p>
     </aside>

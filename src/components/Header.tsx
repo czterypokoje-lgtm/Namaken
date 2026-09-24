@@ -42,7 +42,7 @@ export function Header({ locale = "nl" }: { locale?: "nl" | "en" }) {
         </nav>
 
         <div className="hidden md:block">
-          <CallButton />
+          <CallButton locale={locale} />
         </div>
 
         <button
@@ -71,7 +71,7 @@ export function Header({ locale = "nl" }: { locale?: "nl" | "en" }) {
             </Link>
           ))}
           <div className="pt-2">
-            <CallButton className="w-full" />
+            <CallButton className="w-full" locale={locale} />
           </div>
         </nav>
       )}

@@ -31,7 +31,7 @@ export default function EnglishRootLayout({ children }: { children: React.ReactN
         <Header locale="en" />
         <main className="flex-1">{children}</main>
         <Footer locale="en" />
-        <MobileStickyBar />
+        <MobileStickyBar locale="en" />
       </body>
       {gtmId && <GoogleTagManager gtmId={gtmId} />}
     </html>
