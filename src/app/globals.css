@@ -1,10 +1,15 @@
 @import "tailwindcss";
 @import "./tokens.css";
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background: var(--color-night-navy);
   color: var(--color-frost);
   font-family: var(--font-chivo), sans-serif;
+  overflow-x: hidden;
 }
 
 a {

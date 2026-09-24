@@ -25,12 +25,12 @@ export const images = {
   serviceVanParked: unsplash("1570905375301-e33b61438107", 1200),
   // Real on-site process shots (supplied by the business) — lockout tool use,
   // ignition cylinder repair and the key handoff moment.
-  lockoutAirWedgeTool: "/photos/lockout-airwedge-tool.png",
-  lockoutDoorHandleTool: "/photos/lockout-doorhandle-tool.jpg",
-  ignitionCylinderRemoved: "/photos/ignition-cylinder-removed.jpg",
-  ignitionColumnOpen: "/photos/ignition-column-open.jpg",
-  ignitionBarrelCloseup: "/photos/ignition-barrel-closeup.png",
-  keyHandoff: "/photos/key-handoff.jpg",
+  lockoutAirWedgeTool: "/photos/lockout-airwedge-tool.webp",
+  lockoutDoorHandleTool: "/photos/lockout-doorhandle-tool.webp",
+  ignitionCylinderRemoved: "/photos/ignition-cylinder-removed.webp",
+  ignitionColumnOpen: "/photos/ignition-column-open.webp",
+  ignitionBarrelCloseup: "/photos/ignition-barrel-closeup.webp",
+  keyHandoff: "/photos/key-handoff.webp",
 } as const;
 
 // Real, verified-location photos of each covered city (checked one by one on
@@ -61,9 +61,9 @@ export const cityPhotoBySlug: Record<string, string> = {
   // Supplied directly by the business (verified against known local
   // landmarks before use — see chat: one of the 5 supplied this round was
   // actually Amsterdam's Spiegelgracht, not Hoofddorp, so it was left out).
-  arnhem: "/photos/city-arnhem.jpg", // Eusebiuskerk tower
-  ede: "/photos/city-ede.jpg", // Ede raadhuis/Cultura carillon tower
-  venlo: "/photos/city-venlo.jpg", // historic Stadhuis on the Maas
+  arnhem: "/photos/city-arnhem.webp", // Eusebiuskerk tower
+  ede: "/photos/city-ede.webp", // Ede raadhuis/Cultura carillon tower
+  venlo: "/photos/city-venlo.webp", // historic Stadhuis on the Maas
 };
 
 // DJB2-style string hash — good distribution across every character, unlike a
@@ -130,11 +130,57 @@ export const pickServiceImage = (serviceId: string, seed: string): string => {
 
 const brandPagePool = [...keyServiceImagePool, ...supportingImagePool];
 
-// Returns 5 images for a brand page (hero + 4 inline sections), rotated by a
-// hash of the brand name so the 28 brand pages don't all show the same fixed
-// photos in the same positions.
+const slugifyBrandName = (name: string) =>
+  name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
+// A real photo of that brand's own car (checked one by one — grille badge,
+// wordmark or an explicit "<brand> car" caption confirms it) for the brand
+// page hero, so the BMW page shows a BMW and the Honda page shows a Honda
+// instead of a generic key photo. No stock match was found yet for Seat —
+// every free candidate was actually badged "Cupra" (a related but different
+// brand) — so it still falls back to the generic rotation below.
+export const brandPhotoBySlug: Record<string, string> = {
+  "alfa-romeo": unsplash("1741090868609-2166f09eab8e", 1600),
+  audi: unsplash("1502161254066-6c74afbf07aa", 1600),
+  chevrolet: unsplash("1590456744030-8b9128517cbb", 1600),
+  chrysler: unsplash("1786975658747-9249e2bbd82a", 1600),
+  citroen: unsplash("1641368255943-674052d0f003", 1600),
+  dacia: unsplash("1697461132284-7f1110d1f061", 1600),
+  daewoo: unsplash("1690108232595-2ed012be66b7", 1600),
+  daihatsu: unsplash("1749042920720-13cf5931f41b", 1600),
+  fiat: unsplash("1757120602359-59272740fb0a", 1600),
+  ford: unsplash("1590043586837-35512e866a4e", 1600),
+  honda: unsplash("1578659258511-4a4e7dee7344", 1600),
+  hyundai: unsplash("1575090536203-2a6193126514", 1600),
+  jeep: unsplash("1515049497350-e9dfc9527f5d", 1600),
+  kia: unsplash("1688893287848-a218df183f36", 1600),
+  lancia: unsplash("1728990005420-652fffe19e1e", 1600),
+  landrover: unsplash("1549632891-a0bea6d0355b", 1600),
+  mazda: unsplash("1631856507174-5229e66c6344", 1600),
+  mercedes: unsplash("1592805723127-004b174a1798", 1600),
+  mitsubishi: unsplash("1558199099-ab7fa8a61cb4", 1600),
+  nissan: unsplash("1551817280-6d59c77ce1b8", 1600),
+  opel: unsplash("1785134838800-a49cdf308d5c", 1600),
+  peugeot: unsplash("1566421740474-8456c6840c71", 1600),
+  renault: unsplash("1745856305747-d1872fa7fe67", 1600),
+  skoda: unsplash("1768907217527-848954c12983", 1600),
+  suzuki: unsplash("1653287184042-eff1453aa30b", 1600),
+  toyota: unsplash("1547245324-d777c6f05e80", 1600),
+  volkswagen: unsplash("1561517118-6068d92c6474", 1600),
+};
+
+// Returns 5 images for a brand page (hero + 4 inline sections). The hero is
+// that brand's own car when we have one verified; the 4 supporting photos
+// stay on the generic key/process rotation, hashed by brand name so they
+// don't all show the same fixed photos in the same positions.
 export const pickBrandImages = (brand: string): [string, string, string, string, string] => {
   const offset = hash(brand) % brandPagePool.length;
   const rotated = [...brandPagePool.slice(offset), ...brandPagePool.slice(0, offset)];
-  return [rotated[0], rotated[1], rotated[2], rotated[3], rotated[0]];
+  const hero = brandPhotoBySlug[slugifyBrandName(brand)] ?? rotated[0];
+  return [hero, rotated[1], rotated[2], rotated[3], rotated[0]];
 };
