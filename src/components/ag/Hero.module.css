@@ -96,6 +96,24 @@
   line-height: 0.85;
   color: var(--color-frost);
   margin: 0;
+  animation: heroHeadingIn 0.7s ease-out both;
+}
+
+@keyframes heroHeadingIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heading {
+    animation: none;
+  }
 }
 
 /* ---- Right desc ---- */
