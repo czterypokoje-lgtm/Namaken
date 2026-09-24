@@ -17,6 +17,14 @@ export const metadata: Metadata = {
   description:
     "Landelijk technicianetwerk voor autosleutel bijmaken, verloren sleutels, buitengesloten raken en contactslot vervangen. Prijs vooraf, 24/7 bereikbaar.",
   alternates: { languages: { nl: "/", en: "/en" } },
+  // Search Console / Bing Webmaster site-ownership verification — set once
+  // the accounts exist; the meta tag simply doesn't render until then.
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+    other: process.env.BING_SITE_VERIFICATION
+      ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION }
+      : undefined,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -17,6 +17,12 @@ export const metadata: Metadata = {
   description:
     "Nationwide mobile car-key technician network in the Netherlands: key duplication, lost key replacement, lockouts and ignition lock repair. Price confirmed upfront, 24/7.",
   alternates: { languages: { nl: "/", en: "/en" } },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+    other: process.env.BING_SITE_VERIFICATION
+      ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION }
+      : undefined,
+  },
 };
 
 export default function EnglishRootLayout({ children }: { children: React.ReactNode }) {

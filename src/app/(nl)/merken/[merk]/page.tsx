@@ -113,7 +113,7 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
       <section className="border-t border-line px-4 py-16 sm:px-6">
         <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-2 lg:items-center">
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-            <Image src={inprogrammerenImage} alt="" fill sizes="500px" className="object-cover" />
+            <Image src={inprogrammerenImage} alt={`${brand} sleutel inprogrammeren`} fill sizes="500px" className="object-cover" />
           </div>
           <div>
             <h2 className="text-heading-3 text-frost mb-4">{content.inprogrammeren.heading}</h2>
@@ -145,7 +145,7 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
             <p className="text-body-small text-mist">{content.dealer.p2}</p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-            <Image src={dealerImage} alt="" fill sizes="500px" className="object-cover" />
+            <Image src={dealerImage} alt={`${brand} sleutel bijmaken zoals bij de dealer`} fill sizes="500px" className="object-cover" />
           </div>
         </div>
       </section>
@@ -154,7 +154,7 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
       <section className="border-t border-line bg-signal-orange px-4 py-16 sm:px-6">
         <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-2 lg:items-center">
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-            <Image src={alleSleutelsImage} alt="" fill sizes="500px" className="object-cover" />
+            <Image src={alleSleutelsImage} alt={`Alle ${brand} sleutels kwijt`} fill sizes="500px" className="object-cover" />
           </div>
           <div>
             <h2 className="text-heading-3 text-on-orange mb-4">{content.alleSleutels.heading}</h2>
@@ -173,7 +173,7 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
             <p className="text-body-small text-mist">{content.behuizing.p2}</p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-            <Image src={behuizingImage} alt="" fill sizes="500px" className="object-cover" />
+            <Image src={behuizingImage} alt={`${brand} sleutel behuizing vervangen`} fill sizes="500px" className="object-cover" />
           </div>
         </div>
       </section>
