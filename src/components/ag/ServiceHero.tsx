@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { business } from "@/lib/business";
 import { trackConversion } from "@/lib/analytics";
@@ -63,9 +64,9 @@ export function ServiceHero({
               >
                 {isEn ? `Call ${business.phone}` : `Bel ${business.phone}`}
               </a>
-              <a href="#book" className={styles.secondaryButton}>
+              <Link href={isEn ? '/en/contact' : '/contact'} className={styles.secondaryButton}>
                 {isEn ? "Book this service" : "Boek deze dienst"}
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
