@@ -31,8 +31,52 @@ export const images = {
   ignitionColumnOpen: "/photos/ignition-column-open.jpg",
   ignitionBarrelCloseup: "/photos/ignition-barrel-closeup.png",
   keyHandoff: "/photos/key-handoff.jpg",
-  cityNightAerial: "/photos/city-night-aerial.jpg",
 } as const;
+
+// Real, verified-location photos of each covered city (checked one by one on
+// Unsplash — location tag or title confirms the city, and license is free).
+// The previous approach rotated 1-2 generic "city" stock photos across every
+// region — one of them (a supplied "aerial night city" shot) turned out to
+// have palm trees and clearly wasn't even in the Netherlands, so it was
+// showing a wrong, made-up city for Utrecht. This map only ever shows a
+// place we've actually confirmed.
+export const cityPhotoBySlug: Record<string, string> = {
+  utrecht: unsplash("1651397876655-048325ae5fd0", 1600),
+  amsterdam: unsplash("1583295125721-766a0088cd3f", 1600),
+  haarlem: unsplash("1650379892700-06be52680f6f", 1600),
+  zaandam: unsplash("1566450653303-2614cbb292ea", 1600),
+  leiden: unsplash("1782156451512-567ae463dc1c", 1600),
+  "den-haag": unsplash("1586174035695-35ab9e19215c", 1600),
+  rotterdam: unsplash("1614521272693-73052eaefc51", 1600),
+  dordrecht: unsplash("1672551978864-283f9099f52b", 1600),
+  breda: unsplash("1615989521077-b63d15dcfc41", 1600),
+  tilburg: unsplash("1696629592005-94269f149265", 1600),
+  nijmegen: unsplash("1597577827388-f906d5227bba", 1600),
+  amersfoort: unsplash("1626789896983-ce036577d092", 1600),
+  apeldoorn: unsplash("1577892987956-ecf8e19f86d4", 1600),
+  almere: unsplash("1623005470778-6d6e27b75186", 1600),
+  limburg: unsplash("1562758477-db861f798e9d", 1600), // Maastricht, Limburg's largest city
+  eindhoven: unsplash("1659789178944-8299a5e9047e", 1600),
+  helmond: unsplash("1696152576083-db88c29e1bc9", 1600),
+};
+
+// DJB2-style string hash — good distribution across every character, unlike a
+// first/last-char-only hash which collides often at small pool sizes (e.g.
+// "utrecht" and "arnhem" both landed on remainder 0 mod 4 with that approach).
+export const hash = (s: string) => {
+  let h = 5381;
+  for (let i = 0; i < s.length; i++) {
+    h = (h * 33) ^ s.charCodeAt(i);
+  }
+  return Math.abs(h);
+};
+
+// Regions with no verified city-specific photo yet (Hoofddorp, Arnhem, Oss,
+// Ede, Venlo) fall back to this action pool instead of a mislabeled or
+// unverified "generic city" photo.
+const cityFallbackPool = [images.serviceVanParked, images.keyHandoff, images.lockoutAirWedgeTool] as const;
+
+export const pickCityImage = (slug: string): string => cityPhotoBySlug[slug] ?? cityFallbackPool[hash(slug) % cityFallbackPool.length];
 
 export const keyServiceImagePool = [
   images.keyCutting,
@@ -56,34 +100,12 @@ export const ignitionImagePool = [
   images.startStopEngineButton,
 ] as const;
 
-// Leans toward "we're already on our way" action shots (van, technician at
-// work) rather than generic skyline photos — better for conversion, since
-// it shows the actual service instead of just proving the city exists.
-export const cityImagePool = [
-  images.serviceVanParked,
-  images.keyHandoff,
-  images.cityNightAerial,
-  images.lockoutAirWedgeTool,
-  images.nightCityStreet,
-] as const;
-
 export const supportingImagePool = [
   images.serviceVanParked,
   images.nightCityStreet,
   images.carSnow,
   images.houseKeychain,
 ] as const;
-
-// DJB2-style string hash — good distribution across every character, unlike a
-// first/last-char-only hash which collides often at small pool sizes (e.g.
-// "utrecht" and "arnhem" both landed on remainder 0 mod 4 with that approach).
-export const hash = (s: string) => {
-  let h = 5381;
-  for (let i = 0; i < s.length; i++) {
-    h = (h * 33) ^ s.charCodeAt(i);
-  }
-  return Math.abs(h);
-};
 
 const poolByService: Record<string, readonly string[]> = {
   "autosleutel-bijmaken": keyServiceImagePool,
