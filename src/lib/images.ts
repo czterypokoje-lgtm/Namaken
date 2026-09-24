@@ -31,6 +31,13 @@ export const images = {
   ignitionColumnOpen: "/photos/ignition-column-open.webp",
   ignitionBarrelCloseup: "/photos/ignition-barrel-closeup.webp",
   keyHandoff: "/photos/key-handoff.webp",
+  // Human-face trust photos for the brand pages' 4 supporting sections
+  // (inprogrammeren/dealer/kosten/alleSleutels) — deliberately the SAME
+  // across every brand page rather than car photos, since a Citroën page
+  // was showing an unrelated Audi in the snow and a random city skyline in
+  // those slots. These are about trusting the service, not the car brand.
+  smilingTechnician: unsplash("1732395805034-e0bf859665e5", 1200),
+  happyCustomerInCar: unsplash("1634055739897-b6a98a80114a", 1200),
 } as const;
 
 // Real, verified-location photos of each covered city (checked one by one on
@@ -106,13 +113,6 @@ export const ignitionImagePool = [
   images.startStopEngineButton,
 ] as const;
 
-export const supportingImagePool = [
-  images.serviceVanParked,
-  images.nightCityStreet,
-  images.carSnow,
-  images.houseKeychain,
-] as const;
-
 const poolByService: Record<string, readonly string[]> = {
   "autosleutel-bijmaken": keyServiceImagePool,
   "autosleutel-kwijt": keyServiceImagePool,
@@ -128,7 +128,8 @@ export const pickServiceImage = (serviceId: string, seed: string): string => {
   return pool[hash(seed) % pool.length];
 };
 
-const brandPagePool = [...keyServiceImagePool, ...supportingImagePool];
+// Same 3 trust photos, reused across every brand page's supporting sections.
+const brandTrustImagePool = [images.keyHandoff, images.smilingTechnician, images.happyCustomerInCar] as const;
 
 const slugifyBrandName = (name: string) =>
   name
@@ -175,12 +176,13 @@ export const brandPhotoBySlug: Record<string, string> = {
 };
 
 // Returns 5 images for a brand page (hero + 4 inline sections). The hero is
-// that brand's own car when we have one verified; the 4 supporting photos
-// stay on the generic key/process rotation, hashed by brand name so they
-// don't all show the same fixed photos in the same positions.
+// that brand's own car when we have one verified (falls back to the generic
+// key-service pool for brands without a match, e.g. Seat). The 4 supporting
+// photos are the same trust pool on every brand page on purpose — they're
+// illustrating our process, not the car, so there's no reason for a Citroën
+// page to show a photo of an Audi.
 export const pickBrandImages = (brand: string): [string, string, string, string, string] => {
-  const offset = hash(brand) % brandPagePool.length;
-  const rotated = [...brandPagePool.slice(offset), ...brandPagePool.slice(0, offset)];
-  const hero = brandPhotoBySlug[slugifyBrandName(brand)] ?? rotated[0];
-  return [hero, rotated[1], rotated[2], rotated[3], rotated[0]];
+  const hero = brandPhotoBySlug[slugifyBrandName(brand)] ?? keyServiceImagePool[hash(brand) % keyServiceImagePool.length];
+  const [a, b, c] = brandTrustImagePool;
+  return [hero, a, b, c, a];
 };
