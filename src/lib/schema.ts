@@ -13,13 +13,30 @@ export function localBusinessSchema() {
     "@type": "Locksmith",
     "@id": `${url}/#business`,
     name: business.name,
+    // "Autosleutelnamaken" is the trade name; CarKey24 is the KVK-registered
+    // legal entity behind it (verified against the public KVK register).
+    legalName: business.legalName,
     telephone: business.phoneHref.replace("tel:", ""),
     email: business.email,
     url,
-    // Mobile, nationwide technician network with no public storefront —
-    // deliberately no `address` field (a fabricated one would violate
-    // Google's guidelines for service-area businesses); areaServed is the
-    // correct schema.org signal for this business model instead.
+    // Registered address (verified via kvk.nl). This business has no public
+    // storefront — customers never visit it — so it stays out of the site's
+    // visible UI copy, but including the real registered address here in
+    // structured data is correct and expected for entity verification.
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: business.address.street,
+      postalCode: business.address.postalCode,
+      addressLocality: business.address.city,
+      addressCountry: "NL",
+    },
+    identifier: {
+      "@type": "PropertyValue",
+      name: "KVK",
+      value: business.kvk,
+    },
+    // Mobile, nationwide technician network — areaServed is the correct
+    // schema.org signal for where the service is actually delivered.
     areaServed: regions.map((r) => r.name),
     priceRange: `€${services[0].priceFrom}-€${Math.max(...services.map((s) => s.priceFrom))}`,
     openingHours: "Mo-Su 00:00-23:59",

@@ -1,9 +1,15 @@
 // Central business facts. Values marked PENDING are working defaults from
 // the plan's research (see plan doc) — swap for confirmed real values before
-// launch: KVK/BTW numbers, exact WhatsApp number, and final price points.
+// launch: BTW number, exact WhatsApp number, and final price points.
 
 export const business = {
   name: "Autosleutelnamaken",
+  // Registered legal entity behind the "Autosleutelnamaken" trade name —
+  // verified against the public KVK register (kvk.nl) on 2026-09-24:
+  // eenmanszaak, handelsnaam "CarKey24", matches this business's activity
+  // description exactly ("Bijsnijden en dupliceren van autosleutels en
+  // slotenmakers diensten").
+  legalName: "CarKey24",
   domain: "autosleutelnamaken.nl",
   phone: "06 11 75 12 31",
   phoneHref: "tel:+31611751231",
@@ -11,8 +17,13 @@ export const business = {
   email: "info@autosleutelnamaken.nl",
   hours: "24/7 bereikbaar",
   technicianCount: 7,
-  kvk: "PENDING", // PENDING: real KVK number for footer/schema trust signals
-  btw: "PENDING", // PENDING: real BTW/VAT number
+  kvk: "42155437",
+  btw: "PENDING", // PENDING: real BTW/VAT number (not derivable from KVK since the 2020 privacy reform)
+  address: {
+    street: "Kapelstraat 9C",
+    postalCode: "1404HT",
+    city: "Bussum",
+  },
   foundedYear: 2018, // PENDING: confirm real founding year
   jobsSince: "18.400", // PENDING: confirm real completed-jobs count
   rating: "4.9",

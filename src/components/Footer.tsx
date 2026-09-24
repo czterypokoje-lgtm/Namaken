@@ -102,8 +102,9 @@ export function Footer({ locale = "nl" }: { locale?: "nl" | "en" }) {
         </div>
 
         <p className="mt-8 text-mono text-faint">
-          {business.name} is een landelijk technicianetwerk voor mobiele autosleutelservice. KVK: {business.kvk} ·
-          BTW: {business.btw}.
+          {isEn
+            ? `${business.name} is a trade name of ${business.legalName}, a nationwide mobile car key technician network. KVK: ${business.kvk} · VAT: ${business.btw}.`
+            : `${business.name} is een handelsnaam van ${business.legalName}, een landelijk technicianetwerk voor mobiele autosleutelservice. KVK: ${business.kvk} · BTW: ${business.btw}.`}
         </p>
 
         <div className="mt-4 flex flex-col justify-between gap-2 border-t border-line pt-4 text-mono text-faint sm:flex-row">
