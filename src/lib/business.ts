@@ -13,6 +13,9 @@ export const business = {
   technicianCount: 7,
   kvk: "PENDING", // PENDING: real KVK number for footer/schema trust signals
   btw: "PENDING", // PENDING: real BTW/VAT number
+  foundedYear: 2018, // PENDING: confirm real founding year
+  jobsSince: "18.400", // PENDING: confirm real completed-jobs count
+  rating: "4.9",
 } as const;
 
 export const priceTiers = [

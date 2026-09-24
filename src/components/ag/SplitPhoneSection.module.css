@@ -1,0 +1,126 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--color-night-navy);
+  border-top: 1px solid var(--color-line);
+}
+
+@media (min-width: 992px) {
+  .section {
+    flex-direction: row;
+    min-height: 80vh;
+  }
+}
+
+.imageCol {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+}
+
+@media (min-width: 992px) {
+  .imageCol {
+    width: 50%;
+    height: auto;
+  }
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.textCol {
+  width: 100%;
+  padding: 4rem var(--pad-x);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .textCol {
+    width: 50%;
+    padding: 6rem;
+  }
+}
+
+.textInner {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 2rem 0;
+  letter-spacing: -0.01em;
+}
+
+.massivePhone {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 15vw, 12rem);
+  font-weight: 900;
+  color: var(--color-signal-orange);
+  line-height: 0.8;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  margin-bottom: 4rem;
+  transition: opacity 0.2s;
+}
+
+.massivePhone:hover {
+  opacity: 0.8;
+}
+
+.phoneLine {
+  display: block;
+}
+
+.bottomMeta {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .bottomMeta {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+.metaBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.metaLabel {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-mist);
+}
+
+.metaValue {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #ffffff;
+}

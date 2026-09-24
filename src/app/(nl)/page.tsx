@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Hero } from "@/components/Hero";
-import { Ticker } from "@/components/Ticker";
-import { StatPhotoSection } from "@/components/StatPhotoSection";
-import { StoryTimeline } from "@/components/StoryTimeline";
-import { ArrivalsBoard } from "@/components/ArrivalsBoard";
-import { TrustCredentialsBand } from "@/components/TrustCredentialsBand";
-import { Testimonial } from "@/components/Testimonial";
-import { FooterCta } from "@/components/FooterCta";
 import { services } from "@/data/services";
-import { business } from "@/lib/business";
+import { priceTiers } from "@/lib/business";
 import { images } from "@/lib/images";
+import Hero from "@/components/ag/Hero";
+import MarqueeBanner from "@/components/ag/MarqueeBanner";
+import PhotoGrid from "@/components/ag/PhotoGrid";
+import ServiceRow from "@/components/ag/ServiceRow";
+import TimeLine from "@/components/ag/TimeLine";
+import TrustSection from "@/components/ag/TrustSection";
+import SplitPhoneSection from "@/components/ag/SplitPhoneSection";
+import FadeIn from "@/components/ag/FadeIn";
 
 export const metadata: Metadata = {
   title: "Autosleutel bijmaken, kwijt of buitengesloten — 24/7 in heel Nederland",
@@ -20,56 +20,76 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <>
-      <Hero
-        eyebrow={`${business.hours} · landelijk technicianetwerk`}
-        headline="Autosleutel kwijt? We zijn er, gemiddeld binnen 35 minuten."
-        sub="Sleutel bijmaken, verloren sleutel vervangen, buitengesloten of een defect contactslot — onze technici werken op locatie, in heel Nederland. Prijs hoort u vooraf aan de telefoon."
-        image={images.heroCarNight}
-      />
+    <main>
+      <Hero city="Utrecht" heroImage={images.heroCarNight} />
+      <MarqueeBanner />
+      <PhotoGrid />
 
-      <Ticker locale="nl" />
+      <section className="px-4 py-16 sm:px-6 lg:py-24">
+        <div className="mx-auto max-w-5xl">
+          <FadeIn className="mb-10 flex items-end justify-between">
+            <div>
+              <p className="text-eyebrow text-mist">Wat we doen</p>
+              <h2 className="text-heading-1 text-frost mt-2">Onze diensten</h2>
+            </div>
+            <Link href="/diensten" className="text-label font-semibold text-frost underline hidden sm:block">
+              Alle diensten bekijken →
+            </Link>
+          </FadeIn>
 
-      <section className="px-4 py-12 sm:px-6">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-heading-3 text-frost mb-6">Diensten.</h2>
-          <ul className="divide-y divide-line">
-            {services.map((s) => (
-              <li key={s.id}>
-                <Link
-                  href={`/diensten/${s.id}`}
-                  className="flex items-center justify-between py-4 hover:bg-navy-surface transition-colors"
-                >
-                  <div>
-                    <p className="text-heading-4 text-frost">{s.name}</p>
-                    <p className="text-body-small text-mist">{s.heroSub}</p>
-                  </div>
-                  <p className="text-price text-signal-orange whitespace-nowrap ml-4">vanaf €{s.priceFrom}</p>
-                </Link>
-              </li>
+          <div>
+            {services.map((service, idx) => (
+              <ServiceRow
+                key={service.id}
+                category="Dienst"
+                title={service.shortName}
+                description={service.heroSub}
+                price={`${service.priceFrom} €`}
+                href={`/diensten/${service.id}`}
+                index={idx}
+              />
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
-      <StatPhotoSection locale="nl" />
+      <TimeLine />
 
-      <ArrivalsBoard locale="nl" />
+      <section className="border-t border-line px-4 py-16 sm:px-6 lg:py-24">
+        <div className="mx-auto max-w-5xl">
+          <FadeIn className="mb-12">
+            <p className="text-eyebrow text-signal-orange mb-2">Transparante tarieven</p>
+            <h2 className="text-heading-1 text-frost">
+              Geen verborgen kosten.<br />Geen verrassingen achteraf.
+            </h2>
+          </FadeIn>
 
-      <StoryTimeline locale="nl" />
+          <div className="grid gap-6 sm:grid-cols-3">
+            {priceTiers.map((tier, idx) => (
+              <FadeIn key={tier.id} delay={idx * 0.15} className="border border-line bg-navy-surface p-6">
+                <span className="text-eyebrow text-mist block">{tier.description}</span>
+                <span className="text-heading-4 text-frost mt-2 block">{tier.name}</span>
+                <span style={{ fontFamily: "var(--font-big-shoulders)" }} className="mt-4 block text-3xl font-black text-signal-orange">
+                  vanaf €{tier.price}
+                </span>
+              </FadeIn>
+            ))}
+          </div>
 
-      <TrustCredentialsBand locale="nl" />
-
-      <section className="border-t border-line px-4 py-12 sm:px-6">
-        <div className="mx-auto max-w-4xl">
-          <Testimonial
-            quote="Sleutel kwijt op zondagavond in Rotterdam. Ze belden terug binnen 5 minuten en de technicus stond er binnen het half uur."
-            author="M. de Vries, Rotterdam"
-          />
+          <FadeIn delay={0.5}>
+            <p className="text-body-small text-mist mt-8">
+              Alle prijzen worden <strong className="text-frost">vooraf telefonisch bevestigd</strong> voordat de
+              technicus vertrekt.{" "}
+              <Link href="/prijzen" className="text-frost underline">
+                Volledige prijslijst bekijken →
+              </Link>
+            </p>
+          </FadeIn>
         </div>
       </section>
 
-      <FooterCta locale="nl" />
-    </>
+      <TrustSection />
+      <SplitPhoneSection />
+    </main>
   );
 }
