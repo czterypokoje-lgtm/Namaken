@@ -50,7 +50,7 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
     "@context": "https://schema.org",
     "@type": "Service",
     serviceType: `${brand} sleutel bijmaken`,
-    offers: { "@type": "Offer", priceCurrency: "EUR", price },
+    offers: { "@type": "Offer", priceCurrency: business.currencyCode, price },
   };
 
   const base = `https://${business.domain}`;

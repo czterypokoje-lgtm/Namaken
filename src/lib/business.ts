@@ -24,6 +24,13 @@ export const business = {
     postalCode: "1404HT",
     city: "Bussum",
   },
+  // Template variables: the two market-specific values every schema.org
+  // Offer/PostalAddress on the site reads from — change these two lines
+  // (plus the currency symbol "€" used in on-page price display text,
+  // grep for it) when forking this site for a different country.
+  countryCode: "NL",
+  currencyCode: "EUR",
+  currencySymbol: "€",
   foundedYear: 2018, // PENDING: confirm real founding year
   jobsSince: "18.400", // PENDING: confirm real completed-jobs count
   rating: "4.9",

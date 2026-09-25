@@ -61,7 +61,7 @@ export default async function CityServicePage({
     },
     offers: {
       "@type": "Offer",
-      priceCurrency: "EUR",
+      priceCurrency: business.currencyCode,
       price: service.priceFrom,
     },
   };

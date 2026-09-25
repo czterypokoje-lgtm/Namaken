@@ -44,10 +44,10 @@ export default async function ServicePage({ params }: { params: Promise<{ dienst
       telephone: business.phoneHref.replace("tel:", ""),
       email: business.email,
     },
-    areaServed: "NL",
+    areaServed: business.countryCode,
     offers: {
       "@type": "Offer",
-      priceCurrency: "EUR",
+      priceCurrency: business.currencyCode,
       price: service.priceFrom,
     },
   };

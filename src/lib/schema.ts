@@ -28,7 +28,7 @@ export function localBusinessSchema() {
       streetAddress: business.address.street,
       postalCode: business.address.postalCode,
       addressLocality: business.address.city,
-      addressCountry: "NL",
+      addressCountry: business.countryCode,
     },
     identifier: {
       "@type": "PropertyValue",
@@ -38,7 +38,7 @@ export function localBusinessSchema() {
     // Mobile, nationwide technician network — areaServed is the correct
     // schema.org signal for where the service is actually delivered.
     areaServed: regions.map((r) => r.name),
-    priceRange: `€${services[0].priceFrom}-€${Math.max(...services.map((s) => s.priceFrom))}`,
+    priceRange: `${business.currencySymbol}${services[0].priceFrom}-${business.currencySymbol}${Math.max(...services.map((s) => s.priceFrom))}`,
     openingHours: "Mo-Su 00:00-23:59",
   };
 }
