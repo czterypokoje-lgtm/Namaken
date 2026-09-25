@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { services, getService } from "@/data/services";
-import { Hero } from "@/components/Hero";
-import { ServiceBadgeRow } from "@/components/ServiceBadgeRow";
+import { ServiceHero } from "@/components/ag/ServiceHero";
 import { StickyCtaSidebar } from "@/components/StickyCtaSidebar";
 import { TransponderSmartKeySection } from "@/components/TransponderSmartKeySection";
 import KeyTypesSection from "@/components/ag/KeyTypesSection";
@@ -32,18 +31,14 @@ export default async function EnglishServicePage({ params }: { params: Promise<{
 
   return (
     <>
-      <Hero
-        locale="en"
+      <ServiceHero
+        isEn={true}
         headline={service.en.heroHeadline}
         sub={service.en.heroSub}
-        image={service.heroImage}
-        compact
-      />
-      <ServiceBadgeRow
+        image={service.heroImage || ''}
         priceFrom={service.priceFrom}
         timeOnSite={service.en.timeOnSite}
         averageArrival={service.en.averageArrival}
-        locale="en"
       />
 
       <section className="px-4 py-12 sm:px-6">

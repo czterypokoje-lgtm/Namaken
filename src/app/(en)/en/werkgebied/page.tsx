@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrivalsBoard } from "@/components/ArrivalsBoard";
 import { regions } from "@/data/regions";
+import { CityHubHero } from "@/components/ag/CityHubHero";
 
 export const metadata: Metadata = {
   title: "Areas covered",
@@ -9,16 +10,22 @@ export const metadata: Metadata = {
 };
 
 export default function EnglishAreasIndexPage() {
+  const sorted = [...regions].sort((a, b) => a.avgArrivalMin - b.avgArrivalMin);
+  const fastest = sorted[0];
+  const slowest = sorted[sorted.length - 1];
+  const avg = Math.round(regions.reduce((sum, r) => sum + r.avgArrivalMin, 0) / regions.length);
+
   return (
     <>
-      <section className="border-b border-line bg-night-navy px-4 py-16 sm:px-6">
-        <div className="mx-auto max-w-4xl">
-          <h1 className="text-display-page text-frost">{regions.length} areas.</h1>
-          <p className="text-lead text-mist mt-4 max-w-2xl">
-            Technicians spread across the country, so the closest one always takes your call.
-          </p>
-        </div>
-      </section>
+      <CityHubHero 
+        fastestName={fastest.name}
+        fastestMin={fastest.avgArrivalMin}
+        slowestName={slowest.name}
+        slowestMin={slowest.avgArrivalMin}
+        avgMin={avg}
+        regionCount={regions.length}
+        isEn={true}
+      />
       <ArrivalsBoard locale="en" />
     </>
   );

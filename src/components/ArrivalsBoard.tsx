@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { regions } from "@/data/regions";
+import styles from "./ArrivalsBoard.module.css";
 
 const THRESHOLD_MIN = 45;
 
@@ -13,72 +14,74 @@ export function ArrivalsBoard({ locale = "nl" }: { locale?: "nl" | "en" }) {
   const sorted = [...regions].sort((a, b) => a.avgArrivalMin - b.avgArrivalMin);
 
   return (
-    <section className="px-4 py-12 sm:px-6">
-      <div className="mx-auto max-w-5xl">
-        <h2 className="text-heading-3 text-frost mb-2">
-          {isEn ? "Arrivals." : "Aankomsten."} <span className="text-body-small text-mist">({regions.length})</span>
-        </h2>
-        <p className="text-body-small text-mist mb-8 max-w-2xl">
+    <section className={styles.board}>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <h2 className={styles.headerTitle}>
+            {isEn ? "Arrivals." : "Aankomsten."}
+          </h2>
+          <span className={styles.headerSub}>({regions.length})</span>
+        </div>
+        <p className={styles.intro}>
           {isEn
             ? `Sorted by average arrival time. Each bar runs against our ${THRESHOLD_MIN}-minute limit; orange means under the ${avg}-minute nationwide average.`
             : `Gesorteerd op gemiddelde aankomsttijd. Elke balk loopt tegen onze limiet van ${THRESHOLD_MIN} minuten; oranje betekent sneller dan het landelijk gemiddelde van ${avg} minuten.`}
         </p>
 
-        <div className="hidden border-b border-line pb-2 text-eyebrow text-mist sm:grid sm:grid-cols-[60px_1fr_240px_120px] sm:gap-4">
+        <div className={styles.tableHeader}>
           <span>{isEn ? "MIN" : "MIN"}</span>
-          <span>{isEn ? "AREA & SUB-LOCATIONS" : "REGIO EN GEBIEDEN"}</span>
+          <span>{isEn ? "AREA AND ZIP CODES" : "REGIO EN POSTCODES"}</span>
           <span>{isEn ? `AGAINST ${THRESHOLD_MIN} MIN` : `TEGEN ${THRESHOLD_MIN} MIN`}</span>
-          <span className="text-right">{isEn ? "STATUS" : "STATUS"}</span>
+          <span className={styles.tableHeaderRight}>{isEn ? "STATUS" : "STATUS"}</span>
         </div>
 
-        <ul className="divide-y divide-line">
+        <ul className={styles.list}>
           {sorted.map((r, i) => {
             const faster = r.avgArrivalMin < avg;
             const width = Math.min(100, (r.avgArrivalMin / THRESHOLD_MIN) * 100);
             return (
               <motion.li
                 key={r.slug}
-                initial={{ opacity: 0, x: -8 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: i * 0.02 }}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className={styles.listItem}
               >
-                <Link
-                  href={`${base}/${r.slug}`}
-                  className="grid grid-cols-[50px_1fr] items-center gap-4 py-4 hover:bg-navy-surface transition-colors sm:grid-cols-[60px_1fr_240px_120px]"
-                >
-                  <span className="text-heading-3 text-signal-orange">{r.avgArrivalMin}</span>
-                  <div>
-                    <p className="text-heading-4 text-frost">{isEn && r.enName ? r.enName : r.name}</p>
-                    <p className="text-body-small text-mist">{r.areas.slice(0, 2).join(", ")}</p>
+                <Link href={`${base}/${r.slug}`} className={styles.row}>
+                  <div className={styles.minCell}>
+                    <span className={styles.minNumber}>{r.avgArrivalMin}</span>
+                    <span className={styles.minLabel}>MIN</span>
                   </div>
-                  <span className="relative hidden h-2 overflow-hidden rounded-full bg-line sm:block">
-                    <span
-                      className={`absolute inset-y-0 left-0 rounded-full ${faster ? "bg-signal-orange" : "bg-line-strong"}`}
+                  <div className={styles.areaCell}>
+                    <h3 className={styles.areaName}>{isEn && r.enName ? r.enName : r.name}</h3>
+                    <p className={styles.areaSub}>{r.areas.slice(0, 3).join(", ")}</p>
+                  </div>
+                  <div className={styles.barCell}>
+                    <div
+                      className={faster ? styles.barFill : styles.barFillGray}
                       style={{ width: `${width}%` }}
                     />
-                  </span>
-                  <span
-                    className={`hidden text-right text-mono sm:block ${faster ? "text-signal-orange" : "text-mist"}`}
-                  >
+                  </div>
+                  <div className={`${styles.statusCell} ${faster ? styles.statusFast : styles.statusSlow}`}>
                     {faster
                       ? isEn
-                        ? `Under ${avg} min`
-                        : `Onder ${avg} min`
+                        ? `UNDER ${avg} MIN`
+                        : `ONDER ${avg} MIN`
                       : isEn
-                        ? `${avg}–${THRESHOLD_MIN} min`
-                        : `${avg}–${THRESHOLD_MIN} min`}
-                  </span>
+                        ? `${avg} TO ${THRESHOLD_MIN} MIN`
+                        : `${avg} TOT ${THRESHOLD_MIN} MIN`}
+                  </div>
                 </Link>
               </motion.li>
             );
           })}
         </ul>
 
-        <p className="text-body-small text-mist mt-8">
+        <p className={styles.footerText}>
           {isEn
-            ? "Outside this list? Call and ask — we handle scheduled work and business accounts beyond these areas too."
-            : "Niet in dit lijstje? Bel en vraag — voor afspraken en zakelijke accounts rijden we ook buiten deze regio's."}
+            ? "Outside this list? Call and ask \u2014 we handle scheduled work and business accounts beyond these areas too."
+            : "Niet in dit lijstje? Bel en vraag \u2014 voor afspraken en zakelijke accounts rijden we ook buiten deze regio's."}
         </p>
       </div>
     </section>

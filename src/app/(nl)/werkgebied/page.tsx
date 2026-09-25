@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { ArrivalsBoard } from "@/components/ArrivalsBoard";
 import { CtaBand } from "@/components/CtaBand";
 import { regions } from "@/data/regions";
-import { images } from "@/lib/images";
 import { business } from "@/lib/business";
+import { CityHubHero } from "@/components/ag/CityHubHero";
 
 export const metadata: Metadata = {
   title: "Werkgebied",
@@ -20,44 +19,15 @@ export default function WerkgebiedIndexPage() {
 
   return (
     <>
-      <section className="relative min-h-[85vh] overflow-hidden border-b border-line flex flex-col justify-end">
-        <Image src={images.nightCityStreet} alt="" fill priority sizes="100vw" className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-night-navy via-night-navy/70 to-night-navy/30" />
-
-        <div className="relative flex items-start justify-between px-4 pt-10 sm:px-6">
-          <p className="text-mono text-frost">Werkgebied door heel Nederland</p>
-          <p className="text-mono text-mist text-right hidden sm:block">
-            Technici gestationeerd in {fastest.name}, {sorted[1]?.name} en {sorted[2]?.name}
-          </p>
-        </div>
-
-        <div className="relative grid gap-6 px-4 pb-8 pt-16 sm:px-6 lg:grid-cols-[1fr_320px] lg:items-end lg:gap-12">
-          <h1 className="text-hero-line text-frost">
-            {regions.length} regio&apos;s.
-            <br />
-            {fastest.avgArrivalMin} tot {slowest.avgArrivalMin} minuten.
-          </h1>
-          <p className="text-body text-mist">
-            Technici zitten verspreid door het hele land, zodat de dichtstbijzijnde altijd uw oproep aanneemt. De
-            tijden hieronder zijn het gemiddelde over de afgelopen 30 dagen.
-            <br />
-            <a href="/contact" className="text-frost underline">
-              Bel en vraag naar uw straat
-            </a>
-          </p>
-        </div>
-
-        <div className="relative grid grid-cols-2 gap-4 border-t border-line/50 bg-night-navy/80 px-4 py-6 text-mono text-mist sm:grid-cols-4 sm:px-6">
-          <p>
-            SNELSTE: {fastest.name.toUpperCase()}, {fastest.avgArrivalMin} MIN
-          </p>
-          <p>ALLE OPROEPEN: GEM. {avg} MIN</p>
-          <p>
-            VERST: {slowest.name.toUpperCase()}, {slowest.avgArrivalMin} MIN
-          </p>
-          <p>GEPLAND WERK: OOK VERDER WEG</p>
-        </div>
-      </section>
+      <CityHubHero 
+        fastestName={fastest.name}
+        fastestMin={fastest.avgArrivalMin}
+        slowestName={slowest.name}
+        slowestMin={slowest.avgArrivalMin}
+        avgMin={avg}
+        regionCount={regions.length}
+        isEn={false}
+      />
 
       <ArrivalsBoard locale="nl" />
 

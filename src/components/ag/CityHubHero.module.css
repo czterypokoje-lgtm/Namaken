@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 85svh;
   background-color: var(--color-night-navy);
   display: flex;
   flex-direction: column;
@@ -8,20 +8,10 @@
   border-bottom: 1px solid var(--color-line);
 }
 
-/* ---- Background ---- */
-.bg {
-  position: absolute;
-  inset: 0;
-  background-color: var(--color-night-navy);
-}
-
 .bgImage {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: brightness(0.4);
+  filter: brightness(0.6);
 }
 
 .bgOverlay {
@@ -30,38 +20,31 @@
   background: linear-gradient(
     to bottom,
     rgba(12, 20, 34, 0.4) 0%,
-    rgba(12, 20, 34, 0.8) 70%,
+    rgba(12, 20, 34, 0.7) 60%,
     rgba(12, 20, 34, 1) 100%
   );
 }
 
-/* ---- Live badge row ---- */
-.badge {
+.topBar {
   position: absolute;
   top: 2.5rem;
   left: 5%;
+  right: 5%;
   z-index: 10;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-big-shoulders), sans-serif;
-  font-weight: 900;
-  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.topMono {
+  font-family: var(--font-chivo), sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--color-frost);
 }
 
-.liveDot {
-  width: 8px;
-  height: 8px;
-  background: var(--color-signal-orange);
-  border-radius: 50%;
-  flex-shrink: 0;
-  box-shadow: 0 0 10px rgba(255, 106, 43, 0.5);
-}
-
-/* ---- Content ---- */
 .content {
   position: relative;
   z-index: 2;
@@ -70,11 +53,10 @@
   flex-direction: column;
   width: 100%;
   padding: 0 5%;
-  padding-top: 6rem;
+  padding-top: 8rem;
   justify-content: flex-end;
 }
 
-/* ---- Bottom grid ---- */
 .bottomGrid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -83,17 +65,16 @@
 }
 @media (min-width: 992px) {
   .bottomGrid {
-    grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     align-items: end;
     margin-bottom: 3rem;
   }
 }
 
-/* ---- H1 ---- */
 .heading {
   font-family: var(--font-big-shoulders), sans-serif;
   font-weight: 900;
-  font-size: clamp(3rem, 12vw, 9rem);
+  font-size: clamp(4rem, 15vw, 12rem);
   text-transform: uppercase;
   line-height: 0.85;
   color: var(--color-frost);
@@ -102,7 +83,6 @@
   letter-spacing: -0.01em;
 }
 
-/* ---- Right desc ---- */
 .descWrapper {
   display: flex;
   flex-direction: column;
@@ -110,13 +90,13 @@
 
 @media (min-width: 992px) {
   .descWrapper {
-    align-items: flex-end; /* Places the block on the right side of the grid column */
+    align-items: flex-end;
   }
 }
 
 .descInner {
   max-width: 380px;
-  text-align: left; /* Keep text left-aligned inside the block */
+  text-align: left;
 }
 
 .desc {
@@ -138,47 +118,30 @@
   padding-bottom: 4px;
   transition: all 0.2s;
 }
-
 .ctaLink:hover {
   color: var(--color-signal-orange);
   border-bottom-color: var(--color-signal-orange);
 }
 
-/* ---- Phone number stripe ---- */
-.phoneContainer {
+.statsRow {
   position: relative;
   z-index: 3;
-  width: 100%;
-  overflow: hidden;
-  background: transparent;
-  line-height: 0.85;
-  display: flex;
-  justify-content: flex-start;
-  padding: 0 5%;
-  margin-bottom: -1rem; /* Let it sit right on the bottom edge */
-}
-
-@media (min-width: 992px) {
-  .phoneContainer {
-    justify-content: center;
-  }
-}
-
-.phoneNumber {
-  font-family: var(--font-big-shoulders), sans-serif;
-  font-weight: 900;
-  font-size: clamp(6.5rem, 24vw, 24rem);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1.5rem 5%;
+  background-color: rgba(12, 20, 34, 0.8);
+  border-top: 1px solid var(--color-line);
+  font-family: var(--font-chivo), sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
-  color: var(--color-signal-orange);
-  text-decoration: none;
-  display: block;
-  white-space: nowrap;
-  text-align: left;
-  transition: transform 0.3s ease;
-  line-height: 0.85;
+  color: var(--color-mist);
 }
-
-.phoneNumber:hover {
-  transform: scale(1.01);
+@media (min-width: 992px) {
+  .statsRow {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 2rem 5%;
+  }
 }
