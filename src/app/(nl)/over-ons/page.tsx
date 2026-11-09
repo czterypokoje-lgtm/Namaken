@@ -37,7 +37,7 @@ export default function OverOnsPage() {
             </blockquote>
             <div className="text-body text-mist space-y-4">
               <p>
-                De markt voor slotenmakers en pechhulp heeft te vaak te maken met ondoorzichtige tussenpersonen en
+                De markt voor autoslotenmakers en pechhulp heeft te vaak te maken met ondoorzichtige tussenpersonen en
                 vage beloftes. Wij geloven in duidelijke taal en directe communicatie.
               </p>
               <p>

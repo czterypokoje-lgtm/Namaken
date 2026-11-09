@@ -5,7 +5,7 @@ import { business } from "@/lib/business";
 
 // Manufacturer logos are trademarks of their respective owners, sourced from
 // public Wikimedia Commons files. Shown here for brand/model identification
-// only (nominative use) — we are an independent locksmith network, not an
+// only (nominative use) — we are an independent auto locksmith network, not an
 // authorized dealer for any of these brands. Alfa Romeo has no freely
 // licensed logo file available, so it falls back to a text wordmark tile.
 const logoExt: Record<string, string> = {
@@ -74,7 +74,7 @@ export function BrandLogoGrid({ locale = "nl" }: { locale?: "nl" | "en" }) {
       </div>
       <p className="text-mono text-faint mt-6">
         {isEn
-          ? `All brand logos are the property of their respective manufacturers. ${business.name} is an independent locksmith network and not an authorized dealer or licensee of these brands.`
+          ? `All brand logos are the property of their respective manufacturers. ${business.name} is an independent auto locksmith network and not an authorized dealer or licensee of these brands.`
           : `Alle merklogo's zijn eigendom van de respectievelijke fabrikanten. ${business.name} is een onafhankelijk technicianetwerk en geen erkende dealer of licentiehouder van deze merken.`}
       </p>
     </div>

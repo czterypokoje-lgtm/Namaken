@@ -19,7 +19,7 @@ const STATS_EN = [
 const BADGES_NL = [
   {
     title: 'GECERTIFICEERD',
-    desc: 'Erkend slotenmaker. KVK- en licentienummer op verzoek, telefonisch of op uw factuur.',
+    desc: 'Erkend autoslotenmaker. KVK- en licentienummer op verzoek, telefonisch of op uw factuur.',
   },
   {
     title: 'VOLLEDIG VERZEKERD',
@@ -46,7 +46,7 @@ const BADGES_NL = [
 const BADGES_EN = [
   {
     title: 'CERTIFIED',
-    desc: 'Licensed locksmith network. KVK and license number available on request, by phone or on your invoice.',
+    desc: 'Licensed auto locksmith network. KVK and license number available on request, by phone or on your invoice.',
   },
   {
     title: 'FULLY INSURED',

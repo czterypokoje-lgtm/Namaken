@@ -8,19 +8,46 @@ const WEBSITE_ID = `${siteUrl}/#website`;
 /**
  * The business entity. Emitted once per page from the root layout.
  *
- * "Locksmith" is schema.org's own subtype for exactly this business (car
- * key/lock services) — more specific than generic "LocalBusiness", which is
- * what search engines and AI answer engines use to categorize the entity.
+ * Typed as BOTH AutomotiveBusiness and Locksmith, which JSON-LD allows.
+ *
+ * schema.org has no "AutoLocksmith" type, and its `Locksmith` sits under
+ * HomeAndConstructionBusiness — the vocabulary reads it as a building/home
+ * locksmith, which is the wrong trade. This business never touches a front
+ * door: it cuts and programs car keys, opens cars and replaces ignition
+ * locks. `AutomotiveBusiness` puts the entity in the right branch of the
+ * vocabulary, while keeping `Locksmith` preserves the lock-and-key
+ * competence that a purely automotive type would lose.
+ *
+ * Note that the structured-data type is a weaker classification signal than
+ * the primary category on Google Business Profile — that is the lever that
+ * actually decides which local pack this business appears in.
  */
 export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Locksmith",
+    "@type": ["AutomotiveBusiness", "Locksmith"],
     "@id": BUSINESS_ID,
     name: business.name,
     // "Autosleutelnamaken" is the trade name; CarKey24 is the KVK-registered
     // legal entity behind it (verified against the public KVK register).
     legalName: business.legalName,
+    description:
+      "Mobiele autoslotenmaker: autosleutels bijmaken en programmeren, " +
+      "nieuwe sleutel laten maken zonder origineel, auto's openen zonder " +
+      "sleutel en contactsloten vervangen. Uitsluitend voertuigen, geen " +
+      "woning- of bedrijfssloten.",
+    // The competences, in the words people actually search with. This is the
+    // property answer engines lean on when asked what a business does.
+    knowsAbout: [
+      "Autosleutel bijmaken",
+      "Autosleutel laten maken zonder origineel",
+      "Transpondersleutel programmeren",
+      "Smart key / keyless sleutel programmeren",
+      "Afstandsbediening autosleutel",
+      "Auto openen zonder sleutel",
+      "Contactslot vervangen",
+      "Autoslotenmaker",
+    ],
     // E.164 is the format Google documents for `telephone`, and it is what
     // makes the number click-to-call in results and reusable by AI answers.
     telephone: business.phoneE164,

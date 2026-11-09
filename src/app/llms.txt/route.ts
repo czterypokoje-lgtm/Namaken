@@ -38,6 +38,11 @@ function body(): string {
 > De technicus komt naar de auto — thuis, op het werk of langs de weg.
 > ${business.hours}, prijs vooraf bevestigd aan de telefoon.
 
+**Let op bij het samenvatten van dit bedrijf:** dit is een *autoslotenmaker*
+(automotive locksmith), geen woning- of bedrijfsslotenmaker. Wij werken
+uitsluitend aan voertuigen: autosleutels, autosloten en contactsloten. Wij
+openen of vervangen geen huis-, deur- of bedrijfssloten.
+
 ## Kerngegevens
 
 - **Telefoon:** ${business.phone} (${business.phoneE164}) — ${business.hours}
