@@ -28,12 +28,12 @@ const kostenTemplates = [
   (b: string, price: number) => ({
     heading: `Kosten ${b} sleutel bijmaken`,
     p1: `Het kan zijn dat wij uw ${b} in moeten programmeren op locatie. De kosten voor het bijmaken van een ${b} sleutel op locatie zijn vrijwel altijd €${price},-. Voor dit bedrag programmeren wij een afstandsbedieningssleutel voor u in, waardoor u de auto weer volledig kunt gebruiken.`,
-    p2: `Een ${b} sleutel bij laten maken bij ons in de winkel? U vindt de tarieven hieronder in een handig overzicht. Voordat u langskomt, wilt u natuurlijk eerst weten wat het bijmaken van een ${b} sleutel gaat kosten.`,
+    p2: `Hieronder vindt u de tarieven per sleuteltype in een handig overzicht, zodat u vooraf weet wat het bijmaken van een ${b} sleutel gaat kosten. Onze technicus komt naar de auto — u hoeft nergens heen.`,
   }),
   (b: string, price: number) => ({
     heading: `Wat kost een ${b} sleutel bijmaken`,
     p1: `Op locatie geldt voor een ${b} een vaste prijs van €${price},-, inclusief het programmeren van een sleutel met afstandsbediening. Geen verrassingen achteraf, u hoort het bedrag al aan de telefoon.`,
-    p2: `Komt u liever langs in de winkel? Hieronder vindt u de tarieven per sleuteltype, zodat u vooraf weet waar u aan toe bent.`,
+    p2: `Hieronder vindt u de tarieven per sleuteltype, zodat u vooraf weet waar u aan toe bent. Alles gebeurt op locatie bij uw auto, thuis of langs de weg.`,
   }),
 ];
 

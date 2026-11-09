@@ -74,7 +74,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...regions.map((r) => entry(`/en/werkgebied/${r.slug}`, 0.5, "monthly", `/werkgebied/${r.slug}`)),
 
     // Brand pages.
-    ...allBrands.map((b) => entry(`/merken/${slugifyBrand(b)}`, 0.7, "monthly")),
+    // Brand pages live under the search phrase people actually type
+    // ("autosleutel bijmaken"), not under a navigation word. /merken stays
+    // as the hub that lists them.
+    ...allBrands.map((b) => entry(`/autosleutel-bijmaken/${slugifyBrand(b)}`, 0.7, "monthly")),
 
     // Region x service long-tail. Deliberately the lowest non-legal priority:
     // these are template-generated and should not out-compete the service and

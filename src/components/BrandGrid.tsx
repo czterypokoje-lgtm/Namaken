@@ -10,7 +10,7 @@ export function BrandGrid() {
           <ul className="space-y-2">
             {group.brands.map((brand) => (
               <li key={brand}>
-                <Link href={`/merken/${slugifyBrand(brand)}`} className="text-body text-frost hover:text-signal-orange">
+                <Link href={`/autosleutel-bijmaken/${slugifyBrand(brand)}`} className="text-body text-frost hover:text-signal-orange">
                   {brand}
                 </Link>
               </li>

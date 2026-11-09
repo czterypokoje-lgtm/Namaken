@@ -49,7 +49,7 @@ export function BrandLogoGrid({ locale = "nl" }: { locale?: "nl" | "en" }) {
           return (
             <Link
               key={brand}
-              href={`/merken/${slug}`}
+              href={`/autosleutel-bijmaken/${slug}`}
               className="group flex aspect-[4/3] items-center justify-center rounded-sm bg-frost p-4 transition-transform hover:-translate-y-1"
               title={isEn ? `${brand} key duplication` : `${brand} sleutel bijmaken`}
             >

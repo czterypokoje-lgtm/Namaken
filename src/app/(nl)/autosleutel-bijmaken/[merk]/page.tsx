@@ -27,9 +27,9 @@ export async function generateMetadata({
   if (!brand) return {};
   const bijmakenPrice = services.find((s) => s.id === "autosleutel-bijmaken")!.priceFrom;
   return seo({
-    path: `/merken/${slugifyBrand(brand)}`,
+    path: `/autosleutel-bijmaken/${slugifyBrand(brand)}`,
     title: `${brand} sleutel bijmaken`,
-    description: `${brand} autosleutel bijmaken, inprogrammeren of alle sleutels kwijt? Vaste prijzen vanaf ${business.currencySymbol}${bijmakenPrice}, op locatie of in de winkel.`,
+    description: `${brand} autosleutel bijmaken, inprogrammeren of alle sleutels kwijt? Vaste prijzen vanaf ${business.currencySymbol}${bijmakenPrice}, technicus komt naar u toe.`,
   });
 }
 
@@ -50,14 +50,14 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
   const base = siteUrl;
   const schema = serviceSchema({
     name: `${brand} sleutel bijmaken`,
-    url: `${base}/merken/${slugifyBrand(brand)}`,
+    url: `${base}/autosleutel-bijmaken/${slugifyBrand(brand)}`,
     priceFrom: price,
   });
 
   const breadcrumbItems = [
     { name: "Home", url: base },
     { name: "Merken", url: `${base}/merken` },
-    { name: brand, url: `${base}/merken/${slugifyBrand(brand)}` },
+    { name: brand, url: `${base}/autosleutel-bijmaken/${slugifyBrand(brand)}` },
   ];
   const breadcrumb = breadcrumbSchema(breadcrumbItems);
 
