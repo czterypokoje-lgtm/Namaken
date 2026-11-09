@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { seo } from "@/lib/seo";
 import { business } from "@/lib/business";
+import { ConsentReopenButton } from "@/components/ConsentBanner";
 
 export const metadata: Metadata = seo({
   path: "/privacybeleid",
@@ -35,10 +36,24 @@ export default function PrivacybeleidPage() {
             <p>Klantgegevens bewaren we tot 3 jaar na de laatste klus, voor garantie- en belastingdoeleinden.</p>
           </div>
           <div>
+            <h2>Cookies en meten</h2>
+            <p>
+              Noodzakelijke cookies houden de site werkend en vragen geen toestemming. Alleen met uw
+              toestemming plaatsen we analytische en marketingcookies: Google Analytics en Google Ads om te
+              meten welke pagina&rsquo;s bezoekers helpen en welke advertenties werken, en Microsoft Clarity om
+              te zien waar bezoekers vastlopen. Zonder uw toestemming worden deze cookies niet geplaatst.
+            </p>
+            <p>
+              U mag uw keuze altijd wijzigen of intrekken:{" "}
+              <ConsentReopenButton label="pas uw cookievoorkeuren aan" />. Het intrekken van toestemming heeft
+              geen gevolgen voor de dienst die wij u leveren.
+            </p>
+          </div>
+          <div>
             <h2>Uw rechten</h2>
             <p>
               U kunt inzage, correctie of verwijdering van uw gegevens aanvragen via {business.email}. We reageren
-              binnen 30 dagen.
+              binnen 30 dagen. U kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens.
             </p>
           </div>
           <div>

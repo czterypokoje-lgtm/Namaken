@@ -5,6 +5,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileStickyBar } from "@/components/MobileStickyBar";
 import { SiteAnalytics } from "@/components/SiteAnalytics";
+import { ConsentDefaults } from "@/components/ConsentDefaults";
+import { ConsentBanner } from "@/components/ConsentBanner";
 import { AttributionCapture } from "@/components/AttributionCapture";
 import { localBusinessSchema, webSiteSchema } from "@/lib/schema";
 import "../../globals.css";
@@ -33,6 +35,7 @@ export default function EnglishRootLayout({ children }: { children: React.ReactN
   return (
     <html lang="en" className={`${fontVariables} h-full`}>
       <body className="min-h-full flex flex-col pb-16 sm:pb-0">
+        <ConsentDefaults />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }}
@@ -47,6 +50,7 @@ export default function EnglishRootLayout({ children }: { children: React.ReactN
         <MobileStickyBar locale="en" />
         <SiteAnalytics />
         <AttributionCapture />
+        <ConsentBanner locale="en" />
       </body>
     </html>
   );

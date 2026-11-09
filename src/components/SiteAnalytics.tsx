@@ -1,5 +1,6 @@
 import Script from "next/script";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { ClarityScript } from "@/components/ClarityScript";
 
 /**
  * Every measurement tag the site uses, in one place, each one switched on by
@@ -15,12 +16,13 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
  * loads it, so when an Ads ID is also present we only need to add a second
  * `config` call rather than load the library twice.
  *
- * NOTE ON CONSENT: these tags set cookies and start collecting as soon as a
- * page loads. Under the Dutch Telecommunicatiewet / GDPR an analytics and
- * advertising setup like this needs prior consent from the visitor, which
- * means a consent banner plus Google Consent Mode v2. That banner does not
- * exist on this site yet — see the audit notes. Nothing here depends on the
- * banner, so it can be added in front of these tags without rework.
+ * CONSENT: <ConsentDefaults /> denies every consent signal before these tags
+ * load, and <ConsentBanner /> replays the visitor's decision. So the Google
+ * tags here load in a restricted state and send only cookieless pings until
+ * consent is granted — Google's "advanced" Consent Mode v2 model, which keeps
+ * modelled data flowing without setting cookies first. Clarity is handled
+ * differently: it is not a Google tag, Consent Mode cannot restrain it, and it
+ * records sessions, so it is not loaded at all until consent exists.
  */
 export function SiteAnalytics() {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
@@ -53,17 +55,8 @@ gtag('config', '${adsId}');`}
         </Script>
       )}
 
-      {/* Microsoft Clarity: session recordings and heatmaps. Shows where
-          visitors hesitate or drop off on the way to calling. */}
-      {clarityId && (
-        <Script id="microsoft-clarity" strategy="afterInteractive">
-          {`(function(c,l,a,r,i,t,y){
-c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window,document,"clarity","script","${clarityId}");`}
-        </Script>
-      )}
+      {/* Session recordings and heatmaps, gated on consent. */}
+      {clarityId && <ClarityScript projectId={clarityId} />}
     </>
   );
 }

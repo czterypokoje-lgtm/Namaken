@@ -33,31 +33,7 @@ export const regions: Region[] = [
 
 export const getRegion = (slug: string) => regions.find((r) => r.slug === slug);
 
-const introTemplates = [
-  (city: string, area: string, svc: string) =>
-    `In ${city} rukken we het vaakst uit richting ${area} en omstreken voor ${svc}. Onze technicus kent de wijk, weet waar u kunt parkeren en is binnen het gemiddelde aankomsttijd bij u.`,
-  (city: string, area: string, svc: string) =>
-    `${svc} in ${city}? Van ${area} tot het centrum, onze technicus is al vaker in de regio geweest en werkt ter plekke — geen sleepwagen, geen wachten bij de garage.`,
-  (city: string, area: string, svc: string) =>
-    `Klanten in ${city}, vooral rond ${area}, bellen ons meestal met dezelfde vraag: hoe snel kan iemand komen. Voor ${svc.toLowerCase()} is het antwoord: vaak dezelfde dag nog.`,
-  (city: string, area: string, svc: string) =>
-    `Onze technici rijden regelmatig door ${city}, van ${area} tot de buitenwijken. ${svc} doen we op locatie, met de prijs vooraf duidelijk aan de telefoon.`,
-];
-
-export function cityServiceIntro(region: Region, serviceName: string) {
-  const idx = (region.slug.length + serviceName.length) % introTemplates.length;
-  const area = region.areas[region.slug.length % region.areas.length];
-  return introTemplates[idx](region.name, area, serviceName);
-}
-
-const whyTemplates = [
-  (city: string, min: number, svc: string) =>
-    `Waarom klanten in ${city} voor ons kiezen voor ${svc.toLowerCase()}: gemiddeld ${min} minuten aankomsttijd, een vaste prijs vooraf, en een technicus die ter plekke direct aan de slag kan.`,
-  (city: string, min: number, svc: string) =>
-    `${svc} in ${city} hoeft niet lang te duren. Gemiddeld staat onze technicus binnen ${min} minuten voor de deur, met alle gereedschap om het meteen af te ronden.`,
-];
-
-export function cityServiceWhy(region: Region, serviceName: string) {
-  const idx = region.avgArrivalMin % whyTemplates.length;
-  return whyTemplates[idx](region.name, region.avgArrivalMin, serviceName);
-}
+// The region x service copy that used to live here (four interchangeable intro
+// sentences and two "why us" sentences) has moved to src/data/cityContent.ts,
+// where each page is built from the region's real data — districts, arrival
+// time, neighbouring regions — instead of a name swapped into one sentence.

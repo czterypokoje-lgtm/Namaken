@@ -3,9 +3,9 @@ import { seo } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { regions, getRegion } from "@/data/regions";
+import { nearbyRegions } from "@/data/cityContent";
 import { services } from "@/data/services";
 import { Hero } from "@/components/Hero";
-import { Testimonial } from "@/components/Testimonial";
 import { pickCityImage } from "@/lib/images";
 import { siteUrl } from "@/lib/business";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -33,6 +33,8 @@ export async function generateMetadata({
 export default async function RegionPage({ params }: { params: Promise<{ stad: string }> }) {
   const region = getRegion((await params).stad);
   if (!region) notFound();
+
+  const nearby = nearbyRegions(region);
 
   const base = siteUrl;
   const breadcrumbItems = [
@@ -86,14 +88,30 @@ export default async function RegionPage({ params }: { params: Promise<{ stad: s
         </div>
       </section>
 
-      <section className="border-t border-line px-4 py-12 sm:px-6">
-        <div className="mx-auto max-w-4xl">
-          <Testimonial
-            quote={`Snel geholpen in ${region.areas[0]}, precies zoals aan de telefoon beloofd.`}
-            author={`Klant uit ${region.name}`}
-          />
-        </div>
-      </section>
+      {nearby.length > 0 && (
+        <section className="border-t border-line px-4 py-12 sm:px-6">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="text-heading-3 text-frost mb-4">Regio&rsquo;s naast {region.name}</h2>
+            <p className="text-body text-mist mb-6">
+              Staat u op de grens van het werkgebied? Dit zijn de aangrenzende regio&rsquo;s met hun
+              gemiddelde aanrijtijd. Bel ons en we zeggen welke technicus het snelst bij u is.
+            </p>
+            <ul className="divide-y divide-line">
+              {nearby.map((r) => (
+                <li key={r.slug}>
+                  <Link
+                    href={`/werkgebied/${r.slug}`}
+                    className="flex items-center justify-between py-3 transition-colors hover:bg-navy-surface"
+                  >
+                    <span className="text-body text-frost">Autosleutelservice {r.name}</span>
+                    <span className="text-body-small text-mist">gem. {r.avgArrivalMin} min</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
     </>
   );
 }
