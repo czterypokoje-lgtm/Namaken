@@ -51,6 +51,17 @@ export const brandModels: Record<string, string[]> = {
   Toyota: ["Auris", "Avensis", "Aygo", "C-HR", "Camry", "Celica", "Corolla", "GT86", "Hilux", "Land Cruiser", "Prius", "Proace", "RAV4", "Urban Cruiser", "Verso", "Yaris", "Yaris Cross", "bZ4X", "iQ"],
   Volkswagen: ["Amarok", "Arteon", "Beetle", "Caddy", "Crafter", "Eos", "Fox", "Golf", "ID.3", "ID.4", "Jetta", "Lupo", "Multivan", "Passat", "Polo", "Scirocco", "Sharan", "T-Cross", "T-Roc", "Tiguan", "Touareg", "Touran", "Transporter", "Up!"],
   Volvo: ["C30", "C70", "EX30", "S40", "S60", "S80", "S90", "V40", "V50", "V60", "V70", "V90", "XC40", "XC60", "XC70", "XC90"],
+  Bentley: ["Bentayga", "Continental GT", "Flying Spur", "Mulsanne"],
+  Chery: ["Omoda 5", "Tiggo 7", "Tiggo 8"],
+  DAF: ["CF", "LF", "XF"],
+  Dodge: ["Caliber", "Challenger", "Charger", "Journey", "Nitro", "RAM"],
+  Infiniti: ["Q30", "Q50", "Q60", "QX30", "QX70"],
+  Isuzu: ["D-Max", "N-Series", "Trooper"],
+  Iveco: ["Daily", "Eurocargo"],
+  Maserati: ["Ghibli", "GranTurismo", "Levante", "Quattroporte"],
+  "Rolls-Royce": ["Cullinan", "Ghost", "Phantom", "Wraith"],
+  Rover: ["25", "45", "75", "Streetwise"],
+  SsangYong: ["Korando", "Kyron", "Rexton", "Tivoli", "XLV"],
 };
 
 export const getBrandModels = (brand: string): string[] => brandModels[brand] ?? [];
