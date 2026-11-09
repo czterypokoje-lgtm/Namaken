@@ -1,206 +1,56 @@
-export type BrandModel = { name: string; years: string };
-
-// Real model names per brand with plausible production-span years, matching
-// the "model — year(s)" pattern used by competitor brand pages.
-export const brandModels: Record<string, BrandModel[]> = {
-  "Alfa Romeo": [
-    { name: "147", years: "2000 / 2010" },
-    { name: "156", years: "1997 / 2005" },
-    { name: "159", years: "2005 / 2011" },
-    { name: "Giulietta", years: "2010 / 2020" },
-    { name: "MiTo", years: "2008 / 2018" },
-    { name: "Giulia", years: "2016" },
-    { name: "Stelvio", years: "2017" },
-  ],
-  Audi: [
-    { name: "A1", years: "2010 / 2018" },
-    { name: "A3", years: "2003 / 2012" },
-    { name: "A4", years: "2001 / 2008" },
-    { name: "A6", years: "2004 / 2011" },
-    { name: "Q3", years: "2011 / 2018" },
-    { name: "Q5", years: "2008 / 2017" },
-    { name: "TT", years: "2006 / 2014" },
-  ],
-  Chevrolet: [
-    { name: "Aveo", years: "2008 / 2015" },
-    { name: "Cruze", years: "2009 / 2015" },
-    { name: "Matiz", years: "2005 / 2010" },
-    { name: "Spark", years: "2010 / 2015" },
-    { name: "Captiva", years: "2006 / 2016" },
-  ],
-  Chrysler: [
-    { name: "300C", years: "2005 / 2010" },
-    { name: "Voyager", years: "2001 / 2008" },
-    { name: "PT Cruiser", years: "2000 / 2010" },
-    { name: "Grand Voyager", years: "2001 / 2016" },
-  ],
-  Citroën: [
-    { name: "C1", years: "2005 / 2014" },
-    { name: "C2", years: "2003 / 2009" },
-    { name: "C3", years: "2002 / 2010" },
-    { name: "C4", years: "2004 / 2010" },
-    { name: "C5", years: "2001 / 2008" },
-    { name: "Berlingo", years: "2002 / 2018" },
-  ],
-  Dacia: [
-    { name: "Logan", years: "2005 / 2012" },
-    { name: "Sandero", years: "2008 / 2012" },
-    { name: "Duster", years: "2010 / 2017" },
-    { name: "Lodgy", years: "2012 / 2018" },
-  ],
-  Daewoo: [
-    { name: "Matiz", years: "1998 / 2005" },
-    { name: "Lanos", years: "1997 / 2002" },
-    { name: "Nubira", years: "1997 / 2003" },
-    { name: "Kalos", years: "2002 / 2008" },
-  ],
-  Daihatsu: [
-    { name: "Cuore", years: "1998 / 2007" },
-    { name: "Sirion", years: "1998 / 2005" },
-    { name: "Terios", years: "1997 / 2006" },
-  ],
-  Fiat: [
-    { name: "500", years: "2007" },
-    { name: "Albea", years: "2002" },
-    { name: "Bravo", years: "2007 / 2010" },
-    { name: "Cinquecento", years: "1995 / 1996" },
-    { name: "Croma", years: "1995 / 1997" },
-    { name: "Doblo", years: "2000 / 2006 / 2010" },
-    { name: "Ducato", years: "1996 / 2002 / 2006 / 2010" },
-    { name: "Fiorino", years: "1995 / 2002 / 2007 / 2010" },
-    { name: "Grande Punto", years: "2005 / 2009" },
-    { name: "Idea", years: "2003 / 2009" },
-    { name: "Linea", years: "2007" },
-    { name: "Multipla", years: "1998" },
-    { name: "Panda", years: "1995 / 2002 / 2003" },
-    { name: "Punto", years: "2000 / 2005 / 2008" },
-    { name: "Punto EVO", years: "2009" },
-    { name: "Qubo", years: "2008" },
-    { name: "Scudo", years: "2007" },
-    { name: "Sedici", years: "2006" },
-    { name: "Seicento", years: "1995 / 1996 / 2000" },
-    { name: "Stilo", years: "2001 / 2007" },
-    { name: "Ulysse", years: "1996 / 2001 / 2003" },
-  ],
-  Ford: [
-    { name: "Fiesta", years: "2002 / 2008" },
-    { name: "Focus", years: "1998 / 2011" },
-    { name: "Ka", years: "1996 / 2008" },
-    { name: "Mondeo", years: "2000 / 2007" },
-    { name: "Transit", years: "2006 / 2014" },
-    { name: "C-Max", years: "2003 / 2010" },
-  ],
-  Honda: [
-    { name: "Civic", years: "2001 / 2011" },
-    { name: "Jazz", years: "2002 / 2015" },
-    { name: "CR-V", years: "2002 / 2012" },
-    { name: "Accord", years: "2003 / 2008" },
-  ],
-  Hyundai: [
-    { name: "i10", years: "2008 / 2013" },
-    { name: "i20", years: "2008 / 2014" },
-    { name: "i30", years: "2007 / 2012" },
-    { name: "Tucson", years: "2004 / 2015" },
-    { name: "Santa Fe", years: "2000 / 2012" },
-  ],
-  Jeep: [
-    { name: "Cherokee", years: "2001 / 2007" },
-    { name: "Grand Cherokee", years: "1999 / 2010" },
-    { name: "Compass", years: "2007 / 2016" },
-    { name: "Renegade", years: "2014" },
-  ],
-  Kia: [
-    { name: "Picanto", years: "2004 / 2011" },
-    { name: "Rio", years: "2005 / 2011" },
-    { name: "Sportage", years: "2004 / 2010" },
-    { name: "Ceed", years: "2006 / 2012" },
-  ],
-  Lancia: [
-    { name: "Ypsilon", years: "2003 / 2011" },
-    { name: "Delta", years: "2008 / 2014" },
-    { name: "Musa", years: "2004 / 2012" },
-  ],
-  Landrover: [
-    { name: "Freelander", years: "1998 / 2014" },
-    { name: "Discovery", years: "1998 / 2016" },
-    { name: "Range Rover", years: "2002 / 2012" },
-    { name: "Defender", years: "1990 / 2016" },
-  ],
-  Mazda: [
-    { name: "2", years: "2003 / 2014" },
-    { name: "3", years: "2003 / 2013" },
-    { name: "6", years: "2002 / 2012" },
-    { name: "CX-5", years: "2012" },
-  ],
-  Mercedes: [
-    { name: "A-klasse", years: "1997 / 2012" },
-    { name: "C-klasse", years: "2000 / 2014" },
-    { name: "E-klasse", years: "2002 / 2016" },
-    { name: "Vito", years: "2003 / 2014" },
-  ],
-  Mitsubishi: [
-    { name: "Colt", years: "2004 / 2012" },
-    { name: "Lancer", years: "2000 / 2016" },
-    { name: "Outlander", years: "2003 / 2012" },
-    { name: "ASX", years: "2010" },
-  ],
-  Nissan: [
-    { name: "Micra", years: "2002 / 2016" },
-    { name: "Qashqai", years: "2006 / 2013" },
-    { name: "Note", years: "2006 / 2012" },
-    { name: "Juke", years: "2010" },
-  ],
-  Opel: [
-    { name: "Corsa", years: "2000 / 2014" },
-    { name: "Astra", years: "1998 / 2015" },
-    { name: "Insignia", years: "2008 / 2017" },
-    { name: "Zafira", years: "1999 / 2014" },
-  ],
-  Peugeot: [
-    { name: "107", years: "2005 / 2014" },
-    { name: "206", years: "1998 / 2010" },
-    { name: "207", years: "2006 / 2012" },
-    { name: "307", years: "2001 / 2008" },
-    { name: "308", years: "2007 / 2013" },
-    { name: "3008", years: "2009" },
-  ],
-  Renault: [
-    { name: "Clio", years: "1998 / 2012" },
-    { name: "Mégane", years: "1996 / 2016" },
-    { name: "Twingo", years: "1993 / 2014" },
-    { name: "Scénic", years: "1996 / 2016" },
-  ],
-  Seat: [
-    { name: "Ibiza", years: "2002 / 2017" },
-    { name: "Leon", years: "1999 / 2012" },
-    { name: "Altea", years: "2004 / 2015" },
-    { name: "Toledo", years: "1999 / 2009" },
-  ],
-  Skoda: [
-    { name: "Fabia", years: "1999 / 2014" },
-    { name: "Octavia", years: "1996 / 2013" },
-    { name: "Superb", years: "2001 / 2015" },
-    { name: "Yeti", years: "2009" },
-  ],
-  Suzuki: [
-    { name: "Swift", years: "2005 / 2017" },
-    { name: "SX4", years: "2006 / 2014" },
-    { name: "Vitara", years: "1988 / 2015" },
-    { name: "Ignis", years: "2000 / 2016" },
-  ],
-  Toyota: [
-    { name: "Yaris", years: "1999 / 2011" },
-    { name: "Corolla", years: "1997 / 2013" },
-    { name: "Aygo", years: "2005 / 2014" },
-    { name: "RAV4", years: "2000 / 2018" },
-  ],
-  Volkswagen: [
-    { name: "Polo", years: "2001 / 2017" },
-    { name: "Golf", years: "1997 / 2019" },
-    { name: "Passat", years: "2000 / 2014" },
-    { name: "Touran", years: "2003 / 2015" },
-    { name: "Transporter", years: "2003 / 2015" },
-  ],
+/**
+ * Model names we make keys for, per brand.
+ *
+ * These are model NAMES only. An earlier version carried a production-year
+ * span per model, described in its own comment as "plausible" — that is, made
+ * up to look right rather than sourced. A wrong year on a model page costs a
+ * lead: an owner of a 2015 car reading "2003 / 2012" concludes we cannot help
+ * them. Both competitors checked (autosleutelpoint.nl, autosleuteloplocatie.nl)
+ * list model names with no years at all, so the years were never a competitive
+ * necessity either. They are gone rather than guessed again.
+ *
+ * Add a year span back only from a source you can point at, and only if it is
+ * correct for every generation of that model sold in the Netherlands.
+ */
+export const brandModels: Record<string, string[]> = {
+  "Alfa Romeo": ["145", "146", "147", "155", "156", "159", "166", "Brera", "GT", "GTV", "Giulia", "Giulietta", "MiTo", "Spider", "Stelvio", "Tonale"],
+  Audi: ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "Allroad", "Q2", "Q3", "Q5", "Q7", "Q8", "R8", "RS3", "S3", "S4", "TT", "e-tron"],
+  BMW: ["1-serie", "2-serie", "3-serie", "4-serie", "5-serie", "6-serie", "7-serie", "8-serie", "M3", "M5", "X1", "X2", "X3", "X4", "X5", "X6", "X7", "Z3", "Z4", "i3", "i4", "iX"],
+  Chevrolet: ["Aveo", "Camaro", "Captiva", "Cruze", "Epica", "Kalos", "Lacetti", "Matiz", "Nubira", "Orlando", "Spark", "Trax"],
+  Chrysler: ["300C", "Crossfire", "Grand Voyager", "Neon", "PT Cruiser", "Sebring", "Voyager", "Ypsilon"],
+  "Citroën": ["Berlingo", "C1", "C2", "C3", "C3 Picasso", "C4", "C4 Cactus", "C4 Picasso", "C5", "C5 Aircross", "C6", "C8", "DS3", "DS4", "DS5", "Jumper", "Jumpy", "Nemo", "Saxo", "Xsara"],
+  Dacia: ["Dokker", "Duster", "Jogger", "Lodgy", "Logan", "Sandero", "Spring"],
+  Daewoo: ["Espero", "Kalos", "Lanos", "Leganza", "Matiz", "Nubira", "Tacuma"],
+  Daihatsu: ["Charade", "Copen", "Cuore", "Materia", "Move", "Sirion", "Terios", "YRV"],
+  Fiat: ["500", "500L", "500X", "Bravo", "Croma", "Doblo", "Ducato", "Fiorino", "Grande Punto", "Idea", "Linea", "Multipla", "Panda", "Punto", "Qubo", "Scudo", "Sedici", "Seicento", "Stilo", "Tipo", "Ulysse"],
+  Ford: ["B-Max", "C-Max", "Ecosport", "Edge", "Explorer", "Fiesta", "Focus", "Fusion", "Galaxy", "Ka", "Kuga", "Mondeo", "Mustang", "Puma", "Ranger", "S-Max", "Tourneo", "Transit"],
+  Honda: ["Accord", "CR-V", "CR-Z", "Civic", "FR-V", "HR-V", "Insight", "Jazz", "Legend", "Prelude", "S2000", "Stream"],
+  Hyundai: ["Accent", "Atos", "Bayon", "Getz", "Ioniq", "Kona", "Matrix", "Santa Fe", "Sonata", "Tucson", "i10", "i20", "i30", "i40", "ix20", "ix35"],
+  Jaguar: ["E-Pace", "F-Pace", "F-Type", "I-Pace", "S-Type", "X-Type", "XE", "XF", "XJ", "XK"],
+  Jeep: ["Avenger", "Cherokee", "Commander", "Compass", "Grand Cherokee", "Patriot", "Renegade", "Wrangler"],
+  Kia: ["Carens", "Ceed", "Cerato", "EV6", "Niro", "Optima", "Picanto", "Rio", "Sorento", "Soul", "Sportage", "Stonic", "Venga", "Xceed"],
+  Lancia: ["Delta", "Lybra", "Musa", "Phedra", "Thesis", "Voyager", "Ypsilon", "Zeta"],
+  Landrover: ["Defender", "Discovery", "Discovery Sport", "Freelander", "Range Rover", "Range Rover Evoque", "Range Rover Sport", "Range Rover Velar"],
+  Lexus: ["CT", "ES", "GS", "IS", "LS", "NX", "RC", "RX", "UX"],
+  Mazda: ["2", "3", "323", "5", "6", "626", "CX-3", "CX-30", "CX-5", "CX-60", "CX-7", "MX-5", "Premacy", "RX-8", "Tribute"],
+  Mercedes: ["A-Klasse", "B-Klasse", "C-Klasse", "CLA", "CLK", "CLS", "Citan", "E-Klasse", "G-Klasse", "GLA", "GLB", "GLC", "GLE", "GLK", "ML", "S-Klasse", "SLK", "Sprinter", "Vaneo", "Viano", "Vito"],
+  Mini: ["Cabrio", "Clubman", "Cooper", "Countryman", "One", "Paceman"],
+  Mitsubishi: ["ASX", "Carisma", "Colt", "Eclipse", "Eclipse Cross", "Galant", "Grandis", "L200", "Lancer", "Outlander", "Pajero", "Space Star"],
+  Nissan: ["Almera", "Ariya", "Cube", "Juke", "Leaf", "Micra", "Murano", "NV200", "Navara", "Note", "Pathfinder", "Pixo", "Primera", "Pulsar", "Qashqai", "X-Trail"],
+  Opel: ["Adam", "Agila", "Ampera", "Antara", "Astra", "Combo", "Corsa", "Crossland", "Grandland", "Insignia", "Karl", "Meriva", "Mokka", "Movano", "Signum", "Tigra", "Vectra", "Vivaro", "Zafira"],
+  Peugeot: ["106", "107", "108", "2008", "205", "206", "207", "208", "3008", "301", "306", "307", "308", "4007", "405", "406", "407", "5008", "508", "Bipper", "Boxer", "Expert", "Partner", "RCZ", "Rifter", "Traveller"],
+  Porsche: ["718", "911", "Boxster", "Cayenne", "Cayman", "Macan", "Panamera", "Taycan"],
+  Renault: ["Arkana", "Austral", "Captur", "Clio", "Espace", "Fluence", "Grand Scenic", "Kadjar", "Kangoo", "Koleos", "Laguna", "Master", "Megane", "Modus", "Scenic", "Talisman", "Trafic", "Twingo", "Twizy", "Zoe"],
+  Saab: ["9-3", "9-5", "9-7X", "900", "9000"],
+  Seat: ["Alhambra", "Altea", "Arona", "Arosa", "Ateca", "Cordoba", "Exeo", "Formentor", "Ibiza", "Leon", "Mii", "Tarraco", "Toledo"],
+  Skoda: ["Citigo", "Enyaq", "Fabia", "Kamiq", "Karoq", "Kodiaq", "Octavia", "Rapid", "Roomster", "Scala", "Superb", "Yeti"],
+  Smart: ["EQ Fortwo", "Forfour", "Fortwo", "Roadster"],
+  Subaru: ["BRZ", "Forester", "Impreza", "Justy", "Legacy", "Levorg", "Outback", "Trezia", "XV"],
+  Suzuki: ["Alto", "Baleno", "Celerio", "Grand Vitara", "Ignis", "Jimny", "Kizashi", "Liana", "S-Cross", "SX4", "Splash", "Swift", "Vitara", "Wagon R"],
+  Tesla: ["Model 3", "Model S", "Model X", "Model Y"],
+  Toyota: ["Auris", "Avensis", "Aygo", "C-HR", "Camry", "Celica", "Corolla", "GT86", "Hilux", "Land Cruiser", "Prius", "Proace", "RAV4", "Urban Cruiser", "Verso", "Yaris", "Yaris Cross", "bZ4X", "iQ"],
+  Volkswagen: ["Amarok", "Arteon", "Beetle", "Caddy", "Crafter", "Eos", "Fox", "Golf", "ID.3", "ID.4", "Jetta", "Lupo", "Multivan", "Passat", "Polo", "Scirocco", "Sharan", "T-Cross", "T-Roc", "Tiguan", "Touareg", "Touran", "Transporter", "Up!"],
+  Volvo: ["C30", "C70", "EX30", "S40", "S60", "S80", "S90", "V40", "V50", "V60", "V70", "V90", "XC40", "XC60", "XC70", "XC90"],
 };
 
-export const getBrandModels = (brand: string): BrandModel[] => brandModels[brand] ?? [];
+export const getBrandModels = (brand: string): string[] => brandModels[brand] ?? [];

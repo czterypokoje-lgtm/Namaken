@@ -80,7 +80,8 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
         <div className="mx-auto max-w-5xl">
           <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
             <div className="max-w-2xl">
-              <h1 className="text-heading-2 text-frost mb-4">Welke {brand} autosleutels wij bijmaken</h1>
+              {/* h2, not h1: the Hero above already renders the page's only h1. */}
+              <h2 className="text-heading-2 text-frost mb-4">Welke {brand} autosleutels wij bijmaken</h2>
               <p className="text-body text-mist">{content.intro}</p>
             </div>
             <BrandBadge brand={brand} />
@@ -90,17 +91,15 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
             <div className="mt-10 grid gap-x-12 sm:grid-cols-2">
               <ul className="space-y-2">
                 {colA.map((m) => (
-                  <li key={m.name} className="text-body text-frost">
-                    <span className="font-semibold">{m.name}</span>{" "}
-                    <span className="text-mist">— {m.years}</span>
+                  <li key={m} className="text-body text-frost">
+                    <span className="font-semibold">{m}</span>
                   </li>
                 ))}
               </ul>
               <ul className="space-y-2">
                 {colB.map((m) => (
-                  <li key={m.name} className="text-body text-frost">
-                    <span className="font-semibold">{m.name}</span>{" "}
-                    <span className="text-mist">— {m.years}</span>
+                  <li key={m} className="text-body text-frost">
+                    <span className="font-semibold">{m}</span>
                   </li>
                 ))}
               </ul>
