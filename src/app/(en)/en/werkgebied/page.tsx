@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import { ArrivalsBoard } from "@/components/ArrivalsBoard";
 import { regions } from "@/data/regions";
 import { CityHubHero } from "@/components/ag/CityHubHero";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
+  path: "/en/werkgebied",
+  altPath: "/werkgebied",
+  locale: "en",
   title: "Areas covered",
   description: `Car key service in ${regions.length} regions across the Netherlands, with average arrival times per region.`,
-  alternates: { canonical: "/en/werkgebied" },
-};
+});
 
 export default function EnglishAreasIndexPage() {
   const sorted = [...regions].sort((a, b) => a.avgArrivalMin - b.avgArrivalMin);

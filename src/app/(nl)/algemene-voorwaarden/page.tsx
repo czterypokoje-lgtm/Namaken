@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import { business } from "@/lib/business";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
+  path: "/algemene-voorwaarden",
   title: "Algemene voorwaarden",
-  alternates: { canonical: "/algemene-voorwaarden" },
-};
+  description: `De algemene voorwaarden van ${business.name}.`,
+});
 
 export default function VoorwaardenPage() {
   return (

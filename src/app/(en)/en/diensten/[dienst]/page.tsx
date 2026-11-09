@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { services, getService } from "@/data/services";
 import { ServiceHero } from "@/components/ag/ServiceHero";
@@ -6,6 +7,8 @@ import { StickyCtaSidebar } from "@/components/StickyCtaSidebar";
 import { TransponderSmartKeySection } from "@/components/TransponderSmartKeySection";
 import KeyTypesSection from "@/components/ag/KeyTypesSection";
 import { Faq } from "@/components/Faq";
+import { siteUrl } from "@/lib/business";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
   return services.map((s) => ({ dienst: s.id }));
@@ -18,19 +21,36 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const service = getService((await params).dienst);
   if (!service) return {};
-  return {
+  return seo({
+    path: `/en/diensten/${service.id}`,
+    altPath: `/diensten/${service.id}`,
+    locale: "en",
     title: service.en.name,
     description: service.en.heroSub,
-    alternates: { canonical: `/en/diensten/${service.id}` },
-  };
+  });
 }
 
 export default async function EnglishServicePage({ params }: { params: Promise<{ dienst: string }> }) {
   const service = getService((await params).dienst);
   if (!service) notFound();
 
+  const base = siteUrl;
+  const schema = serviceSchema({
+    name: service.en.name,
+    description: service.en.heroSub,
+    url: `${base}/en/diensten/${service.id}`,
+    priceFrom: service.priceFrom,
+  });
+  const breadcrumb = breadcrumbSchema([
+    { name: "Home", url: `${base}/en` },
+    { name: "Services", url: `${base}/en/diensten` },
+    { name: service.en.name, url: `${base}/en/diensten/${service.id}` },
+  ]);
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <ServiceHero
         isEn={true}
         headline={service.en.heroHeadline}

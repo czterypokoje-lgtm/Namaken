@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import Link from "next/link";
 import { services } from "@/data/services";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
+  path: "/en/diensten",
+  altPath: "/diensten",
+  locale: "en",
   title: "Services",
   description: "Car key duplication, lost key replacement, lockouts and ignition lock repair.",
-  alternates: { canonical: "/en/diensten" },
-};
+});
 
 export default function EnglishServicesIndexPage() {
   return (

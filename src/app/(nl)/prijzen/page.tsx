@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import { services } from "@/data/services";
 import { Faq } from "@/components/Faq";
 import { CtaBand } from "@/components/CtaBand";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
+  path: "/prijzen",
   title: "Prijzen",
   description: "Vaste, transparante prijzen voor autosleutel bijmaken, verloren sleutels, buitengesloten en contactslot vervangen.",
-  alternates: { canonical: "/prijzen" },
-};
+});
 
 const priceList = [
   { name: "Voorrijkosten", included: "Reistijd en diagnose binnen ons werkgebied", price: "€0" },

@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { regions, getRegion } from "@/data/regions";
 import { services } from "@/data/services";
 import { Hero } from "@/components/Hero";
 import { pickCityImage } from "@/lib/images";
+import { siteUrl } from "@/lib/business";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
   return regions.map((r) => ({ stad: r.slug }));
@@ -18,11 +21,13 @@ export async function generateMetadata({
   const region = getRegion((await params).stad);
   if (!region) return {};
   const name = region.enName ?? region.name;
-  return {
+  return seo({
+    path: `/en/werkgebied/${region.slug}`,
+    altPath: `/werkgebied/${region.slug}`,
+    locale: "en",
     title: `Car key service ${name}`,
     description: `Car key duplication, lost keys or lockouts in ${name}? Our technician arrives in about ${region.avgArrivalMin} minutes on average.`,
-    alternates: { canonical: `/en/werkgebied/${region.slug}` },
-  };
+  });
 }
 
 export default async function EnglishRegionPage({ params }: { params: Promise<{ stad: string }> }) {
@@ -30,8 +35,16 @@ export default async function EnglishRegionPage({ params }: { params: Promise<{ 
   if (!region) notFound();
   const name = region.enName ?? region.name;
 
+  const base = siteUrl;
+  const breadcrumb = breadcrumbSchema([
+    { name: "Home", url: `${base}/en` },
+    { name: "Areas covered", url: `${base}/en/werkgebied` },
+    { name, url: `${base}/en/werkgebied/${region.slug}` },
+  ]);
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <Hero
         locale="en"
         eyebrow={`Coverage area · avg. ${region.avgArrivalMin} min arrival`}

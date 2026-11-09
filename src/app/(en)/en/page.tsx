@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import Link from "next/link";
 import { services } from "@/data/services";
 import { images } from "@/lib/images";
@@ -14,12 +15,14 @@ import KeyHandoffSection from "@/components/ag/KeyHandoffSection";
 import FadeIn from "@/components/ag/FadeIn";
 import { BrandLogoGrid } from "@/components/BrandLogoGrid";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
+  path: "/en",
+  altPath: "/",
+  locale: "en",
   title: "Car Key Duplication, Lost Keys & Lockouts — Nationwide NL",
   description:
     "Car key duplication, lost key replacement, lockouts and ignition lock repair across the Netherlands. Technicians come to you, price confirmed upfront, 24/7.",
-  alternates: { canonical: "/en" },
-};
+});
 
 export default function EnglishHomePage() {
   return (

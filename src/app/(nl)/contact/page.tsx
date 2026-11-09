@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import Image from "next/image";
 import { LeadForm } from "@/components/LeadForm";
+import { TrackedPhoneLink, TrackedWhatsAppLink } from "@/components/TrackedPhoneLink";
 import { business } from "@/lib/business";
 import { images } from "@/lib/images";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
+  path: "/contact",
   title: "Contact",
   description: `Neem contact op met ${business.name}. 24/7 pechhulp en autosleutelservice via ${business.phone}.`,
-  alternates: { canonical: "/contact" },
-};
+});
 
 export default function ContactPage() {
   return (
@@ -55,13 +57,11 @@ export default function ContactPage() {
           <div className="space-y-12">
             <div>
               <p className="text-eyebrow text-signal-orange mb-4">Bellen, nu opgenomen</p>
-              <a
-                href={business.phoneHref}
+              <TrackedPhoneLink
+                location="contact_page_phone"
                 style={{ fontFamily: "var(--font-big-shoulders)" }}
                 className="mb-6 block text-4xl font-black text-white sm:text-5xl"
-              >
-                {business.phone}
-              </a>
+              />
               <p className="text-body-small text-mist max-w-sm">
                 Sleutel kwijt of auto op slot? Een specialist neemt direct op, geen callcenter. Gemiddelde
                 aankomst is 35 minuten in de regio.
@@ -81,14 +81,12 @@ export default function ContactPage() {
                 Gepland werk voor uw bedrijfswagen, of meerdere sleutels nodig? Stuur ons een bericht en wij
                 antwoorden binnen een werkdag.
               </p>
-              <a
-                href={business.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
+              <TrackedWhatsAppLink
+                location="contact_page_whatsapp"
                 className="text-label mt-6 inline-block border-b border-white font-semibold text-white hover:border-signal-orange hover:text-signal-orange"
               >
                 Of stuur een WhatsApp
-              </a>
+              </TrackedWhatsAppLink>
             </div>
           </div>
 

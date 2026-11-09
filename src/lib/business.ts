@@ -1,6 +1,6 @@
 // Central business facts. Values marked PENDING are working defaults from
 // the plan's research (see plan doc) — swap for confirmed real values before
-// launch: BTW number, exact WhatsApp number, and final price points.
+// launch: BTW number and final price points.
 
 export const business = {
   name: "Autosleutelnamaken",
@@ -10,10 +10,28 @@ export const business = {
   // description exactly ("Bijsnijden en dupliceren van autosleutels en
   // slotenmakers diensten").
   legalName: "CarKey24",
+
+  // --- Hostnames -------------------------------------------------------
+  // `domain` is the bare registrable domain. Use it for e-mail addresses
+  // and anywhere a brand-readable domain is wanted — NEVER for building
+  // page URLs.
   domain: "autosleutelnamaken.nl",
-  phone: "06 11 75 12 31",
-  phoneHref: "tel:+31611751231",
-  whatsappHref: "https://wa.me/31611751231", // PENDING: confirm same number as phone
+  // `canonicalHost` is the ONE host search engines should index. The
+  // production server 308-redirects autosleutelnamaken.nl -> www, so www is
+  // the host that actually serves pages and therefore the host every
+  // canonical, hreflang and sitemap URL must use. Mismatching these is why
+  // the whole sitemap used to point at redirecting URLs.
+  // If the hosting redirect is ever flipped to non-www, change this one line.
+  canonicalHost: "www.autosleutelnamaken.nl",
+
+  // --- Contact ---------------------------------------------------------
+  // National 085 number: non-geographic, which suits a nationwide mobile
+  // technician network better than a regional 06 mobile number, and keeps
+  // one consistent NAP across site, schema.org and Google Business Profile.
+  phone: "085 109 1359",
+  phoneE164: "+31851091359",
+  phoneHref: "tel:+31851091359",
+  whatsappHref: "https://wa.me/31851091359",
   email: "info@autosleutelnamaken.nl",
   hours: "24/7 bereikbaar",
   technicianCount: 7,
@@ -24,6 +42,10 @@ export const business = {
     postalCode: "1404HT",
     city: "Bussum",
   },
+  // Approximate coordinates of the registered address (Bussum). Used for
+  // schema.org `geo`, which helps search engines resolve the entity to a
+  // place even though there is no walk-in storefront.
+  geo: { latitude: 52.2769, longitude: 5.1618 },
   // Template variables: the two market-specific values every schema.org
   // Offer/PostalAddress on the site reads from — change these two lines
   // (plus the currency symbol "€" used in on-page price display text,
@@ -35,6 +57,17 @@ export const business = {
   jobsSince: "18.400", // PENDING: confirm real completed-jobs count
   rating: "4.9",
 } as const;
+
+// Absolute origin for every indexable URL on the site. Everything that
+// builds a URL (canonicals, hreflang, sitemap, JSON-LD @id) must derive it
+// from here so the site can never again emit two competing hostnames.
+export const siteUrl = `https://${business.canonicalHost}`;
+
+/** Absolute URL for an app-relative path. `absoluteUrl("/")` -> origin. */
+export function absoluteUrl(path: string): string {
+  if (path === "/" || path === "") return siteUrl;
+  return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
+}
 
 export const trustStats = [
   { figure: "4.9", label: "Gemiddelde beoordeling", enLabel: "Average rating" },

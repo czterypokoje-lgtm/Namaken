@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { regions, getRegion } from "@/data/regions";
@@ -6,7 +7,7 @@ import { services } from "@/data/services";
 import { Hero } from "@/components/Hero";
 import { Testimonial } from "@/components/Testimonial";
 import { pickCityImage } from "@/lib/images";
-import { business } from "@/lib/business";
+import { siteUrl } from "@/lib/business";
 import { breadcrumbSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/Breadcrumb";
 
@@ -21,18 +22,19 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const region = getRegion((await params).stad);
   if (!region) return {};
-  return {
+  return seo({
+    path: `/werkgebied/${region.slug}`,
+    altPath: `/en/werkgebied/${region.slug}`,
     title: `Autosleutelservice ${region.name}`,
     description: `Autosleutel bijmaken, verloren sleutel of buitengesloten in ${region.name}? Onze technicus is gemiddeld binnen ${region.avgArrivalMin} minuten ter plekke.`,
-    alternates: { canonical: `/werkgebied/${region.slug}` },
-  };
+  });
 }
 
 export default async function RegionPage({ params }: { params: Promise<{ stad: string }> }) {
   const region = getRegion((await params).stad);
   if (!region) notFound();
 
-  const base = `https://${business.domain}`;
+  const base = siteUrl;
   const breadcrumbItems = [
     { name: "Home", url: base },
     { name: "Werkgebied", url: `${base}/werkgebied` },

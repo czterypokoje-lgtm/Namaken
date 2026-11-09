@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import { ArrivalsBoard } from "@/components/ArrivalsBoard";
 import { CtaBand } from "@/components/CtaBand";
 import { regions } from "@/data/regions";
 import { business } from "@/lib/business";
 import { CityHubHero } from "@/components/ag/CityHubHero";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
+  path: "/werkgebied",
+  altPath: "/en/werkgebied",
   title: "Werkgebied",
   description: `Autosleutelservice in ${regions.length} regio's door heel Nederland, met gemiddelde aankomsttijden per regio.`,
-  alternates: { canonical: "/werkgebied" },
-};
+});
 
 export default function WerkgebiedIndexPage() {
   const sorted = [...regions].sort((a, b) => a.avgArrivalMin - b.avgArrivalMin);

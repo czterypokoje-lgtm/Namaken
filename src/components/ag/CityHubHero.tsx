@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { business } from "@/lib/business";
 import { images } from "@/lib/images";
 import styles from "./CityHubHero.module.css";
 

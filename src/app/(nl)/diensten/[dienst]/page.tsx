@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { services, getService } from "@/data/services";
 import { ServiceHero } from "@/components/ag/ServiceHero";
@@ -7,8 +8,8 @@ import { TransponderSmartKeySection } from "@/components/TransponderSmartKeySect
 import KeyTypesSection from "@/components/ag/KeyTypesSection";
 import { Faq } from "@/components/Faq";
 import { AlsoUsefulCrossSell } from "@/components/AlsoUsefulCrossSell";
-import { business } from "@/lib/business";
-import { breadcrumbSchema } from "@/lib/schema";
+import { siteUrl } from "@/lib/business";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/Breadcrumb";
 
 export function generateStaticParams() {
@@ -22,36 +23,26 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const service = getService((await params).dienst);
   if (!service) return {};
-  return {
+  return seo({
+    path: `/diensten/${service.id}`,
+    altPath: `/en/diensten/${service.id}`,
     title: service.name,
     description: service.heroSub,
-    alternates: { canonical: `/diensten/${service.id}` },
-  };
+  });
 }
 
 export default async function ServicePage({ params }: { params: Promise<{ dienst: string }> }) {
   const service = getService((await params).dienst);
   if (!service) notFound();
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    serviceType: service.name,
-    provider: {
-      "@type": "LocalBusiness",
-      name: business.name,
-      telephone: business.phoneHref.replace("tel:", ""),
-      email: business.email,
-    },
-    areaServed: business.countryCode,
-    offers: {
-      "@type": "Offer",
-      priceCurrency: business.currencyCode,
-      price: service.priceFrom,
-    },
-  };
+  const base = siteUrl;
+  const schema = serviceSchema({
+    name: service.name,
+    description: service.heroSub,
+    url: `${base}/diensten/${service.id}`,
+    priceFrom: service.priceFrom,
+  });
 
-  const base = `https://${business.domain}`;
   const breadcrumbItems = [
     { name: "Home", url: base },
     { name: "Diensten", url: `${base}/diensten` },

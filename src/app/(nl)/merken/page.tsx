@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import { BrandGrid } from "@/components/BrandGrid";
 import { BrandLogoGrid } from "@/components/BrandLogoGrid";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
+  path: "/merken",
   title: "Merken",
   description: "Autosleutel bijmaken voor vrijwel elk automerk — kies uw merk voor specifieke informatie.",
-  alternates: { canonical: "/merken" },
-};
+});
 
 export default function MerkenIndexPage() {
   return (

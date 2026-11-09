@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import Link from "next/link";
 import { services } from "@/data/services";
 import { images } from "@/lib/images";
@@ -14,12 +15,13 @@ import KeyHandoffSection from "@/components/ag/KeyHandoffSection";
 import FadeIn from "@/components/ag/FadeIn";
 import { BrandLogoGrid } from "@/components/BrandLogoGrid";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
+  path: "/",
+  altPath: "/en",
   title: "Autosleutel bijmaken, kwijt of buitengesloten — 24/7 in heel Nederland",
   description:
     "Autosleutel bijmaken, verloren sleutel vervangen, buitengesloten of contactslot defect? Onze technici komen op locatie, prijs vooraf, 22 regio's, 24/7 bereikbaar.",
-  alternates: { canonical: "/" },
-};
+});
 
 export default function HomePage() {
   return (

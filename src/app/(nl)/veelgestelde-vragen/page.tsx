@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import { Hero } from "@/components/Hero";
 import { Faq } from "@/components/Faq";
 import { services } from "@/data/services";
 import { images } from "@/lib/images";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
+  path: "/veelgestelde-vragen",
   title: "Veelgestelde vragen",
   description: "Antwoorden op de meest gestelde vragen over autosleutel bijmaken, verloren sleutels en meer.",
-  alternates: { canonical: "/veelgestelde-vragen" },
-};
+});
 
 const generalFaq = [
   {

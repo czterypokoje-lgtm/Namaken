@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import { business } from "@/lib/business";
 import { CtaBand } from "@/components/CtaBand";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
+  path: "/over-ons",
   title: "Over ons",
   description: `Wij zijn een gespecialiseerd netwerk van mobiele autosleutel monteurs in Nederland. Geen tussenpersonen, echte technici, vaste prijzen vooraf.`,
-  alternates: { canonical: "/over-ons" },
-};
+});
 
 const team = [
   { name: "Marco V.", role: "Hoofdtechnicus. Rijdt dagelijks spoedklussen en is specialist in transponder- en keyless-go-codering." },

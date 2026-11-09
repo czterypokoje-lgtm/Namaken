@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import { business } from "@/lib/business";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
+  path: "/privacybeleid",
   title: "Privacybeleid",
-  alternates: { canonical: "/privacybeleid" },
-};
+  description: `Hoe ${business.name} persoonsgegevens verwerkt en bewaart.`,
+});
 
 export default function PrivacybeleidPage() {
   return (

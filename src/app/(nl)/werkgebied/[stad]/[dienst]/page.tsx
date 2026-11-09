@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { regions, getRegion, cityServiceIntro, cityServiceWhy } from "@/data/regions";
 import { services, getService } from "@/data/services";
 import { ServiceHero } from "@/components/ag/ServiceHero";
 import { StickyCtaSidebar } from "@/components/StickyCtaSidebar";
 import { Faq } from "@/components/Faq";
-import { business } from "@/lib/business";
-import { breadcrumbSchema } from "@/lib/schema";
+import { business, siteUrl } from "@/lib/business";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { pickServiceImage } from "@/lib/images";
 
@@ -23,11 +24,11 @@ export async function generateMetadata({
   const region = getRegion(stad);
   const service = getService(dienst);
   if (!region || !service) return {};
-  return {
+  return seo({
+    path: `/werkgebied/${region.slug}/${service.id}`,
     title: `${service.name} ${region.name}`,
-    description: `${service.name} in ${region.name}: gemiddeld ${region.avgArrivalMin} min aankomst, prijs vanaf €${service.priceFrom}, vooraf bevestigd aan de telefoon.`,
-    alternates: { canonical: `/werkgebied/${region.slug}/${service.id}` },
-  };
+    description: `${service.name} in ${region.name}: gemiddeld ${region.avgArrivalMin} min aankomst, prijs vanaf ${business.currencySymbol}${service.priceFrom}, vooraf bevestigd aan de telefoon.`,
+  });
 }
 
 export default async function CityServicePage({
@@ -43,29 +44,16 @@ export default async function CityServicePage({
   const intro = cityServiceIntro(region, service.name);
   const why = cityServiceWhy(region, service.name);
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    serviceType: service.name,
-    areaServed: {
-      "@type": "City",
-      name: region.name,
-    },
-    provider: {
-      "@type": "LocalBusiness",
-      name: business.name,
-      telephone: business.phoneHref.replace("tel:", ""),
-      email: business.email,
-      areaServed: region.areas,
-    },
-    offers: {
-      "@type": "Offer",
-      priceCurrency: business.currencyCode,
-      price: service.priceFrom,
-    },
-  };
+  const base = siteUrl;
+  const schema = serviceSchema({
+    name: `${service.name} ${region.name}`,
+    description: intro,
+    url: `${base}/werkgebied/${region.slug}/${service.id}`,
+    priceFrom: service.priceFrom,
+    areaName: region.name,
+    areas: region.areas,
+  });
 
-  const base = `https://${business.domain}`;
   const breadcrumbItems = [
     { name: "Home", url: base },
     { name: "Werkgebied", url: `${base}/werkgebied` },

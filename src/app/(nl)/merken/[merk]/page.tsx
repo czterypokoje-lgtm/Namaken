@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { allBrands, getBrandBySlug, slugifyBrand } from "@/data/brands";
@@ -9,8 +10,8 @@ import { pickBrandImages } from "@/lib/images";
 import { Hero } from "@/components/Hero";
 import { BrandBadge } from "@/components/BrandBadge";
 import { PriceTiers } from "@/components/PriceTiers";
-import { business } from "@/lib/business";
-import { breadcrumbSchema } from "@/lib/schema";
+import { business, siteUrl } from "@/lib/business";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/Breadcrumb";
 
 export function generateStaticParams() {
@@ -25,11 +26,11 @@ export async function generateMetadata({
   const brand = getBrandBySlug((await params).merk);
   if (!brand) return {};
   const bijmakenPrice = services.find((s) => s.id === "autosleutel-bijmaken")!.priceFrom;
-  return {
+  return seo({
+    path: `/merken/${slugifyBrand(brand)}`,
     title: `${brand} sleutel bijmaken`,
-    description: `${brand} autosleutel bijmaken, inprogrammeren of alle sleutels kwijt? Vaste prijzen vanaf €${bijmakenPrice}, op locatie of in de winkel.`,
-    alternates: { canonical: `/merken/${slugifyBrand(brand)}` },
-  };
+    description: `${brand} autosleutel bijmaken, inprogrammeren of alle sleutels kwijt? Vaste prijzen vanaf ${business.currencySymbol}${bijmakenPrice}, op locatie of in de winkel.`,
+  });
 }
 
 export default async function BrandPage({ params }: { params: Promise<{ merk: string }> }) {
@@ -46,14 +47,13 @@ export default async function BrandPage({ params }: { params: Promise<{ merk: st
 
   const [heroImage, inprogrammerenImage, dealerImage, behuizingImage, alleSleutelsImage] = pickBrandImages(brand);
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    serviceType: `${brand} sleutel bijmaken`,
-    offers: { "@type": "Offer", priceCurrency: business.currencyCode, price },
-  };
+  const base = siteUrl;
+  const schema = serviceSchema({
+    name: `${brand} sleutel bijmaken`,
+    url: `${base}/merken/${slugifyBrand(brand)}`,
+    priceFrom: price,
+  });
 
-  const base = `https://${business.domain}`;
   const breadcrumbItems = [
     { name: "Home", url: base },
     { name: "Merken", url: `${base}/merken` },

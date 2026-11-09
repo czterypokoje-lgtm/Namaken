@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/seo";
 import Link from "next/link";
 import { services } from "@/data/services";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
+  path: "/diensten",
+  altPath: "/en/diensten",
   title: "Diensten",
   description: "Alle autosleutelservices: bijmaken, verloren sleutel, buitengesloten en contactslot vervangen.",
-  alternates: { canonical: "/diensten" },
-};
+});
 
 export default function DienstenIndexPage() {
   return (

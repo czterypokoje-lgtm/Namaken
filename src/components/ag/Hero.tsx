@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { SITE_CONFIG } from './agConfig';
+import { trackConversion } from '@/lib/analytics';
 import styles from './Hero.module.css';
 import { motion, type Variants } from 'framer-motion';
 
@@ -99,7 +100,12 @@ export default function Hero({ city, heroImage, locale = 'nl' }: HeroProps) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.8, type: 'spring', bounce: 0.2 }}
       >
-        <a href={SITE_CONFIG.phoneHref} className={styles.phoneNumber} aria-label={`${isEn ? 'Call now' : 'Nu bellen'}: ${SITE_CONFIG.phone}`}>
+        <a
+          href={SITE_CONFIG.phoneHref}
+          className={styles.phoneNumber}
+          aria-label={`${isEn ? 'Call now' : 'Nu bellen'}: ${SITE_CONFIG.phone}`}
+          onClick={() => trackConversion('tel_click', { link_location: 'hero_phone' })}
+        >
           {SITE_CONFIG.phone}
         </a>
       </motion.div>
