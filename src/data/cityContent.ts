@@ -1,5 +1,6 @@
 import { regions, type Region } from "@/data/regions";
 import { services, type Service, type ServiceId } from "@/data/services";
+import { business } from "@/lib/business";
 
 /**
  * Content for the 22 region pages and the 88 region x service pages.
@@ -205,6 +206,87 @@ export function cityServiceFaq(region: Region, service: Service): { q: string; a
   }
 
   return faq;
+}
+
+/** Intro paragraph for a region hub page, built from that region's own data. */
+export function cityIntro(region: Region): string {
+  const areas = region.areas.slice(0, 3).join(", ");
+  const openings = [
+    `In ${region.name} rijden onze technici dagelijks rond. Of u nu in ${areas} staat of net buiten het centrum, wij komen naar de auto in plaats van andersom.`,
+    `${region.name} is vast werkgebied: ${areas} en de omliggende wijken worden door onze eigen technici bediend, niet door een doorverwijzing naar een derde partij.`,
+    `Wie in ${region.name} zonder autosleutel staat, hoeft niet te slepen. Onze technicus komt naar u toe — in ${areas} en in de rest van de regio.`,
+  ];
+  return pick(openings, region.slug);
+}
+
+/**
+ * Questions a visitor to a region hub page actually has, answered from that
+ * region's real figures. Different per region because the numbers are.
+ */
+export function cityFaq(region: Region): { q: string; a: string }[] {
+  const nearby = nearbyRegions(region);
+  const fastest = services.reduce((a, b) => (a.priceFrom < b.priceFrom ? a : b));
+  return [
+    {
+      q: `Hoe lang duurt het voordat er iemand in ${region.name} is?`,
+      a: `Gemiddeld ${region.avgArrivalMin} minuten. Dat getal is het gemiddelde over de hele regio ${region.name}; dichter bij ${region.areas[0]} gaat het meestal sneller en aan de randen kan het wat langer duren. U hoort aan de telefoon een concrete tijd voor uw eigen adres.`,
+    },
+    {
+      q: `Wat kost een autosleutelservice in ${region.name}?`,
+      a: `De prijzen in ${region.name} zijn dezelfde als in de rest van het land: vanaf ${business.currencySymbol}${fastest.priceFrom} voor ${fastest.name.toLowerCase()}. Er geldt geen regiotoeslag. Het exacte bedrag krijgt u telefonisch bevestigd voordat de technicus vertrekt.`,
+    },
+    {
+      q: `Komen jullie ook 's nachts naar ${region.name}?`,
+      a: `Ja, ${business.hours.toLowerCase()}, ook in het weekend. Voor spoedservice buiten kantooruren geldt een toeslag die u vooraf hoort, nooit achteraf.`,
+    },
+    {
+      q: `Ik sta net buiten ${region.name} — kom ik dan ook in aanmerking?`,
+      a: nearby.length
+        ? `Waarschijnlijk wel. Naast ${region.name} dekken wij ook ${joinOr(nearby.map((r) => r.name))} af. Bel ons met uw postcode en we zeggen direct welke technicus het snelst bij u kan zijn.`
+        : `Bel ons met uw postcode, dan zeggen we direct of we bij u kunnen komen en hoe snel.`,
+    },
+  ];
+}
+
+/** English intro for a region hub page. */
+export function cityIntroEn(region: Region): string {
+  const name = region.enName ?? region.name;
+  const areas = region.areas.slice(0, 3).join(", ");
+  const openings = [
+    `Our technicians drive through ${name} every day. Whether you are in ${areas} or just outside the centre, we come to the car instead of the other way round.`,
+    `${name} is a fixed service area: ${areas} and the surrounding districts are covered by our own technicians, not passed on to a third party.`,
+    `If you are stuck without a car key in ${name}, nothing needs towing. Our technician comes to you — in ${areas} and across the rest of the region.`,
+  ];
+  return pick(openings, region.slug);
+}
+
+/** English FAQ for a region hub page, from that region's own figures. */
+export function cityFaqEn(region: Region): { q: string; a: string }[] {
+  const name = region.enName ?? region.name;
+  const nearby = nearbyRegions(region);
+  const cheapest = services.reduce((a, b) => (a.priceFrom < b.priceFrom ? a : b));
+  const joinOrEn = (items: string[]) =>
+    items.length <= 1 ? items.join("") : `${items.slice(0, -1).join(", ")} or ${items[items.length - 1]}`;
+  return [
+    {
+      q: `How long does it take for someone to reach me in ${name}?`,
+      a: `About ${region.avgArrivalMin} minutes on average. That figure is the average across the whole ${name} region; closer to ${region.areas[0]} it is usually quicker, and at the edges it can take a little longer. On the phone you get a concrete time for your own address.`,
+    },
+    {
+      q: `What does a car key service in ${name} cost?`,
+      a: `The same as anywhere else in the country: from ${business.currencySymbol}${cheapest.priceFrom} for ${cheapest.en.name.toLowerCase()}. There is no regional surcharge. You hear the exact amount on the phone before the technician sets off.`,
+    },
+    {
+      q: `Do you come to ${name} at night as well?`,
+      a: `Yes, we are reachable 24/7, weekends included. An out-of-hours call-out carries a surcharge, which you hear in advance and never afterwards.`,
+    },
+    {
+      q: `I am just outside ${name} — can you still help?`,
+      a: nearby.length
+        ? `Most likely. Besides ${name} we also cover ${joinOrEn(nearby.map((r) => r.enName ?? r.name))}. Call us with your postcode and we will say straight away which technician can reach you fastest.`
+        : `Call us with your postcode and we will tell you right away whether we can reach you, and how quickly.`,
+    },
+  ];
 }
 
 /** The other services, for cross-linking within the same region. */

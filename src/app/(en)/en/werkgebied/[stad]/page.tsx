@@ -8,6 +8,8 @@ import { Hero } from "@/components/Hero";
 import { pickCityImage } from "@/lib/images";
 import { siteUrl } from "@/lib/business";
 import { breadcrumbSchema } from "@/lib/schema";
+import { cityFaqEn, cityIntroEn, nearbyRegions } from "@/data/cityContent";
+import { Faq } from "@/components/Faq";
 
 export function generateStaticParams() {
   return regions.map((r) => ({ stad: r.slug }));
@@ -35,6 +37,10 @@ export default async function EnglishRegionPage({ params }: { params: Promise<{ 
   if (!region) notFound();
   const name = region.enName ?? region.name;
 
+  const intro = cityIntroEn(region);
+  const faqItems = cityFaqEn(region);
+  const nearby = nearbyRegions(region);
+
   const base = siteUrl;
   const breadcrumb = breadcrumbSchema([
     { name: "Home", url: `${base}/en` },
@@ -56,6 +62,17 @@ export default async function EnglishRegionPage({ params }: { params: Promise<{ 
 
       <section className="px-4 py-12 sm:px-6">
         <div className="mx-auto max-w-4xl">
+          <p className="text-body text-mist mb-8">{intro}</p>
+
+          <h2 className="text-heading-3 text-frost mb-4">Arrival and coverage in {name}</h2>
+          <p className="text-body text-mist mb-6">
+            Average arrival time in {name} is{" "}
+            <strong className="text-frost">{region.avgArrivalMin} minutes</strong>. The technician works at the
+            car itself — at home, at work or on the roadside — so there is no tow truck and no dealer
+            appointment. You hear the price on the phone before anyone sets off, and there is no regional
+            surcharge for {name}.
+          </p>
+
           <h2 className="text-heading-3 text-frost mb-6">Services in {name}</h2>
           <ul className="divide-y divide-line">
             {services.map((s) => (
@@ -72,6 +89,28 @@ export default async function EnglishRegionPage({ params }: { params: Promise<{ 
           </ul>
         </div>
       </section>
+      {nearby.length > 0 && (
+        <section className="border-t border-line px-4 py-12 sm:px-6">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="text-heading-3 text-frost mb-4">Regions next to {name}</h2>
+            <ul className="divide-y divide-line">
+              {nearby.map((r) => (
+                <li key={r.slug}>
+                  <Link
+                    href={`/en/werkgebied/${r.slug}`}
+                    className="flex items-center justify-between py-3 transition-colors hover:bg-navy-surface"
+                  >
+                    <span className="text-body text-frost">Car key service {r.enName ?? r.name}</span>
+                    <span className="text-body-small text-mist">avg. {r.avgArrivalMin} min</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      <Faq items={faqItems} title={`Frequently asked questions about car key service in ${name}`} />
     </>
   );
 }

@@ -3,13 +3,14 @@ import { seo } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { regions, getRegion } from "@/data/regions";
-import { nearbyRegions } from "@/data/cityContent";
+import { cityFaq, cityIntro, nearbyRegions } from "@/data/cityContent";
 import { services } from "@/data/services";
 import { Hero } from "@/components/Hero";
 import { pickCityImage } from "@/lib/images";
 import { siteUrl } from "@/lib/business";
 import { breadcrumbSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/Breadcrumb";
+import { Faq } from "@/components/Faq";
 
 export function generateStaticParams() {
   return regions.map((r) => ({ stad: r.slug }));
@@ -35,6 +36,8 @@ export default async function RegionPage({ params }: { params: Promise<{ stad: s
   if (!region) notFound();
 
   const nearby = nearbyRegions(region);
+  const intro = cityIntro(region);
+  const faqItems = cityFaq(region);
 
   const base = siteUrl;
   const breadcrumbItems = [
@@ -58,6 +61,17 @@ export default async function RegionPage({ params }: { params: Promise<{ stad: s
 
       <section className="px-4 py-12 sm:px-6">
         <div className="mx-auto max-w-4xl">
+          <p className="text-body text-mist mb-8">{intro}</p>
+
+          <h2 className="text-heading-3 text-frost mb-4">Aankomst en dekking in {region.name}</h2>
+          <p className="text-body text-mist mb-6">
+            De gemiddelde aanrijtijd in {region.name} is{" "}
+            <strong className="text-frost">{region.avgArrivalMin} minuten</strong>. Onze technicus werkt ter
+            plekke bij de auto — thuis, op het werk of langs de weg — zodat er geen sleepwagen en geen afspraak
+            bij een dealer aan te pas komt. De prijs hoort u aan de telefoon voordat iemand vertrekt, en er
+            geldt geen regiotoeslag voor {region.name}.
+          </p>
+
           <h2 className="text-heading-3 text-frost mb-6">Diensten in {region.name}</h2>
           <ul className="divide-y divide-line">
             {services.map((s) => (
@@ -112,6 +126,8 @@ export default async function RegionPage({ params }: { params: Promise<{ stad: s
           </div>
         </section>
       )}
+
+      <Faq items={faqItems} title={`Veelgestelde vragen over autosleutelservice in ${region.name}`} />
     </>
   );
 }

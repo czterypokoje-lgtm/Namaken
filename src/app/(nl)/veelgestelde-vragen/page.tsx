@@ -13,6 +13,14 @@ export const metadata: Metadata = seo({
 
 const generalFaq = [
   {
+    // Captures the "autosleutel namaken" query, which is the brand name and a
+    // real search term, while answering the question a visitor actually has.
+    // "Namaken" can read as unauthorised copying where a key is certified, so
+    // the answer states plainly that ownership is verified first.
+    q: "Autosleutel namaken of bijmaken — is dat hetzelfde?",
+    a: "In het dagelijks taalgebruik bedoelen mensen er hetzelfde mee: een extra of vervangende sleutel voor uw auto. Vakmensen zeggen meestal 'bijmaken'. Wat de woorden niet veranderen, is de procedure: wij maken alleen een sleutel nadat we met het kenteken en een geldig legitimatiebewijs hebben vastgesteld dat de auto van u is. Zonder dat begint onze technicus niet.",
+  },
+  {
     q: "Hoe snel kunnen jullie ter plekke zijn?",
     a: "Landelijk gemiddeld binnen 35 minuten, afhankelijk van uw regio. Op de werkgebied-pagina staat de gemiddelde aankomsttijd per regio.",
   },
